@@ -1,0 +1,31 @@
+# Frontend setup and run instructions
+
+This workspace uses the `employee-management-system` React + Vite frontend.
+
+## Frontend location
+- `employee-management-system/`
+
+## Startup commands
+1. Open a terminal in the repo root:
+   ```bash
+   cd "c:\Users\Rishi Garg\OneDrive\Desktop\I soft\ri\employee-management-system"
+   ```
+2. Install frontend dependencies (if needed):
+   ```bash
+   npm install
+   ```
+3. Start the frontend dev server:
+   ```bash
+   npm run dev
+   ```
+
+## Local URL
+- The Vite app usually runs on `http://localhost:5173`
+- If that port is busy, Vite will pick the next available port automatically.
+
+## Notes
+- The frontend is configured to proxy `/api` requests to the backend on `http://localhost:4000`.
+- Main app entry files:
+  - `employee-management-system/src/main.jsx`
+  - `employee-management-system/src/App.jsx`
+  - `employee-management-system/vite.config.js`

@@ -1,0 +1,35 @@
+# Backend setup and run instructions
+
+This workspace uses a backend server in the `employee-management-system` folder.
+
+## Backend location
+- `employee-management-system/server.js`
+
+## Startup commands
+1. Open a terminal in the repo root:
+   ```bash
+   cd "c:\Users\Rishi Garg\OneDrive\Desktop\I soft\ri\employee-management-system"
+   ```
+2. Install backend dependencies (if needed):
+   ```bash
+   npm install express cors
+   ```
+3. Start the backend server:
+   ```bash
+   npm run backend
+   ```
+
+## Local URL
+- Backend API is available at `http://localhost:4000`
+
+## API endpoints
+- `GET /api/health`
+- `POST /api/login`
+- `GET /api/users`
+- `GET /api/departments`
+- `GET /api/skills`
+- `GET /api/employees`
+
+## Notes
+- The frontend uses `/api` proxying to connect to this backend.
+- If you need a landing page, `GET /` returns a simple status message.

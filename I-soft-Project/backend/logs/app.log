@@ -1,0 +1,47 @@
+{"level":"info","message":"===================================================","timestamp":"2026-06-10 15:43:26"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-06-10 15:43:26"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-06-10 15:43:26"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-06-10 15:43:26"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-06-10 15:43:26"}
+{"level":"info","message":" 📖 Swagger Docs: http://localhost:4000/api-docs","timestamp":"2026-06-10 15:43:26"}
+{"level":"info","message":"===================================================","timestamp":"2026-06-10 15:43:26"}
+{"level":"info","message":"GET /api/auth/profile 200","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/employees?limit=100 200","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 15:45:05"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 15:45:06"}
