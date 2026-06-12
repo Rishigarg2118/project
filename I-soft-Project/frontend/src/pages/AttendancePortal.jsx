@@ -145,7 +145,7 @@ export default function AttendancePortal() {
               fontFamily: 'var(--font-head)',
               fontSize: '32px',
               fontWeight: '800',
-              background: 'linear-gradient(135deg, #fff 50%, var(--text-secondary) 100%)',
+              background: 'linear-gradient(135deg, var(--text-primary) 50%, var(--text-secondary) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               marginBottom: '8px'
@@ -173,11 +173,11 @@ export default function AttendancePortal() {
             style={{
               background: 'transparent',
               border: 'none',
-              color: activeTab === 'portal' ? '#fff' : 'var(--text-secondary)',
+              color: activeTab === 'portal' ? 'var(--primary)' : 'var(--text-secondary)',
               borderBottom: activeTab === 'portal' ? '2px solid var(--primary)' : 'none',
               padding: '8px 16px',
               cursor: 'pointer',
-              fontWeight: '600',
+              fontWeight: '700',
               fontSize: '14px'
             }}
           >
@@ -191,11 +191,11 @@ export default function AttendancePortal() {
             style={{
               background: 'transparent',
               border: 'none',
-              color: activeTab === 'admin' ? '#fff' : 'var(--text-secondary)',
+              color: activeTab === 'admin' ? 'var(--primary)' : 'var(--text-secondary)',
               borderBottom: activeTab === 'admin' ? '2px solid var(--primary)' : 'none',
               padding: '8px 16px',
               cursor: 'pointer',
-              fontWeight: '600',
+              fontWeight: '700',
               fontSize: '14px'
             }}
           >
@@ -215,7 +215,7 @@ export default function AttendancePortal() {
                   fontFamily: 'var(--font-head)',
                   fontSize: '44px',
                   fontWeight: '800',
-                  color: '#fff',
+                  color: 'var(--text-primary)',
                   letterSpacing: '0.02em',
                   textShadow: '0 0 20px rgba(6, 182, 212, 0.25)',
                   marginBottom: '8px'
@@ -323,7 +323,7 @@ export default function AttendancePortal() {
 
               <div
                 style={{
-                  background: 'rgba(5, 8, 16, 0.4)',
+                  background: 'rgba(0, 0, 0, 0.03)',
                   border: '1px solid var(--border-glass)',
                   borderRadius: '10px',
                   padding: '16px 20px',
@@ -399,7 +399,7 @@ export default function AttendancePortal() {
                 placeholder="Search staff logs by employee name, email, or location..."
                 value={adminSearchQuery}
                 onChange={(e) => setAdminSearchQuery(e.target.value)}
-                style={{ border: 'none', background: 'transparent', padding: '4px', width: '100%', color: '#fff', outline: 'none' }}
+                style={{ border: 'none', background: 'transparent', padding: '4px', width: '100%', color: 'var(--text-primary)', outline: 'none' }}
               />
             </div>
           </Card>

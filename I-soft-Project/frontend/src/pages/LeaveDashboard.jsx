@@ -87,7 +87,7 @@ export default function LeaveDashboard() {
             fontFamily: 'var(--font-head)',
             fontSize: '32px',
             fontWeight: '800',
-            background: 'linear-gradient(135deg, #fff 50%, var(--text-secondary) 100%)',
+            background: 'linear-gradient(135deg, var(--text-primary) 50%, var(--text-secondary) 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '8px'

@@ -273,7 +273,7 @@ export default function Reports() {
         <div>
           <h1 style={{
             fontFamily: 'var(--font-head)', fontSize: '32px', fontWeight: '800',
-            background: 'linear-gradient(135deg, #fff 50%, var(--text-secondary) 100%)',
+            background: 'linear-gradient(135deg, var(--text-primary) 50%, var(--text-secondary) 100%)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px'
           }}>
             Analytics & Reports
@@ -314,7 +314,7 @@ export default function Reports() {
               padding: '8px 18px',
               borderRadius: '8px',
               border: activeTab === tab.id ? '1px solid var(--primary)' : '1px solid var(--border-glass)',
-              background: activeTab === tab.id ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.04)',
+              background: activeTab === tab.id ? 'var(--primary)' : 'rgba(0,0,0,0.03)',
               color: activeTab === tab.id ? '#fff' : 'var(--text-secondary)',
               cursor: 'pointer',
               fontSize: '13px',

@@ -244,13 +244,13 @@ export default function Dashboard() {
         <div>
           <h1 style={{
             fontFamily: 'var(--font-head)', fontSize: '28px', fontWeight: '800',
-            background: 'linear-gradient(135deg, #fff 50%, var(--text-secondary))',
+            background: 'linear-gradient(135deg, var(--text-primary) 50%, var(--text-secondary))',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
           }}>
             i-SOFTZONE Analytics
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '13px', marginTop: '4px' }}>
-            Welcome, <strong style={{ color: '#fff' }}>{user?.name?.split(' ')[0]}</strong> — {user?.role?.toUpperCase()} • Live Data Dashboard
+            Welcome, <strong style={{ color: 'var(--primary)' }}>{user?.name?.split(' ')[0]}</strong> — {user?.role?.toUpperCase()} • Live Data Dashboard
           </p>
         </div>
         <Button variant="ghost" onClick={fetchAll}>🔄 Refresh</Button>
@@ -309,7 +309,7 @@ export default function Dashboard() {
                   style={{ fontSize: '10px', fill: 'var(--text-secondary)' }}>
                   {deptData.map((entry, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
                 </Pie>
-                <text x="50%" y="45%" textAnchor="middle" dominantBaseline="middle" fill="#fff" style={{ fontSize: '20px', fontWeight: '900', fontFamily: 'var(--font-head)' }}>
+                <text x="50%" y="45%" textAnchor="middle" dominantBaseline="middle" fill="var(--text-primary)" style={{ fontSize: '20px', fontWeight: '900', fontFamily: 'var(--font-head)' }}>
                   {stats?.employees || 0}
                 </text>
                 <text x="50%" y="55%" textAnchor="middle" dominantBaseline="middle" fill="var(--text-muted)" style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: '700' }}>
@@ -426,14 +426,14 @@ export default function Dashboard() {
             Average clock-in, clock-out, or work hours per employee
           </div>
           
-          <div style={{ display: 'flex', gap: '6px', marginBottom: '14px', background: 'rgba(255,255,255,0.03)', padding: '4px', borderRadius: '8px', border: '1px solid var(--border-glass)' }}>
+          <div style={{ display: 'flex', gap: '6px', marginBottom: '14px', background: 'rgba(0,0,0,0.03)', padding: '4px', borderRadius: '8px', border: '1px solid var(--border-glass)' }}>
             <button 
               onClick={() => setAttendancePieMetric('workHours')}
               style={{
                 flex: 1,
                 background: attendancePieMetric === 'workHours' ? 'var(--primary)' : 'transparent',
                 border: 'none',
-                color: '#fff',
+                color: attendancePieMetric === 'workHours' ? '#fff' : 'var(--text-secondary)',
                 padding: '6px 8px',
                 borderRadius: '6px',
                 fontSize: '11px',
@@ -450,7 +450,7 @@ export default function Dashboard() {
                 flex: 1,
                 background: attendancePieMetric === 'clockIn' ? 'var(--primary)' : 'transparent',
                 border: 'none',
-                color: '#fff',
+                color: attendancePieMetric === 'clockIn' ? '#fff' : 'var(--text-secondary)',
                 padding: '6px 8px',
                 borderRadius: '6px',
                 fontSize: '11px',
@@ -467,7 +467,7 @@ export default function Dashboard() {
                 flex: 1,
                 background: attendancePieMetric === 'clockOut' ? 'var(--primary)' : 'transparent',
                 border: 'none',
-                color: '#fff',
+                color: attendancePieMetric === 'clockOut' ? '#fff' : 'var(--text-secondary)',
                 padding: '6px 8px',
                 borderRadius: '6px',
                 fontSize: '11px',
@@ -528,7 +528,7 @@ export default function Dashboard() {
                     boxShadow: monitorStats.dbStatus === 'CONNECTED' ? '0 0 10px var(--success)' : '0 0 10px var(--danger)',
                     display: 'inline-block'
                   }}></span>
-                  <strong style={{ fontSize: '15px', color: '#fff', fontFamily: 'monospace' }}>
+                  <strong style={{ fontSize: '15px', color: 'var(--text-primary)', fontFamily: 'monospace' }}>
                     {monitorStats.dbStatus}
                   </strong>
                 </div>
@@ -550,14 +550,14 @@ export default function Dashboard() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <span style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Server Uptime</span>
-                <span style={{ fontSize: '15px', fontWeight: '700', color: '#fff', fontFamily: 'monospace', marginTop: '4px' }}>
+                <span style={{ fontSize: '15px', fontWeight: '700', color: 'var(--text-primary)', fontFamily: 'monospace', marginTop: '4px' }}>
                   {formatUptime(monitorStats.uptime)}
                 </span>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', gridColumn: 'span 2' }}>
                 <span style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Memory Footprint (RSS / Heap)</span>
-                <span style={{ fontSize: '14px', color: '#fff', fontFamily: 'monospace', marginTop: '4px' }}>
+                <span style={{ fontSize: '14px', color: 'var(--text-primary)', fontFamily: 'monospace', marginTop: '4px' }}>
                   RSS: <strong style={{ color: 'var(--primary)' }}>{formatBytes(monitorStats.memory?.rss)}</strong> • 
                   Heap: <strong style={{ color: 'var(--warning)' }}>{formatBytes(monitorStats.memory?.heapUsed)}</strong> / {formatBytes(monitorStats.memory?.heapTotal)}
                 </span>

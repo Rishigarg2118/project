@@ -2487,3 +2487,5 @@
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:38:45"}
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:39:45"}
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:39:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:40:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:40:45"}

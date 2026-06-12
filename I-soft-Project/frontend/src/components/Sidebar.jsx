@@ -22,7 +22,7 @@ export default function Sidebar() {
         position: 'fixed',
         left: 0,
         top: 0,
-        background: 'rgba(7, 9, 19, 0.7)',
+        background: 'var(--surface-glass)',
         backdropFilter: 'blur(24px)',
         borderRight: '1px solid var(--border-glass)',
         padding: '28px 18px',
@@ -64,7 +64,7 @@ export default function Sidebar() {
             fontSize: '21px',
             fontWeight: '800',
             letterSpacing: '0.04em',
-            background: 'linear-gradient(135deg, var(--white) 30%, var(--text-secondary) 100%)',
+            background: 'linear-gradient(135deg, var(--text-primary) 30%, var(--text-secondary) 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}
@@ -144,14 +144,14 @@ export default function Sidebar() {
               width: '42px',
               height: '42px',
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+              background: 'linear-gradient(135deg, var(--primary-glow) 0%, var(--secondary-glow) 100%)',
               border: '1px solid var(--border-glass-active)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: '17px',
               fontWeight: '800',
-              color: 'var(--secondary)'
+              color: 'var(--primary)'
             }}
           >
             {user.name.charAt(0)}

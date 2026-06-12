@@ -5,8 +5,8 @@ export default function Landing() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.12) 0%, transparent 40%), #030712',
-      color: '#fff',
+      background: 'radial-gradient(circle at 10% 20%, rgba(249, 115, 22, 0.08) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(217, 119, 6, 0.08) 0%, transparent 40%), #fcfbfc',
+      color: 'var(--text-primary)',
       fontFamily: 'var(--font-body)',
       display: 'flex',
       flexDirection: 'column',
@@ -14,8 +14,8 @@ export default function Landing() {
       overflow: 'hidden'
     }}>
       {/* Decorative Blur Spheres (Cool/Warm Harmony) */}
-      <div style={{ position: 'absolute', top: '-10%', left: '10%', width: '400px', height: '400px', borderRadius: '50%', background: 'var(--primary-glow)', filter: 'blur(150px)', opacity: 0.15, pointerEvents: 'none' }}></div>
-      <div style={{ position: 'absolute', bottom: '-10%', right: '10%', width: '500px', height: '500px', borderRadius: '50%', background: 'rgba(249, 115, 22, 0.3)', filter: 'blur(160px)', opacity: 0.12, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', top: '-10%', left: '10%', width: '400px', height: '400px', borderRadius: '50%', background: 'var(--primary-glow)', filter: 'blur(150px)', opacity: 0.1, pointerEvents: 'none' }}></div>
+      <div style={{ position: 'absolute', bottom: '-10%', right: '10%', width: '500px', height: '500px', borderRadius: '50%', background: 'rgba(249, 115, 22, 0.15)', filter: 'blur(160px)', opacity: 0.1, pointerEvents: 'none' }}></div>
 
       {/* Header / Navbar */}
       <header style={{
@@ -38,7 +38,8 @@ export default function Landing() {
             justifyContent: 'center',
             fontSize: '18px',
             fontWeight: '800',
-            boxShadow: '0 0 15px rgba(6, 182, 212, 0.4)'
+            color: '#fff',
+            boxShadow: '0 0 15px rgba(234, 88, 12, 0.4)'
           }}>I</span>
           <span style={{ fontSize: '20px', fontWeight: '800', fontFamily: 'var(--font-head)', letterSpacing: '0.04em' }}>
             i-<span style={{ color: 'var(--primary)' }}>SOFTZONE</span>
@@ -54,7 +55,7 @@ export default function Landing() {
             padding: '8px 16px',
             transition: 'color 0.2s'
           }}
-          onMouseEnter={(e) => e.target.style.color = '#fff'}
+          onMouseEnter={(e) => e.target.style.color = 'var(--text-primary)'}
           onMouseLeave={(e) => e.target.style.color = 'var(--text-secondary)'}>
             Sign In
           </Link>
@@ -81,13 +82,13 @@ export default function Landing() {
         zIndex: 10
       }}>
         <div style={{
-          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(249, 115, 22, 0.1) 100%)',
-          border: '1px solid rgba(255,255,255,0.05)',
+          background: 'linear-gradient(135deg, rgba(234, 88, 12, 0.08) 0%, rgba(217, 119, 6, 0.08) 100%)',
+          border: '1px solid rgba(0,0,0,0.05)',
           padding: '6px 16px',
           borderRadius: '30px',
           fontSize: '13px',
           fontWeight: '600',
-          color: 'rgba(249, 115, 22, 0.9)',
+          color: 'var(--primary)',
           marginBottom: '24px',
           letterSpacing: '0.05em',
           textTransform: 'uppercase',
@@ -105,7 +106,7 @@ export default function Landing() {
           lineHeight: '1.15',
           maxWidth: '850px',
           marginBottom: '24px',
-          background: 'linear-gradient(135deg, #fff 40%, rgba(255,255,255,0.7) 70%, var(--secondary) 100%)',
+          background: 'linear-gradient(135deg, var(--text-primary) 40%, var(--text-secondary) 70%, var(--primary) 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent'
         }}>
@@ -134,9 +135,9 @@ export default function Landing() {
           </Link>
           <Link to="/signup" style={{
             textDecoration: 'none',
-            background: 'rgba(255, 255, 255, 0.02)',
-            border: '1px solid rgba(249, 115, 22, 0.35)',
-            color: '#fff',
+            background: 'rgba(255, 255, 255, 0.4)',
+            border: '1px solid rgba(234, 88, 12, 0.35)',
+            color: 'var(--text-primary)',
             fontSize: '16px',
             fontWeight: '600',
             padding: '14px 32px',
@@ -144,13 +145,15 @@ export default function Landing() {
             transition: 'all 0.3s ease'
           }}
           onMouseEnter={(e) => {
-            e.target.style.background = 'rgba(249, 115, 22, 0.06)';
-            e.target.style.borderColor = 'rgba(249, 115, 22, 0.6)';
-            e.target.style.boxShadow = '0 0 15px rgba(249, 115, 22, 0.2)';
+            e.target.style.background = 'var(--primary)';
+            e.target.style.color = '#fff';
+            e.target.style.borderColor = 'var(--primary)';
+            e.target.style.boxShadow = '0 8px 25px rgba(234, 88, 12, 0.2)';
           }}
           onMouseLeave={(e) => {
-            e.target.style.background = 'rgba(255, 255, 255, 0.02)';
-            e.target.style.borderColor = 'rgba(249, 115, 22, 0.35)';
+            e.target.style.background = 'rgba(255, 255, 255, 0.4)';
+            e.target.style.color = 'var(--text-primary)';
+            e.target.style.borderColor = 'rgba(234, 88, 12, 0.35)';
             e.target.style.boxShadow = 'none';
           }}>
             Register Account
@@ -168,7 +171,7 @@ export default function Landing() {
           {/* Card 1 */}
           <div className="glass-card" style={{ padding: '32px', textAlign: 'left' }}>
             <div style={{ fontSize: '28px', marginBottom: '16px' }}>⏰</div>
-            <h3 style={{ fontFamily: 'var(--font-head)', fontSize: '18px', fontWeight: '700', marginBottom: '12px', color: 'var(--white)' }}>
+            <h3 style={{ fontFamily: 'var(--font-head)', fontSize: '18px', fontWeight: '700', marginBottom: '12px', color: 'var(--text-primary)' }}>
               Geofenced Attendance
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: '1.5' }}>
@@ -177,9 +180,9 @@ export default function Landing() {
           </div>
 
           {/* Card 2 */}
-          <div className="glass-card" style={{ padding: '32px', textAlign: 'left', borderTop: '2px solid rgba(249, 115, 22, 0.25)' }}>
+          <div className="glass-card" style={{ padding: '32px', textAlign: 'left', borderTop: '2px solid rgba(234, 88, 12, 0.25)' }}>
             <div style={{ fontSize: '28px', marginBottom: '16px' }}>💻</div>
-            <h3 style={{ fontFamily: 'var(--font-head)', fontSize: '18px', fontWeight: '700', marginBottom: '12px', color: 'var(--white)' }}>
+            <h3 style={{ fontFamily: 'var(--font-head)', fontSize: '18px', fontWeight: '700', marginBottom: '12px', color: 'var(--text-primary)' }}>
               Hardware Asset Registry
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: '1.5' }}>
@@ -190,7 +193,7 @@ export default function Landing() {
           {/* Card 3 */}
           <div className="glass-card" style={{ padding: '32px', textAlign: 'left' }}>
             <div style={{ fontSize: '28px', marginBottom: '16px' }}>📊</div>
-            <h3 style={{ fontFamily: 'var(--font-head)', fontSize: '18px', fontWeight: '700', marginBottom: '12px', color: 'var(--white)' }}>
+            <h3 style={{ fontFamily: 'var(--font-head)', fontSize: '18px', fontWeight: '700', marginBottom: '12px', color: 'var(--text-primary)' }}>
               Operations Dashboard
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: '1.5' }}>
