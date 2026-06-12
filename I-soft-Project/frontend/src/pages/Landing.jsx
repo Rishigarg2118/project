@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../components/Logo';
 
 export default function Landing() {
   return (
@@ -28,21 +29,9 @@ export default function Landing() {
         zIndex: 10
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span style={{
-            background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
-            width: '32px',
-            height: '32px',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '18px',
-            fontWeight: '800',
-            color: '#fff',
-            boxShadow: '0 0 15px rgba(234, 88, 12, 0.4)'
-          }}>I</span>
+          <Logo size={32} />
           <span style={{ fontSize: '20px', fontWeight: '800', fontFamily: 'var(--font-head)', letterSpacing: '0.04em' }}>
-            i-<span style={{ color: 'var(--primary)' }}>SOFTZONE</span>
+            Portal <span style={{ color: 'var(--primary)' }}>System</span>
           </span>
         </div>
         
@@ -120,7 +109,7 @@ export default function Landing() {
           lineHeight: '1.6',
           marginBottom: '40px'
         }}>
-          i-SOFTZONE Technologies introduces a unified operations ecosystem. Track your hardware assets, record geofenced check-ins, and manage leaves—all in one secure place.
+          The Employee Management Portal System introduces a unified operations ecosystem. Track your hardware assets, record geofenced check-ins, and manage leaves—all in one secure place.
         </p>
 
         {/* Call to Actions (Warm and Cool Balanced) */}
@@ -212,7 +201,7 @@ export default function Landing() {
         color: 'var(--text-muted)',
         zIndex: 10
       }}>
-        © 2026 i-SOFTZONE Technologies Pvt Ltd. All rights reserved.
+        © 2026 Employee Management Portal System. All rights reserved.
       </footer>
     </div>
   );

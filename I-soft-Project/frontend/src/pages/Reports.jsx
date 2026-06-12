@@ -330,7 +330,7 @@ export default function Reports() {
 
       {/* Print-only title */}
       <div className="print-only" style={{ display: 'none' }}>
-        <h2 className="print-title">i-SOFTZONE Technologies Pvt Ltd — Enterprise Report</h2>
+        <h2 className="print-title">Employee Management Portal System — Enterprise Report</h2>
         <p style={{ textAlign: 'center', fontSize: '12px', marginBottom: '30px' }}>Generated on {new Date().toLocaleString()}</p>
       </div>
 

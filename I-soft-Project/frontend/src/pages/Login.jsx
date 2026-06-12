@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import Logo from '../components/Logo';
 
 export default function Login() {
   const { login, error: authError } = useAuth();
@@ -59,24 +60,7 @@ export default function Login() {
       <div style={{ width: '100%', maxWidth: '440px', animation: 'fadeIn 0.5s ease-out' }}>
         {/* Brand Header */}
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <span
-            style={{
-              background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
-              width: '48px',
-              height: '48px',
-              borderRadius: '12px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '24px',
-              fontWeight: '800',
-              color: '#fff',
-              boxShadow: '0 0 20px rgba(234, 88, 12, 0.4)',
-              marginBottom: '16px'
-            }}
-          >
-            ⚡
-          </span>
+          <Logo size={48} style={{ marginBottom: '16px' }} />
           <h1
             style={{
               fontFamily: 'var(--font-head)',
@@ -92,7 +76,7 @@ export default function Login() {
             Welcome Back
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>
-            Access the I-soft enterprise management system
+            Access the Employee Management Portal System
           </p>
         </div>
 

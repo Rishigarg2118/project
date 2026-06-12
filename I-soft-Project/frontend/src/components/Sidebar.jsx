@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import Logo from './Logo';
 
 export default function Sidebar() {
   const { user, logout } = useAuth();
@@ -41,35 +42,20 @@ export default function Sidebar() {
           paddingLeft: '6px'
         }}
       >
-        <span
-          style={{
-            background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
-            width: '34px',
-            height: '34px',
-            borderRadius: '10px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '18px',
-            fontWeight: '800',
-            color: '#fff',
-            boxShadow: '0 0 15px rgba(6, 182, 212, 0.35)'
-          }}
-        >
-          I
-        </span>
+        <Logo size={36} />
         <h2
           style={{
             fontFamily: 'var(--font-head)',
-            fontSize: '21px',
+            fontSize: '18px',
             fontWeight: '800',
             letterSpacing: '0.04em',
             background: 'linear-gradient(135deg, var(--text-primary) 30%, var(--text-secondary) 100%)',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
+            WebkitTextFillColor: 'transparent',
+            lineHeight: '1.2'
           }}
         >
-          I-soft Portal
+          Portal System
         </h2>
       </div>
 

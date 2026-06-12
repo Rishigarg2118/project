@@ -247,7 +247,7 @@ export default function Dashboard() {
             background: 'linear-gradient(135deg, var(--text-primary) 50%, var(--text-secondary))',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
           }}>
-            i-SOFTZONE Analytics
+            Portal Analytics
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '13px', marginTop: '4px' }}>
             Welcome, <strong style={{ color: 'var(--primary)' }}>{user?.name?.split(' ')[0]}</strong> — {user?.role?.toUpperCase()} • Live Data Dashboard
