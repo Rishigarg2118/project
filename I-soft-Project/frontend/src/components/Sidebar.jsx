@@ -46,16 +46,16 @@ export default function Sidebar() {
         <h2
           style={{
             fontFamily: 'var(--font-head)',
-            fontSize: '18px',
+            fontSize: '14px',
             fontWeight: '800',
-            letterSpacing: '0.04em',
+            letterSpacing: '0.02em',
             background: 'linear-gradient(135deg, var(--text-primary) 30%, var(--text-secondary) 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            lineHeight: '1.2'
+            lineHeight: '1.3'
           }}
         >
-          Portal System
+          Employee Management<br />Portal System
         </h2>
       </div>
 

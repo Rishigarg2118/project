@@ -30,8 +30,8 @@ export default function Landing() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Logo size={32} />
-          <span style={{ fontSize: '20px', fontWeight: '800', fontFamily: 'var(--font-head)', letterSpacing: '0.04em' }}>
-            Portal <span style={{ color: 'var(--primary)' }}>System</span>
+          <span style={{ fontSize: '18px', fontWeight: '800', fontFamily: 'var(--font-head)', letterSpacing: '0.02em' }}>
+            Employee Management <span style={{ color: 'var(--primary)' }}>Portal System</span>
           </span>
         </div>
         
