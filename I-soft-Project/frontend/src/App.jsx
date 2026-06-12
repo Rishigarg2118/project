@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import useAuth from './hooks/useAuth';
 
 // Pages
+import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
@@ -34,10 +35,11 @@ function MainLayout() {
   if (!user) {
     return (
       <Routes>
+        <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     );
   }
@@ -47,6 +49,7 @@ function MainLayout() {
       <Sidebar />
       <main style={{ marginLeft: '260px', flex: 1, padding: '40px', minWidth: '0' }}>
         <Routes>
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/employees" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><EmployeeList /></ProtectedRoute>} />
           <Route path="/departments" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><DepartmentMaster /></ProtectedRoute>} />
