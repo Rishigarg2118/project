@@ -71,7 +71,7 @@ export default function Login() {
               fontSize: '24px',
               fontWeight: '800',
               color: '#fff',
-              boxShadow: '0 0 20px rgba(139, 92, 246, 0.4)',
+              boxShadow: '0 0 20px rgba(234, 88, 12, 0.4)',
               marginBottom: '16px'
             }}
           >
@@ -219,13 +219,24 @@ export default function Login() {
             <button
               onClick={() => handleQuickLogin('admin@demo.com', 'admin123')}
               style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid var(--border-glass)',
+                background: 'rgba(234, 88, 12, 0.05)',
+                border: '1px solid rgba(234, 88, 12, 0.15)',
                 padding: '6px 12px',
-                borderRadius: '6px',
+                borderRadius: '8px',
                 color: 'var(--primary)',
                 fontSize: '11px',
-                fontWeight: '600'
+                fontWeight: '700',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--primary)';
+                e.currentTarget.style.color = '#fff';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(234, 88, 12, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(234, 88, 12, 0.05)';
+                e.currentTarget.style.color = 'var(--primary)';
+                e.currentTarget.style.boxShadow = 'none';
               }}
             >
               Admin (Full Control)
@@ -233,13 +244,24 @@ export default function Login() {
             <button
               onClick={() => handleQuickLogin('hr@demo.com', 'hr123')}
               style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid var(--border-glass)',
+                background: 'rgba(217, 119, 6, 0.05)',
+                border: '1px solid rgba(217, 119, 6, 0.15)',
                 padding: '6px 12px',
-                borderRadius: '6px',
+                borderRadius: '8px',
                 color: 'var(--secondary)',
                 fontSize: '11px',
-                fontWeight: '600'
+                fontWeight: '700',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--secondary)';
+                e.currentTarget.style.color = '#fff';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 119, 6, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(217, 119, 6, 0.05)';
+                e.currentTarget.style.color = 'var(--secondary)';
+                e.currentTarget.style.boxShadow = 'none';
               }}
             >
               HR (Manager role)
@@ -247,13 +269,24 @@ export default function Login() {
             <button
               onClick={() => handleQuickLogin('jane@demo.com', 'jane123')}
               style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid var(--border-glass)',
+                background: 'rgba(5, 150, 105, 0.05)',
+                border: '1px solid rgba(5, 150, 105, 0.15)',
                 padding: '6px 12px',
-                borderRadius: '6px',
+                borderRadius: '8px',
                 color: 'var(--success)',
                 fontSize: '11px',
-                fontWeight: '600'
+                fontWeight: '700',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--success)';
+                e.currentTarget.style.color = '#fff';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(5, 150, 105, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(5, 150, 105, 0.05)';
+                e.currentTarget.style.color = 'var(--success)';
+                e.currentTarget.style.boxShadow = 'none';
               }}
             >
               Employee (Jane Smith)

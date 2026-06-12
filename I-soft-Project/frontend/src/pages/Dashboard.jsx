@@ -264,7 +264,7 @@ export default function Dashboard() {
         <StatCard icon="⏳" label="Pending Leaves"   value={stats.pending}        color="#f59e0b"          sub="Awaiting approval"  onClick={() => navigate('/leave-approval')} />
         <StatCard icon="✅" label="Approved Leaves"  value={stats.approved}       color="var(--success)"   sub="Sanctioned"         onClick={() => navigate('/leave-approval')} />
         <StatCard icon="❌" label="Rejected Leaves"  value={stats.rejected}       color="var(--danger)"    sub="Declined"           onClick={() => navigate('/leave-approval')} />
-        <StatCard icon="💰" label="Monthly Payroll"  value={fmt(stats.totalSalary)} color="#a78bfa"        sub="Total salary" />
+        <StatCard icon="💰" label="Monthly Payroll"  value={fmt(stats.totalSalary)} color="var(--primary)"        sub="Total salary" />
       </div>
 
       {/* ── Charts Row 1: Attendance & Department Distribution ──────────────── */}

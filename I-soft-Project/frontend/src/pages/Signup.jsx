@@ -91,7 +91,7 @@ export default function Signup() {
               fontSize: '24px',
               fontWeight: '800',
               color: '#fff',
-              boxShadow: '0 0 20px rgba(6, 182, 212, 0.4)',
+              boxShadow: '0 0 20px rgba(234, 88, 12, 0.4)',
               marginBottom: '16px'
             }}
           >

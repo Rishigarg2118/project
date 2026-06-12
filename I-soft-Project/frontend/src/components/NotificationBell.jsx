@@ -74,7 +74,7 @@ export default function NotificationBell() {
         id="notification-bell-btn"
         onClick={() => setOpen(o => !o)}
         style={{
-          background: open ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.06)',
+          background: open ? 'rgba(234, 88, 12, 0.15)' : 'rgba(0,0,0,0.03)',
           border: '1px solid var(--border-glass)',
           borderRadius: '10px',
           width: '40px',
@@ -123,10 +123,11 @@ export default function NotificationBell() {
           width: '360px',
           maxHeight: '480px',
           overflowY: 'auto',
-          background: 'var(--bg-card)',
+          background: 'rgba(255, 255, 255, 0.95)',
+          backdropFilter: 'blur(16px)',
           border: '1px solid var(--border-glass)',
           borderRadius: '16px',
-          boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+          boxShadow: 'var(--shadow-premium)',
           zIndex: 9999,
           animation: 'fadeIn 0.2s ease-out',
         }}>
@@ -139,7 +140,7 @@ export default function NotificationBell() {
             alignItems: 'center',
             position: 'sticky',
             top: 0,
-            background: 'var(--bg-card)',
+            background: 'rgba(255, 255, 255, 0.95)',
             borderRadius: '16px 16px 0 0',
           }}>
             <div>
@@ -192,9 +193,9 @@ export default function NotificationBell() {
                 onClick={() => !n.is_read && markOneRead(n.id)}
                 style={{
                   padding: '14px 20px',
-                  borderBottom: '1px solid rgba(255,255,255,0.04)',
+                  borderBottom: '1px solid rgba(0,0,0,0.04)',
                   cursor: n.is_read ? 'default' : 'pointer',
-                  background: n.is_read ? 'transparent' : 'rgba(99,102,241,0.06)',
+                  background: n.is_read ? 'transparent' : 'rgba(234, 88, 12, 0.05)',
                   transition: 'background 0.15s',
                   display: 'flex',
                   gap: '12px',
