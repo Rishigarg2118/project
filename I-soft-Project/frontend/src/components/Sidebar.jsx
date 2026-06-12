@@ -9,24 +9,7 @@ export default function Sidebar() {
   if (!user) return null;
 
   const isActive = (path) => location.pathname === path;
-
-  const linkStyle = (path) => ({
-    display: 'flex',
-    alignItems: 'center',
-    gap: '12px',
-    padding: '12px 18px',
-    color: isActive(path) ? 'var(--white)' : 'var(--text-secondary)',
-    textDecoration: 'none',
-    borderRadius: '10px',
-    fontFamily: 'var(--font-head)',
-    fontWeight: '500',
-    fontSize: '14px',
-    background: isActive(path) ? 'linear-gradient(135deg, var(--primary) 0%, rgba(139, 92, 246, 0.4) 100%)' : 'transparent',
-    border: isActive(path) ? '1px solid rgba(255,255,255,0.15)' : '1px solid transparent',
-    boxShadow: isActive(path) ? '0 4px 12px rgba(139, 92, 246, 0.15)' : 'none',
-    transition: 'var(--transition-smooth)',
-    marginBottom: '8px'
-  });
+  const getLinkClass = (path) => `sidebar-link ${isActive(path) ? 'active' : ''}`;
 
   const isHrOrAdmin = user.role === 'admin' || user.role === 'hr';
   const isManager = user.role === 'manager';
@@ -39,10 +22,10 @@ export default function Sidebar() {
         position: 'fixed',
         left: 0,
         top: 0,
-        background: 'rgba(11, 15, 25, 0.75)',
-        backdropFilter: 'blur(20px)',
+        background: 'rgba(7, 9, 19, 0.7)',
+        backdropFilter: 'blur(24px)',
         borderRight: '1px solid var(--border-glass)',
-        padding: '24px 16px',
+        padding: '28px 18px',
         display: 'flex',
         flexDirection: 'column',
         zIndex: 100
@@ -53,24 +36,24 @@ export default function Sidebar() {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '10px',
-          marginBottom: '32px',
-          paddingLeft: '8px'
+          gap: '12px',
+          marginBottom: '36px',
+          paddingLeft: '6px'
         }}
       >
         <span
           style={{
             background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
-            width: '32px',
-            height: '32px',
-            borderRadius: '8px',
+            width: '34px',
+            height: '34px',
+            borderRadius: '10px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '18px',
             fontWeight: '800',
             color: '#fff',
-            boxShadow: '0 0 15px rgba(6, 182, 212, 0.3)'
+            boxShadow: '0 0 15px rgba(6, 182, 212, 0.35)'
           }}
         >
           I
@@ -78,9 +61,9 @@ export default function Sidebar() {
         <h2
           style={{
             fontFamily: 'var(--font-head)',
-            fontSize: '20px',
-            fontWeight: '700',
-            letterSpacing: '0.05em',
+            fontSize: '21px',
+            fontWeight: '800',
+            letterSpacing: '0.04em',
             background: 'linear-gradient(135deg, var(--white) 30%, var(--text-secondary) 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
@@ -91,50 +74,50 @@ export default function Sidebar() {
       </div>
 
       {/* Nav Links */}
-      <nav style={{ flex: 1, overflowY: 'auto' }}>
-        <Link to="/dashboard" style={linkStyle('/dashboard')}>
+      <nav style={{ flex: 1, overflowY: 'auto', paddingRight: '4px' }}>
+        <Link to="/dashboard" className={getLinkClass('/dashboard')}>
           <span>📊</span> Dashboard
         </Link>
         
         {isHrOrAdmin && (
           <>
-            <Link to="/employees" style={linkStyle('/employees')}>
+            <Link to="/employees" className={getLinkClass('/employees')}>
               <span>👥</span> Directory
             </Link>
-            <Link to="/departments" style={linkStyle('/departments')}>
+            <Link to="/departments" className={getLinkClass('/departments')}>
               <span>🏢</span> Departments
             </Link>
-            <Link to="/skills" style={linkStyle('/skills')}>
+            <Link to="/skills" className={getLinkClass('/skills')}>
               <span>🛠️</span> Skills Master
             </Link>
           </>
         )}
 
-        <Link to="/assets" style={linkStyle('/assets')}>
+        <Link to="/assets" className={getLinkClass('/assets')}>
           <span>💻</span> Hardware Assets
         </Link>
 
-        <Link to="/attendance" style={linkStyle('/attendance')}>
+        <Link to="/attendance" className={getLinkClass('/attendance')}>
           <span>⏰</span> Clock In/Out
         </Link>
 
-        <Link to="/leaves" style={linkStyle('/leaves')}>
+        <Link to="/leaves" className={getLinkClass('/leaves')}>
           <span>🌴</span> Leave Balance
         </Link>
 
         {(isHrOrAdmin || isManager) && (
-          <Link to="/approvals" style={linkStyle('/approvals')}>
+          <Link to="/approvals" className={getLinkClass('/approvals')}>
             <span>✅</span> Leave Review
           </Link>
         )}
 
         {(isHrOrAdmin || isManager) && (
-          <Link to="/reports" style={linkStyle('/reports')}>
+          <Link to="/reports" className={getLinkClass('/reports')}>
             <span>📈</span> View Reports
           </Link>
         )}
 
-        <Link to="/profile" style={linkStyle('/profile')}>
+        <Link to="/profile" className={getLinkClass('/profile')}>
           <span>👤</span> My Profile
         </Link>
       </nav>
@@ -152,22 +135,22 @@ export default function Sidebar() {
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
-            marginBottom: '16px',
-            paddingLeft: '8px'
+            marginBottom: '18px',
+            paddingLeft: '6px'
           }}
         >
           <div
             style={{
-              width: '40px',
-              height: '40px',
+              width: '42px',
+              height: '42px',
               borderRadius: '50%',
               background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
               border: '1px solid var(--border-glass-active)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '16px',
-              fontWeight: '700',
+              fontSize: '17px',
+              fontWeight: '800',
               color: 'var(--secondary)'
             }}
           >
@@ -192,7 +175,7 @@ export default function Sidebar() {
                 color: 'var(--text-muted)',
                 textTransform: 'uppercase',
                 fontWeight: '700',
-                letterSpacing: '0.05em'
+                letterSpacing: '0.06em'
               }}
             >
               {user.role}
@@ -204,21 +187,23 @@ export default function Sidebar() {
           onClick={logout}
           style={{
             width: '100%',
-            padding: '10px',
-            borderRadius: '8px',
-            background: 'rgba(244, 63, 94, 0.1)',
-            border: '1px solid rgba(244, 63, 94, 0.2)',
+            padding: '12px',
+            borderRadius: '12px',
+            background: 'rgba(244, 63, 94, 0.08)',
+            border: '1px solid rgba(244, 63, 94, 0.25)',
             color: 'var(--danger)',
             fontSize: '14px',
             fontWeight: '600',
             transition: 'var(--transition-smooth)'
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(244, 63, 94, 0.2)';
-            e.currentTarget.style.boxShadow = '0 0 10px rgba(244, 63, 94, 0.15)';
+            e.currentTarget.style.background = 'rgba(244, 63, 94, 0.18)';
+            e.currentTarget.style.borderColor = 'rgba(244, 63, 94, 0.4)';
+            e.currentTarget.style.boxShadow = '0 8px 20px rgba(244, 63, 94, 0.15)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'rgba(244, 63, 94, 0.1)';
+            e.currentTarget.style.background = 'rgba(244, 63, 94, 0.08)';
+            e.currentTarget.style.borderColor = 'rgba(244, 63, 94, 0.25)';
             e.currentTarget.style.boxShadow = 'none';
           }}
         >

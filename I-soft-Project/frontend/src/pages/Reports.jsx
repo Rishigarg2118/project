@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import Loader from '../components/Loader';
 import Table from '../components/Table';
 import axios from 'axios';
+import * as XLSX from 'xlsx';
 
 // ─── Micro Stat Card ─────────────────────────────────────────────────────────
 function StatBadge({ label, value, color }) {
@@ -17,6 +18,7 @@ function StatBadge({ label, value, color }) {
       flexDirection: 'column',
       gap: '4px',
       minWidth: '120px',
+      flex: 1,
     }}>
       <span style={{ fontSize: '28px', fontWeight: '800', color, fontFamily: 'var(--font-head)' }}>
         {value}
@@ -31,7 +33,7 @@ function StatBadge({ label, value, color }) {
 // ─── Section Header ───────────────────────────────────────────────────────────
 function SectionHeader({ icon, title, subtitle }) {
   return (
-    <div style={{ marginBottom: '20px' }}>
+    <div style={{ marginBottom: '20px' }} className="no-print">
       <h3 style={{
         fontFamily: 'var(--font-head)',
         fontSize: '18px',
@@ -55,13 +57,13 @@ function SectionHeader({ icon, title, subtitle }) {
 // ─── SVG Bar Chart ────────────────────────────────────────────────────────────
 function BarChart({ data, valueKey, labelKey, color = 'var(--primary)', height = 180 }) {
   if (!data || data.length === 0) {
-    return <div style={{ color: 'var(--text-secondary)', textAlign: 'center', padding: '32px' }}>No data available.</div>;
+    return <div style={{ color: 'var(--text-secondary)', textAlign: 'center', padding: '32px' }} className="no-print">No data available.</div>;
   }
   const maxVal = Math.max(...data.map(d => Number(d[valueKey] || 0)), 1);
   const barWidth = Math.min(48, Math.floor(460 / data.length) - 12);
 
   return (
-    <div style={{ overflowX: 'auto' }}>
+    <div style={{ overflowX: 'auto', marginBottom: '24px' }} className="no-print">
       <svg viewBox={`0 0 520 ${height + 60}`} style={{ width: '100%', minWidth: '360px' }}>
         <defs>
           <linearGradient id={`bGrad-${color}`} x1="0" y1="0" x2="0" y2="1">
@@ -106,7 +108,7 @@ function BarChart({ data, valueKey, labelKey, color = 'var(--primary)', height =
 // ─── SVG Sparkline (Monthly Trend) ───────────────────────────────────────────
 function Sparkline({ data }) {
   if (!data || data.length === 0) {
-    return <div style={{ color: 'var(--text-secondary)', textAlign: 'center', padding: '32px' }}>No monthly data available yet.</div>;
+    return <div style={{ color: 'var(--text-secondary)', textAlign: 'center', padding: '32px' }} className="no-print">No monthly data available yet.</div>;
   }
   const W = 500, H = 140;
   const maxVal = Math.max(...data.map(d => Number(d.applications || 0)), 1);
@@ -119,7 +121,7 @@ function Sparkline({ data }) {
   const areaD = pathD + ` L${pts[pts.length - 1].x},${H - 10} L${pts[0].x},${H - 10} Z`;
 
   return (
-    <div style={{ overflowX: 'auto' }}>
+    <div style={{ overflowX: 'auto' }} className="no-print">
       <svg viewBox={`0 0 ${W} ${H}`} style={{ width: '100%', minWidth: '340px' }}>
         <defs>
           <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
@@ -147,20 +149,73 @@ function Sparkline({ data }) {
 // ─── Main Reports Page ────────────────────────────────────────────────────────
 export default function Reports() {
   const [analytics, setAnalytics] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [employees, setEmployees] = useState([]);
+  const [assets, setAssets]       = useState([]);
+  const [loading, setLoading]     = useState(true);
+  const [error, setError]         = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
 
   useEffect(() => {
     fetchReportsData();
+    injectPrintStyles();
   }, []);
+
+  const injectPrintStyles = () => {
+    if (document.getElementById('reports-print-styles')) return;
+    const styleEl = document.createElement('style');
+    styleEl.id = 'reports-print-styles';
+    styleEl.innerHTML = `
+      @media print {
+        body {
+          background: #fff !important;
+          color: #000 !important;
+        }
+        .no-print, header, nav, aside, button, .status-badge {
+          display: none !important;
+        }
+        .print-only {
+          display: block !important;
+        }
+        .print-title {
+          font-size: 24px !important;
+          font-weight: 800 !important;
+          color: #000 !important;
+          margin-bottom: 20px !important;
+          text-align: center !important;
+        }
+        .glass-card, .card {
+          background: none !important;
+          border: none !important;
+          box-shadow: none !important;
+          padding: 0 !important;
+        }
+        table {
+          width: 100% !important;
+          border-collapse: collapse !important;
+          color: #000 !important;
+        }
+        th, td {
+          border: 1px solid #ddd !important;
+          padding: 8px !important;
+          color: #000 !important;
+        }
+      }
+    `;
+    document.head.appendChild(styleEl);
+  };
 
   const fetchReportsData = async () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.get('/api/leaves/analytics');
-      setAnalytics(res.data);
+      const [leavesRes, empRes, assetsRes] = await Promise.all([
+        axios.get('/api/leaves/analytics'),
+        axios.get('/api/employees?limit=1000'),
+        axios.get('/api/assets?limit=1000'),
+      ]);
+      setAnalytics(leavesRes.data);
+      setEmployees(empRes.data.employees || []);
+      setAssets(assetsRes.data.assets || []);
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to fetch analytics statistics');
     } finally {
@@ -181,6 +236,18 @@ export default function Reports() {
     URL.revokeObjectURL(url);
   };
 
+  const downloadExcel = (rows, filename) => {
+    if (!rows || rows.length === 0) return;
+    const worksheet = XLSX.utils.json_to_sheet(rows);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Report Sheet");
+    XLSX.writeFile(workbook, filename);
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   if (loading) return <Loader message="Compiling analytical reports..." />;
 
   const overall = analytics?.overall || [];
@@ -191,16 +258,18 @@ export default function Reports() {
 
   const tabs = [
     { id: 'overview',    label: '📊 Overview' },
-    { id: 'department',  label: '🏢 By Department' },
-    { id: 'monthly',     label: '📅 Monthly Trend' },
-    { id: 'absent',      label: '🏖️ Most Absent' },
+    { id: 'employees',   label: '👥 Employee Profiles' },
+    { id: 'department',  label: '🏢 Leave By Department' },
+    { id: 'monthly',     label: '📅 Leave Monthly Trend' },
+    { id: 'absent',      label: '🏖️ Leave Most Absent' },
     { id: 'rank',        label: '🏆 Leave Rank' },
+    { id: 'assets',      label: '💻 Assets Master' },
   ];
 
   return (
     <div style={{ animation: 'fadeIn 0.5s ease-out' }}>
       {/* Page Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px', marginBottom: '32px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px', marginBottom: '32px' }} className="no-print">
         <div>
           <h1 style={{
             fontFamily: 'var(--font-head)', fontSize: '32px', fontWeight: '800',
@@ -210,30 +279,33 @@ export default function Reports() {
             Analytics & Reports
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '14px' }}>
-            Advanced HR analytics powered by SQL GROUP BY, Window Functions, and Subqueries
+            Advanced HR enterprise analytics powered by SQL GROUP BY, Window Functions, and Subqueries
           </p>
         </div>
-        <Button variant="secondary" onClick={fetchReportsData}>🔄 Refresh</Button>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <Button variant="ghost" onClick={handlePrint}>🖨️ Print PDF</Button>
+          <Button variant="secondary" onClick={fetchReportsData}>🔄 Refresh</Button>
+        </div>
       </div>
 
       {error && (
-        <div style={{ background: 'rgba(244,63,94,0.12)', border: '1px solid rgba(244,63,94,0.3)', color: 'var(--danger)', padding: '16px', borderRadius: '12px', marginBottom: '24px' }}>
+        <div style={{ background: 'rgba(244,63,94,0.12)', border: '1px solid rgba(244,63,94,0.3)', color: 'var(--danger)', padding: '16px', borderRadius: '12px', marginBottom: '24px' }} className="no-print">
           ⚠️ {error}
         </div>
       )}
 
       {/* Summary Stat Cards */}
-      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
+      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }} className="no-print">
         <StatBadge label="Total Applications" value={totalApps}   color="var(--text-primary)" />
         <StatBadge label="Pending"            value={pending}     color="var(--warning)" />
         <StatBadge label="Approved"           value={approved}    color="var(--success)" />
         <StatBadge label="Rejected"           value={rejected}    color="var(--danger)" />
-        <StatBadge label="Departments"        value={analytics?.departmentWise?.length || 0} color="var(--primary)" />
-        <StatBadge label="Above Avg Takers"   value={analytics?.aboveAverage?.length || 0}  color="var(--secondary)" />
+        <StatBadge label="Total Employees"    value={employees.length} color="var(--primary)" />
+        <StatBadge label="Total Hardware"     value={assets.length} color="var(--secondary)" />
       </div>
 
       {/* Tab Navigation */}
-      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '28px' }}>
+      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '28px' }} className="no-print">
         {tabs.map(tab => (
           <button
             key={tab.id}
@@ -254,6 +326,12 @@ export default function Reports() {
             {tab.label}
           </button>
         ))}
+      </div>
+
+      {/* Print-only title */}
+      <div className="print-only" style={{ display: 'none' }}>
+        <h2 className="print-title">i-SOFTZONE Technologies Pvt Ltd — Enterprise Report</h2>
+        <p style={{ textAlign: 'center', fontSize: '12px', marginBottom: '30px' }}>Generated on {new Date().toLocaleString()}</p>
       </div>
 
       {/* ── Tab: Overview ───────────────────────────────────────────────── */}
@@ -310,16 +388,59 @@ export default function Reports() {
         </div>
       )}
 
+      {/* ── Tab: Employees ──────────────────────────────────────────────── */}
+      {activeTab === 'employees' && (
+        <Card>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: '10px' }}>
+            <SectionHeader icon="👥" title="Active Employee Directory Report" subtitle="SELECT e.*, u.name, u.email, d.department_name FROM employees e JOIN users u..." />
+            <div style={{ display: 'flex', gap: '8px' }} className="no-print">
+              <Button variant="secondary" onClick={() => downloadCSV(
+                employees,
+                [{label:'Name',key:'name'},{label:'Email',key:'email'},{label:'Role',key:'role'},{label:'Department',key:'department_name'},{label:'Designation',key:'designation'},{label:'Phone',key:'phone'},{label:'Salary',key:'salary'}],
+                'employee_directory_report.csv'
+              )}>📥 CSV</Button>
+              <Button variant="primary" onClick={() => downloadExcel(
+                employees.map(e => ({ Name: e.name, Email: e.email, Role: e.role, Department: e.department_name, Designation: e.designation, Phone: e.phone, Salary: parseFloat(e.salary) })),
+                'employee_directory_report.xlsx'
+              )}>📊 Excel</Button>
+            </div>
+          </div>
+          <Table
+            headers={[{label:'Employee'}, {label:'Department'}, {label:'Designation'}, {label:'Contact Phone'}, {label:'Salary'}]}
+            data={employees}
+            emptyMessage="No employees directory records found."
+            renderRow={(emp, idx) => (
+              <tr key={idx}>
+                <td>
+                  <div style={{ fontWeight: '600' }}>{emp.name}</div>
+                  <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>{emp.email} ({emp.role})</div>
+                </td>
+                <td>{emp.department_name || 'N/A'}</td>
+                <td>{emp.designation || 'N/A'}</td>
+                <td>{emp.phone || 'N/A'}</td>
+                <td style={{ fontWeight: '700', color: 'var(--secondary)' }}>₹{Number(emp.salary).toLocaleString()}</td>
+              </tr>
+            )}
+          />
+        </Card>
+      )}
+
       {/* ── Tab: Department ──────────────────────────────────────────────── */}
       {activeTab === 'department' && (
         <Card>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: '10px' }}>
             <SectionHeader icon="🏢" title="Department-wise Leave Analysis" subtitle="SELECT d.name, COUNT(l.id) FROM departments d LEFT JOIN leaves l ON ... GROUP BY d.id" />
-            <Button variant="secondary" onClick={() => downloadCSV(
-              analytics?.departmentWise,
-              [{label:'Department',key:'department_name'},{label:'Total',key:'total_applications'},{label:'Approved',key:'approved_count'},{label:'Rejected',key:'rejected_count'},{label:'Pending',key:'pending_count'},{label:'Approved Days',key:'total_approved_days'}],
-              'department_leave_report.csv'
-            )}>📥 Export CSV</Button>
+            <div style={{ display: 'flex', gap: '8px' }} className="no-print">
+              <Button variant="secondary" onClick={() => downloadCSV(
+                analytics?.departmentWise,
+                [{label:'Department',key:'department_name'},{label:'Total',key:'total_applications'},{label:'Approved',key:'approved_count'},{label:'Rejected',key:'rejected_count'},{label:'Pending',key:'pending_count'},{label:'Approved Days',key:'total_approved_days'}],
+                'department_leave_report.csv'
+              )}>📥 CSV</Button>
+              <Button variant="primary" onClick={() => downloadExcel(
+                analytics?.departmentWise,
+                'department_leave_report.xlsx'
+              )}>📊 Excel</Button>
+            </div>
           </div>
           <BarChart data={analytics?.departmentWise} valueKey="total_applications" labelKey="department_name" />
           <Table
@@ -410,13 +531,19 @@ export default function Reports() {
       {/* ── Tab: Leave Rank ──────────────────────────────────────────────── */}
       {activeTab === 'rank' && (
         <Card>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px', flexWrap: 'wrap', gap: '10px' }}>
             <SectionHeader icon="🏆" title="Employee Leave Ranking" subtitle="RANK() OVER (ORDER BY total_leave_days DESC) — Window Function" />
-            <Button variant="secondary" onClick={() => downloadCSV(
-              analytics?.rankAnalytics,
-              [{label:'Employee',key:'employee_name'},{label:'Department',key:'department_name'},{label:'Designation',key:'designation'},{label:'Applied',key:'total_leaves_applied'},{label:'Approved',key:'approved_count'},{label:'Rejected',key:'rejected_count'},{label:'Total Days',key:'total_leave_days'},{label:'Rank',key:'leave_rank'},{label:'Dense Rank',key:'dense_rank'}],
-              'employee_leave_rank_report.csv'
-            )}>📥 Export CSV</Button>
+            <div style={{ display: 'flex', gap: '8px' }} className="no-print">
+              <Button variant="secondary" onClick={() => downloadCSV(
+                analytics?.rankAnalytics,
+                [{label:'Employee',key:'employee_name'},{label:'Department',key:'department_name'},{label:'Designation',key:'designation'},{label:'Applied',key:'total_leaves_applied'},{label:'Approved',key:'approved_count'},{label:'Rejected',key:'rejected_count'},{label:'Total Days',key:'total_leave_days'},{label:'Rank',key:'leave_rank'},{label:'Dense Rank',key:'dense_rank'}],
+                'employee_leave_rank_report.csv'
+              )}>📥 CSV</Button>
+              <Button variant="primary" onClick={() => downloadExcel(
+                analytics?.rankAnalytics,
+                'employee_leave_rank_report.xlsx'
+              )}>📊 Excel</Button>
+            </div>
           </div>
           <Table
             headers={[{label:'Rank'},{label:'Employee'},{label:'Department'},{label:'Applied'},{label:'Approved'},{label:'Rejected'},{label:'Total Days'}]}
@@ -444,6 +571,44 @@ export default function Reports() {
                 <td><span className="status-badge success">{row.approved_count}</span></td>
                 <td><span className="status-badge danger">{row.rejected_count}</span></td>
                 <td style={{fontWeight:'700', color:'var(--secondary)'}}>{row.total_leave_days} d</td>
+              </tr>
+            )}
+          />
+        </Card>
+      )}
+
+      {/* ── Tab: Assets ─────────────────────────────────────────────────── */}
+      {activeTab === 'assets' && (
+        <Card>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: '10px' }}>
+            <SectionHeader icon="💻" title="Hardware Asset Inventory Report" subtitle="SELECT a.*, u.name AS allocated_to FROM assets a LEFT JOIN asset_allocations aa..." />
+            <div style={{ display: 'flex', gap: '8px' }} className="no-print">
+              <Button variant="secondary" onClick={() => downloadCSV(
+                assets,
+                [{label:'Name',key:'name'},{label:'Serial Number',key:'serial_number'},{label:'Status',key:'status'},{label:'Allocated To',key:'allocated_to'},{label:'Description',key:'description'}],
+                'assets_inventory_report.csv'
+              )}>📥 CSV</Button>
+              <Button variant="primary" onClick={() => downloadExcel(
+                assets.map(a => ({ Device: a.name, SerialNumber: a.serial_number, Status: a.status, AllocatedTo: a.allocated_to || 'None', Description: a.description })),
+                'assets_inventory_report.xlsx'
+              )}>📊 Excel</Button>
+            </div>
+          </div>
+          <Table
+            headers={[{label:'Device Name'}, {label:'Serial Number'}, {label:'Status'}, {label:'Allocated To'}, {label:'Description'}]}
+            data={assets}
+            emptyMessage="No hardware assets inventory records found."
+            renderRow={(asset, idx) => (
+              <tr key={idx}>
+                <td style={{ fontWeight: '600' }}>💻 {asset.name}</td>
+                <td><code>{asset.serial_number}</code></td>
+                <td>
+                  <span className={`status-badge ${asset.status === 'available' ? 'success' : asset.status === 'allocated' ? 'secondary' : 'warning'}`}>
+                    {asset.status}
+                  </span>
+                </td>
+                <td>{asset.allocated_to ? `👤 ${asset.allocated_to}` : <span style={{ color: 'var(--text-muted)' }}>—</span>}</td>
+                <td>{asset.description || 'N/A'}</td>
               </tr>
             )}
           />

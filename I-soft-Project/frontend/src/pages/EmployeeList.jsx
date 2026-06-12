@@ -6,6 +6,9 @@ import Button from '../components/Button';
 import Modal from '../components/Modal';
 import Table from '../components/Table';
 import Loader from '../components/Loader';
+import FormInput from '../components/FormInput';
+import FormSelect from '../components/FormSelect';
+import FormTable from '../components/FormTable';
 import axios from 'axios';
 
 export default function EmployeeList() {
@@ -371,109 +374,95 @@ export default function EmployeeList() {
           <div className="form-grid">
             {/* User Account Link (Only on Create) */}
             {!editingId ? (
-              <div className="form-group">
-                <label>Link to User Account</label>
-                <select
-                  value={formData.user_id}
-                  onChange={(e) => setFormData(p => ({ ...p, user_id: e.target.value }))}
-                  required
-                >
-                  <option value="">-- Select Registered User --</option>
-                  {usersList.map(u => (
-                    <option key={u.id} value={u.id}>
-                      {u.name} ({u.email} - Role: {u.role})
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <FormSelect
+                label="Link to User Account"
+                value={formData.user_id}
+                onChange={(e) => setFormData(p => ({ ...p, user_id: e.target.value }))}
+                required
+                emptyOptionLabel="-- Select Registered User --"
+                options={usersList.map(u => ({ value: u.id, label: `${u.name} (${u.email} - Role: ${u.role})` }))}
+              />
             ) : (
-              <div className="form-group">
-                <label>User Account</label>
-                <input
-                  type="text"
-                  value={usersList.find(u => u.id === formData.user_id)?.name || ''}
-                  disabled
-                />
-              </div>
+              <FormInput
+                label="User Account"
+                value={usersList.find(u => u.id === formData.user_id)?.name || ''}
+                disabled
+              />
             )}
 
             {/* System Account Role (Admin Only) */}
             {user.role === 'admin' && (
-              <div className="form-group">
-                <label>System Account Role</label>
-                <select
-                  value={formData.role}
-                  onChange={(e) => setFormData(p => ({ ...p, role: e.target.value }))}
-                  required
-                >
-                  <option value="user">User (Standard Employee)</option>
-                  <option value="manager">Manager (Leave Reviewer)</option>
-                  <option value="hr">HR Representative</option>
-                  <option value="admin">System Administrator</option>
-                </select>
-              </div>
+              <FormSelect
+                label="System Account Role"
+                value={formData.role}
+                onChange={(e) => setFormData(p => ({ ...p, role: e.target.value }))}
+                required
+                emptyOptionLabel={null}
+                options={[
+                  { value: 'user', label: 'User (Standard Employee)' },
+                  { value: 'manager', label: 'Manager (Leave Reviewer)' },
+                  { value: 'hr', label: 'HR Representative' },
+                  { value: 'admin', label: 'System Administrator' }
+                ]}
+              />
             )}
 
             {/* Department */}
-            <div className="form-group">
-              <label>Department</label>
-              <select
-                value={formData.department_id}
-                onChange={(e) => setFormData(p => ({ ...p, department_id: e.target.value }))}
-                required
-              >
-                <option value="">-- Select Department --</option>
-                {departments.map(d => (
-                  <option key={d.id} value={d.id}>
-                    {d.department_name}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <FormSelect
+              label="Department"
+              value={formData.department_id}
+              onChange={(e) => setFormData(p => ({ ...p, department_id: e.target.value }))}
+              required
+              emptyOptionLabel="-- Select Department --"
+              options={departments.map(d => ({ value: d.id, label: d.department_name }))}
+            />
 
             {/* Designation */}
-            <div className="form-group">
-              <label>Job Designation</label>
-              <input
-                type="text"
-                placeholder="Senior Engineer"
-                value={formData.designation}
-                onChange={(e) => setFormData(p => ({ ...p, designation: e.target.value }))}
-                required
-              />
-            </div>
+            <FormInput
+              label="Job Designation"
+              placeholder="Senior Engineer"
+              value={formData.designation}
+              onChange={(e) => setFormData(p => ({ ...p, designation: e.target.value }))}
+              required
+            />
 
             {/* Phone */}
-            <div className="form-group">
-              <label>Contact Phone</label>
-              <input
-                type="text"
-                placeholder="9876543210"
-                value={formData.phone}
-                onChange={(e) => setFormData(p => ({ ...p, phone: e.target.value }))}
-              />
-            </div>
+            <FormInput
+              label="Contact Phone"
+              placeholder="9876543210"
+              value={formData.phone}
+              onChange={(e) => setFormData(p => ({ ...p, phone: e.target.value }))}
+            />
 
             {/* Salary */}
-            <div className="form-group">
-              <label>Salary (monthly)</label>
-              <input
-                type="number"
-                placeholder="85000"
-                value={formData.salary}
-                onChange={(e) => setFormData(p => ({ ...p, salary: e.target.value }))}
-                required
-              />
-            </div>
+            <FormInput
+              label="Salary (monthly)"
+              type="number"
+              placeholder="85000"
+              value={formData.salary}
+              onChange={(e) => setFormData(p => ({ ...p, salary: e.target.value }))}
+              required
+            />
 
             {/* Address */}
-            <div className="form-group" style={{ gridColumn: 'span 2' }}>
-              <label>Address Details</label>
+            <div className="form-group" style={{ gridColumn: 'span 2', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <label style={{ fontSize: '13px', fontWeight: '600' }}>Address Details</label>
               <textarea
                 placeholder="Full address details..."
                 value={formData.address}
                 onChange={(e) => setFormData(p => ({ ...p, address: e.target.value }))}
                 rows={3}
+                style={{
+                  width: '100%',
+                  padding: '10px 14px',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid var(--border-glass)',
+                  borderRadius: '10px',
+                  color: 'var(--text-primary)',
+                  fontSize: '14px',
+                  outline: 'none',
+                  transition: 'border-color 0.15s'
+                }}
               />
             </div>
           </div>
@@ -505,15 +494,20 @@ export default function EmployeeList() {
             <label style={{ fontSize: '15px', fontWeight: '700', marginBottom: '8px' }}>Documents & Photos (Max 5)</label>
             
             <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-end', flexWrap: 'wrap', marginBottom: '16px' }}>
-              <div className="form-group" style={{ width: '180px' }}>
-                <label>File Label Type</label>
-                <select value={imageLabel} onChange={(e) => setImageLabel(e.target.value)}>
-                  <option value="Profile Photo">Profile Photo</option>
-                  <option value="Aadhar Card">Aadhar Card</option>
-                  <option value="PAN Card">PAN Card</option>
-                  <option value="Resume">Resume PDF</option>
-                  <option value="Certificate">Experience Certificate</option>
-                </select>
+              <div style={{ width: '180px' }}>
+                <FormSelect
+                  label="File Label Type"
+                  value={imageLabel}
+                  onChange={(e) => setImageLabel(e.target.value)}
+                  emptyOptionLabel={null}
+                  options={[
+                    'Profile Photo',
+                    'Aadhar Card',
+                    'PAN Card',
+                    'Resume',
+                    'Certificate'
+                  ]}
+                />
               </div>
 
               <div className="form-group" style={{ flex: 1, minWidth: '200px' }}>
@@ -530,32 +524,40 @@ export default function EmployeeList() {
             {uploadingFile && <div style={{ color: 'var(--secondary)', fontSize: '13px' }}>Uploading file to server...</div>}
             {uploadError && <div style={{ color: 'var(--danger)', fontSize: '13px' }}>⚠️ {uploadError}</div>}
 
-            {/* Current uploads list */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '12px' }}>
-              {formData.images.map((img, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid var(--border-glass)',
-                    borderRadius: '8px',
-                    padding: '8px 12px',
-                    fontSize: '13px'
-                  }}
-                >
-                  <span>📁 {img.label}</span>
-                  <button
-                    type="button"
-                    onClick={() => handleRemoveImage(idx)}
-                    style={{ background: 'transparent', color: 'var(--danger)', border: 'none', cursor: 'pointer', fontSize: '16px', display: 'flex', alignItems: 'center' }}
-                  >
-                    &times;
-                  </button>
-                </div>
-              ))}
+            {/* Current uploads list via FormTable */}
+            <div style={{ marginTop: '12px' }}>
+              <FormTable
+                headers={['Document Name', 'Link']}
+                items={formData.images}
+                onRemove={handleRemoveImage}
+                emptyText="No documents uploaded yet."
+                renderRow={(img, idx) => (
+                  <tr key={idx} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.03)' }}>
+                    <td style={{ padding: '10px 14px', fontWeight: '600' }}>📁 {img.label}</td>
+                    <td style={{ padding: '10px 14px' }}>
+                      <a href={img.url} target="_blank" rel="noreferrer" style={{ color: 'var(--secondary)', textDecoration: 'underline' }}>
+                        View Document
+                      </a>
+                    </td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right' }}>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveImage(idx)}
+                        style={{
+                          background: 'transparent',
+                          color: 'var(--danger)',
+                          border: 'none',
+                          cursor: 'pointer',
+                          fontWeight: '700',
+                          fontSize: '15px'
+                        }}
+                      >
+                        🗑️
+                      </button>
+                    </td>
+                  </tr>
+                )}
+              />
             </div>
           </div>
 

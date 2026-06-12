@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # 1. PostgreSQL Database Service
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: isoftzone_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: employee_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # 2. Node.js Express API Service
+  backend:
+    build: ./backend
+    container_name: isoftzone_backend
+    restart: always
+    environment:
+      - PORT=4000
+      - DATABASE_URL=postgresql://postgres:postgrespassword@postgres-db:5432/employee_db
+      - JWT_SECRET=supersecretjwtkey_prod12345
+      - LOG_LEVEL=info
+      - NODE_ENV=production
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres-db
+
+  # 3. React Frontend Nginx Host Service
+  frontend:
+    build: ./frontend
+    container_name: isoftzone_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

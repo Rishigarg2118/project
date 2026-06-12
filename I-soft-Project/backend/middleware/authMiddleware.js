@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
-
-const JWT_SECRET = process.env.JWT_SECRET || 'isoftpsecretkeyjwt123!';
+import { JWT_SECRET } from '../config/env.js';
 
 export const verifyToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];

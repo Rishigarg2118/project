@@ -1,11 +1,7 @@
 import pg from 'pg';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import { DATABASE_URL } from './env.js';
 
 const { Pool } = pg;
-
-const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/employee_db';
 
 const pool = new Pool({
   connectionString: DATABASE_URL,

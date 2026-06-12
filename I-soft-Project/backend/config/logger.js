@@ -1,7 +1,6 @@
 /**
- * Winston Logger — centralised application logger
- * Levels: error > warn > info > debug
- * Outputs: console (colorized) + logs/app.log (JSON)
+ * Winston Logger — Centralised Logging System
+ * Outputs logs to logs/combined.log and errors to logs/error.log.
  */
 import { createLogger, format, transports } from 'winston';
 import path from 'path';
@@ -20,7 +19,7 @@ const logger = createLogger({
   level: process.env.LOG_LEVEL || 'info',
   format: combine(errors({ stack: true }), timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }), json()),
   transports: [
-    // Colorized console output
+    // Console log (Colorized output)
     new transports.Console({
       format: combine(
         colorize({ all: true }),
@@ -28,17 +27,17 @@ const logger = createLogger({
         consoleFormat
       ),
     }),
-    // Persistent JSON log file — rotates at 10 MB
+    // Combined logs file
     new transports.File({
-      filename: path.join(logDir, 'app.log'),
-      maxsize: 10 * 1024 * 1024,
+      filename: path.join(logDir, 'combined.log'),
+      maxsize: 10 * 1024 * 1024, // 10MB
       maxFiles: 5,
     }),
-    // Errors-only file
+    // Errors logs file
     new transports.File({
       filename: path.join(logDir, 'error.log'),
       level: 'error',
-      maxsize: 5 * 1024 * 1024,
+      maxsize: 5 * 1024 * 1024, // 5MB
     }),
   ],
 });

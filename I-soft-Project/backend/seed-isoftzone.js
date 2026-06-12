@@ -91,6 +91,7 @@ async function seed() {
     // ─── 4. USERS (with bcrypt-hashed passwords) ─────────────────────────────
     console.log('\n👥 Inserting 10 users (hashing passwords with bcrypt)...');
     const usersData = [
+      { name: 'Rishi Garg',     email: 'rishigarg1290@gmail.com', password: 'admin123', role: 'admin' },
       { name: 'Pranay Gupta',   email: 'pranay@isoftzone.com',  password: '123456', role: 'admin' },
       { name: 'Rahul Sharma',   email: 'rahul@isoftzone.com',   password: '123456', role: 'manager' },
       { name: 'Priya Verma',    email: 'priya@isoftzone.com',   password: '123456', role: 'hr' },
@@ -131,6 +132,7 @@ async function seed() {
     console.log('\n👤 Inserting 10 employee profiles...');
     // user_id references, department_id references match dataset order
     const empData = [
+      { email: 'rishigarg1290@gmail.com', dept: 'Software Development', phone: '9876543220', address: 'Gwalior', designation: 'Engineering Lead',   salary: 160000 },
       { email: 'pranay@isoftzone.com',  dept: 'Software Development', phone: '9876543210', address: 'Indore', designation: 'Director',            salary: 150000 },
       { email: 'rahul@isoftzone.com',   dept: 'Software Development', phone: '9876543211', address: 'Indore', designation: 'Project Manager',     salary: 85000  },
       { email: 'priya@isoftzone.com',   dept: 'Human Resources',      phone: '9876543212', address: 'Indore', designation: 'HR Manager',          salary: 70000  },
@@ -185,6 +187,7 @@ async function seed() {
     // We map to our flat schema: casual_leaves, sick_leaves, earned_leaves
     console.log('\n🗓️  Inserting leave balances...');
     const leaveBalanceData = [
+      { email: 'rishigarg1290@gmail.com', casual: 12, sick: 10, earned: 15 },
       { email: 'amit@isoftzone.com',   casual: 10, sick: 8,  earned: 15 },
       { email: 'neha@isoftzone.com',   casual: 12, sick: 10, earned: 15 },
       { email: 'rohit@isoftzone.com',  casual: 8,  sick: 6,  earned: 15 },
@@ -281,6 +284,88 @@ async function seed() {
       [rejectedLeave5.leaveId, rahulUserId]
     );
     console.log('  ✅ Approval history (5 audit log entries) inserted');
+
+    // ─── 10. HARDWARE INVENTORY (Assets & Allocations) ────────────────────────
+    console.log('\n💻 Seeding hardware assets and allocations...');
+    
+    // Define 10 assets
+    const assetsData = [
+      { name: 'MacBook Pro 16', serial: 'MAC-16-11001', status: 'allocated', desc: 'Apple M3 Max, 36GB RAM, 1TB SSD', email: 'rishigarg1290@gmail.com', notes: 'Engineering Lead setup' },
+      { name: 'MacBook Air 15', serial: 'MAC-15-11002', status: 'allocated', desc: 'Apple M3, 16GB RAM, 512GB SSD', email: 'amit@isoftzone.com', notes: 'React Developer setup' },
+      { name: 'ThinkPad X1 Carbon', serial: 'LEN-TP-11003', status: 'allocated', desc: 'Intel Core Ultra 7, 32GB RAM, 1TB SSD', email: 'rahul@isoftzone.com', notes: 'Project Manager setup' },
+      { name: 'Dell Latitude 5440', serial: 'DEL-LT-11004', status: 'allocated', desc: 'Intel Core i5, 16GB RAM, 512GB SSD', email: 'priya@isoftzone.com', notes: 'HR Laptop' },
+      { name: 'ThinkPad E16', serial: 'LEN-TP-11005', status: 'allocated', desc: 'AMD Ryzen 5, 16GB RAM, 512GB SSD', email: 'neha@isoftzone.com', notes: 'Node Developer setup' },
+      { name: 'Dell UltraSharp 27 Monitor', serial: 'DEL-MON-11006', status: 'available', desc: '4K USB-C Hub Monitor', email: null, notes: null },
+      { name: 'iPad Pro 11', serial: 'APL-IPD-11007', status: 'available', desc: 'Apple M2 chip, 256GB WiFi', email: null, notes: null },
+      { name: 'Logitech MX Master 3S', serial: 'LOG-MS-11008', status: 'available', desc: 'Ergonomic Wireless Mouse', email: null, notes: null },
+      { name: 'ThinkPad T14 Gen 4', serial: 'LEN-TP-11009', status: 'maintenance', desc: 'Broken screen panel replacement pending', email: null, notes: null },
+      { name: 'Dell Thunderbolt Dock WD22TB4', serial: 'DEL-DCK-11010', status: 'available', desc: 'Thunderbolt 4 Docking Station', email: null, notes: null }
+    ];
+
+    for (const a of assetsData) {
+      const res = await client.query(
+        `INSERT INTO assets (name, serial_number, status, description)
+         VALUES ($1, $2, $3, $4) RETURNING id`,
+        [a.name, a.serial, a.status, a.desc]
+      );
+      const assetId = res.rows[0].id;
+      
+      if (a.status === 'allocated' && a.email) {
+        const empId = empIds[a.email];
+        if (empId) {
+          await client.query(
+            `INSERT INTO asset_allocations (asset_id, employee_id, notes, allocated_at)
+             VALUES ($1, $2, $3, NOW() - INTERVAL '30 days')`,
+            [assetId, empId, a.notes]
+          );
+        }
+      }
+    }
+    console.log('  ✅ Seeded 10 hardware assets and active allocations successfully');
+
+    // ─── 11. ATTENDANCE SEEDING ───────────────────────────────────────────────
+    console.log('\n⏰ Seeding realistic attendance logs...');
+    // Seed attendance records for the last 7 days for all employees
+    const today = new Date();
+    for (const email of Object.keys(empIds)) {
+      const empId = empIds[email];
+      
+      for (let i = 0; i < 7; i++) {
+        const date = new Date();
+        date.setDate(today.getDate() - i);
+        
+        // Skip weekends for realistic data
+        const dayOfWeek = date.getDay();
+        if (dayOfWeek === 0 || dayOfWeek === 6) continue;
+        
+        // Randomize check-in time: between 08:30 and 10:15
+        const checkInHour = 8.5 + Math.random() * 1.75; // 8.50 to 10.25
+        const checkInMin = Math.floor((checkInHour % 1) * 60);
+        const checkInHr = Math.floor(checkInHour);
+        
+        const checkInDate = new Date(date);
+        checkInDate.setHours(checkInHr, checkInMin, 0, 0);
+        
+        // Randomize check-out time: between 17:00 and 19:30
+        const checkOutHour = 17.0 + Math.random() * 2.5; // 17.00 to 19.50
+        const checkOutMin = Math.floor((checkOutHour % 1) * 60);
+        const checkOutHr = Math.floor(checkOutHour);
+        
+        const checkOutDate = new Date(date);
+        checkOutDate.setHours(checkOutHr, checkOutMin, 0, 0);
+        
+        const workedHours = parseFloat((checkOutHour - checkInHour).toFixed(2));
+        const location = Math.random() > 0.3 ? 'Office - Noida' : 'Remote - Home';
+        const notes = 'Daily check-in/out';
+        
+        await client.query(
+          `INSERT INTO attendance (employee_id, check_in_time, check_out_time, location, notes, worked_hours)
+           VALUES ($1, $2, $3, $4, $5, $6)`,
+          [empId, checkInDate, checkOutDate, location, notes, workedHours]
+        );
+      }
+    }
+    console.log('  ✅ Seeding of attendance records completed successfully');
 
     // ─── COMMIT ───────────────────────────────────────────────────────────────
     await client.query('COMMIT');

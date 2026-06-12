@@ -1,0 +1,59 @@
+name: i-SOFTZONE CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Job 1: Build & Lint & Test
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: './backend/package-lock.json'
+
+    # Backend Build and Verification
+    - name: Install Backend Dependencies
+      run: |
+        cd backend
+        npm ci
+
+    - name: Verify Backend Compilation
+      run: |
+        cd backend
+        node --check index.js
+
+    # Frontend Build and Verification
+    - name: Install Frontend Dependencies
+      run: |
+        cd frontend
+        npm ci
+
+    - name: Verify Frontend Compilation (Build Production Bundle)
+      run: |
+        cd frontend
+        npm run build
+
+  # Job 2: Release & Containerize (Docker Dry Run Build)
+  docker-build:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Build Backend Docker Image
+      run: docker build -t isoftzone-backend:latest ./backend
+
+    - name: Build Frontend Docker Image
+      run: docker build -t isoftzone-frontend:latest ./frontend

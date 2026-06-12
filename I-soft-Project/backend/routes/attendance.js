@@ -20,4 +20,7 @@ router.get('/my-logs', verifyToken, attendanceController.getMyLogs);
 // Get all logs (Admin / HR)
 router.get('/all-logs', verifyToken, authorizeRoles('admin', 'hr'), attendanceController.getAllLogs);
 
+// Get attendance analytics (Admin / HR)
+router.get('/analytics', verifyToken, authorizeRoles('admin', 'hr', 'manager'), attendanceController.getAttendanceAnalytics);
+
 export default router;

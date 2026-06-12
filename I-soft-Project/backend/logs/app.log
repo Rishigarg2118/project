@@ -45,3 +45,843 @@
 {"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 15:45:06"}
 {"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 15:45:06"}
 {"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 15:45:06"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 16:48:44"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 16:48:44"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 16:48:44"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 16:48:44"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 16:48:44"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:48:44"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:48:44"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 16:48:44"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:48:45"}
+{"level":"info","message":"POST /api/auth/login 200","timestamp":"2026-06-10 16:50:24"}
+{"level":"info","message":"GET /api/employees?limit=100 200","timestamp":"2026-06-10 16:50:24"}
+{"level":"info","message":"GET /api/departments 200","timestamp":"2026-06-10 16:50:24"}
+{"level":"info","message":"GET /api/skills 200","timestamp":"2026-06-10 16:50:24"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 16:50:24"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:50:24"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:50:24"}
+{"level":"info","message":"GET /api/leaves/analytics 200","timestamp":"2026-06-10 16:50:24"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:50:24"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/employees 200","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/auth/profile 200","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 16:51:46"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-06-10 16:51:46"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-06-10 16:51:46"}
+{"level":"info","message":"GET /api/assets?limit=1000 200","timestamp":"2026-06-10 16:55:01"}
+{"level":"info","message":"GET /api/employees?limit=1000 200","timestamp":"2026-06-10 16:55:01"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:55:01"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 16:55:01"}
+{"level":"info","message":"GET /api/assets?limit=1000 304","timestamp":"2026-06-10 16:55:01"}
+{"level":"info","message":"GET /api/employees?limit=1000 304","timestamp":"2026-06-10 16:55:01"}
+{"level":"info","message":"GET /api/employees?limit=1000 304","timestamp":"2026-06-10 17:08:48"}
+{"level":"info","message":"GET /api/assets?limit=1000 304","timestamp":"2026-06-10 17:08:48"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:08:48"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/leaves/analytics 200","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:41"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:41"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:41"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:41"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:44"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:44"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:55"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:57"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:24:57"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/leaves/analytics 200","timestamp":"2026-06-10 17:24:57"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:24:57"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:02"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:02"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:07"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:07"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:12"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:12"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:17"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:17"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:22"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:22"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:27"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:27"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:32"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:32"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:37"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:37"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:42"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:42"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:47"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:47"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:52"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:52"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:25:57"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:25:57"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:02"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:02"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:07"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:07"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:12"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:12"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:17"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:17"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:22"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:22"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:27"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:27"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:32"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:32"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:37"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:37"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:42"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:42"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 17:26:45"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-10 17:26:45"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:26:45"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:26:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:26:46"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:46"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:46"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:26:46"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-10 17:26:46"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-10 17:26:46"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-10 17:26:46"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-10 17:26:46"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:46"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:46"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:26:56"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:26:56"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:27:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:27:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:28:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:28:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:08"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:08"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:40"}
+{"level":"warn","message":"GET /api/monitoring — 404: Route Not Found — /api/monitoring","timestamp":"2026-06-10 17:29:42"}
+{"level":"info","message":"GET /api/monitoring 404","timestamp":"2026-06-10 17:29:42"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:29:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:29:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:05"}
+{"level":"warn","message":"GET /api/v1/status — 404: Route Not Found — /api/v1/status","timestamp":"2026-06-10 17:30:06"}
+{"level":"info","message":"GET /api/v1/status 404","timestamp":"2026-06-10 17:30:06"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:25"}
+{"level":"warn","message":"GET /api/v1/health — 404: Route Not Found — /api/v1/health","timestamp":"2026-06-10 17:30:25"}
+{"level":"info","message":"GET /api/v1/health 404","timestamp":"2026-06-10 17:30:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:30:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:30:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:05"}
+{"level":"warn","message":"GET /api/v1/system — 404: Route Not Found — /api/v1/system","timestamp":"2026-06-10 17:31:06"}
+{"level":"info","message":"GET /api/v1/system 404","timestamp":"2026-06-10 17:31:06"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:35"}
+{"level":"warn","message":"GET /api/v1/system/stats — 404: Route Not Found — /api/v1/system/stats","timestamp":"2026-06-10 17:31:36"}
+{"level":"info","message":"GET /api/v1/system/stats 404","timestamp":"2026-06-10 17:31:36"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:31:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:31:55"}
+{"level":"warn","message":"GET /api/v1/employees — 404: Route Not Found — /api/v1/employees","timestamp":"2026-06-10 17:31:57"}
+{"level":"info","message":"GET /api/v1/employees 404","timestamp":"2026-06-10 17:31:57"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:20"}
+{"level":"info","message":"GET /api/employees 401","timestamp":"2026-06-10 17:32:24"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:40"}
+{"level":"warn","message":"GET /api/monitoring/stats — 404: Route Not Found — /api/monitoring/stats","timestamp":"2026-06-10 17:32:44"}
+{"level":"info","message":"GET /api/monitoring/stats 404","timestamp":"2026-06-10 17:32:44"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:32:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:32:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:15"}
+{"level":"warn","message":"GET /api/monitoring/stats — 404: Route Not Found — /api/monitoring/stats","timestamp":"2026-06-10 17:33:15"}
+{"level":"info","message":"GET /api/monitoring/stats 404","timestamp":"2026-06-10 17:33:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:33:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:33:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:05"}
+{"level":"warn","message":"GET /api/monitoring/stats — 404: Route Not Found — /api/monitoring/stats","timestamp":"2026-06-10 17:34:06"}
+{"level":"info","message":"GET /api/monitoring/stats 404","timestamp":"2026-06-10 17:34:06"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:34:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:34:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:00"}
+{"level":"warn","message":"GET /api/system/stats — 404: Route Not Found — /api/system/stats","timestamp":"2026-06-10 17:35:01"}
+{"level":"info","message":"GET /api/system/stats 404","timestamp":"2026-06-10 17:35:01"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:45"}
+{"level":"info","message":"GET /api/health 200","timestamp":"2026-06-10 17:35:48"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:35:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:35:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:20"}
+{"level":"warn","message":"GET /api/stats — 404: Route Not Found — /api/stats","timestamp":"2026-06-10 17:36:24"}
+{"level":"info","message":"GET /api/stats 404","timestamp":"2026-06-10 17:36:24"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:36:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:36:55"}
+{"level":"warn","message":"GET /api/system — 404: Route Not Found — /api/system","timestamp":"2026-06-10 17:36:55"}
+{"level":"info","message":"GET /api/system 404","timestamp":"2026-06-10 17:36:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:25"}
+{"level":"warn","message":"GET /api/monitoring-stats — 404: Route Not Found — /api/monitoring-stats","timestamp":"2026-06-10 17:37:27"}
+{"level":"info","message":"GET /api/monitoring-stats 404","timestamp":"2026-06-10 17:37:27"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:40"}
+{"level":"warn","message":"GET /api/health/stats — 404: Route Not Found — /api/health/stats","timestamp":"2026-06-10 17:37:44"}
+{"level":"info","message":"GET /api/health/stats 404","timestamp":"2026-06-10 17:37:44"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:37:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:37:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:38:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:38:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:05"}
+{"level":"warn","message":"GET /api/system/health — 404: Route Not Found — /api/system/health","timestamp":"2026-06-10 17:39:05"}
+{"level":"info","message":"GET /api/system/health 404","timestamp":"2026-06-10 17:39:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:39:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:39:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:10"}
+{"level":"warn","message":"GET /api/admin/stats — 404: Route Not Found — /api/admin/stats","timestamp":"2026-06-10 17:40:14"}
+{"level":"info","message":"GET /api/admin/stats 404","timestamp":"2026-06-10 17:40:14"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:35"}
+{"level":"warn","message":"GET /api/dashboard/stats — 404: Route Not Found — /api/dashboard/stats","timestamp":"2026-06-10 17:40:36"}
+{"level":"info","message":"GET /api/dashboard/stats 404","timestamp":"2026-06-10 17:40:36"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:45"}
+{"level":"warn","message":"GET /api/dashboard — 404: Route Not Found — /api/dashboard","timestamp":"2026-06-10 17:40:46"}
+{"level":"info","message":"GET /api/dashboard 404","timestamp":"2026-06-10 17:40:46"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:50"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:40:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:40:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:00"}
+{"level":"warn","message":"GET /api/system-health — 404: Route Not Found — /api/system-health","timestamp":"2026-06-10 17:41:00"}
+{"level":"info","message":"GET /api/system-health 404","timestamp":"2026-06-10 17:41:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:10"}
+{"level":"warn","message":"GET /api/health-check — 404: Route Not Found — /api/health-check","timestamp":"2026-06-10 17:41:14"}
+{"level":"info","message":"GET /api/health-check 404","timestamp":"2026-06-10 17:41:14"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:25"}
+{"level":"warn","message":"GET /api/healthcheck — 404: Route Not Found — /api/healthcheck","timestamp":"2026-06-10 17:41:25"}
+{"level":"info","message":"GET /api/healthcheck 404","timestamp":"2026-06-10 17:41:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:35"}
+{"level":"warn","message":"GET /api/metrics — 404: Route Not Found — /api/metrics","timestamp":"2026-06-10 17:41:38"}
+{"level":"info","message":"GET /api/metrics 404","timestamp":"2026-06-10 17:41:38"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:45"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:50"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:50"}
+{"level":"warn","message":"GET /api/stats/monitoring — 404: Route Not Found — /api/stats/monitoring","timestamp":"2026-06-10 17:41:51"}
+{"level":"info","message":"GET /api/stats/monitoring 404","timestamp":"2026-06-10 17:41:51"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:41:55"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:41:55"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:00"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:05"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:10"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:15"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:20"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:25"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:25"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:30"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:30"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:35"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:35"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:40"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:40"}
+{"level":"warn","message":"GET /api/v1/monitoring/stats — 404: Route Not Found — /api/v1/monitoring/stats","timestamp":"2026-06-10 17:42:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 404","timestamp":"2026-06-10 17:42:45"}

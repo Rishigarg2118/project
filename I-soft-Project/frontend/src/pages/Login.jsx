@@ -22,8 +22,10 @@ export default function Login() {
       setValidationError('Please fill in all fields.');
       return;
     }
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      setValidationError('Please enter a valid email address.');
+    const isEmail = /\S+@\S+\.\S+/.test(email);
+    const isPhone = /^[0-9+() -]{10,20}$/.test(email);
+    if (!isEmail && !isPhone) {
+      setValidationError('Please enter a valid email address or phone number.');
       return;
     }
 
@@ -113,13 +115,13 @@ export default function Login() {
               </div>
             )}
 
-            {/* Email */}
+            {/* Email / Phone */}
             <div className="form-group">
-              <label htmlFor="email">Work Email</label>
+              <label htmlFor="email">Work Email or Phone Number</label>
               <input
                 id="email"
-                type="email"
-                placeholder="name@company.com"
+                type="text"
+                placeholder="name@company.com or +1234567890"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={localLoading}

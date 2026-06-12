@@ -282,29 +282,70 @@ async function rebuildAndSeed() {
     `, [janeEmpId]);
 
     // Seed assets
-    const assetsResult = await pool.query(`
-      INSERT INTO assets (name, serial_number, status, description)
-      VALUES
-        ('MacBook Pro 16', 'MAC-16-55321', 'allocated', 'Apple M3 Pro 18GB RAM'),
-        ('Dell UltraSharp 27', 'DELL-US-99887', 'available', '4K Hub Monitor'),
-        ('ThinkPad T14 Gen 4', 'LEN-TP-88776', 'maintenance', 'AMD Ryzen 7 32GB RAM')
-      RETURNING id, name;
-    `);
-    const macbook = assetsResult.rows.find(a => a.name === 'MacBook Pro 16');
+    console.log('Seeding hardware assets...');
+    const assetsData = [
+      { name: 'MacBook Pro 16', serial: 'MAC-16-11001', status: 'allocated', desc: 'Apple M3 Max, 36GB RAM, 1TB SSD', empId: rishiEmpId, notes: 'Engineering Lead setup' },
+      { name: 'MacBook Air 15', serial: 'MAC-15-11002', status: 'allocated', desc: 'Apple M3, 16GB RAM, 512GB SSD', empId: janeEmpId, notes: 'Senior Developer setup' },
+      { name: 'Dell Latitude 5440', serial: 'DEL-LT-11004', status: 'allocated', desc: 'Intel Core i5, 16GB RAM, 512GB SSD', empId: hrEmpId, notes: 'HR Laptop' },
+      { name: 'Dell UltraSharp 27 Monitor', serial: 'DEL-MON-11006', status: 'available', desc: '4K USB-C Hub Monitor', empId: null, notes: null },
+      { name: 'iPad Pro 11', serial: 'APL-IPD-11007', status: 'available', desc: 'Apple M2 chip, 256GB WiFi', empId: null, notes: null },
+      { name: 'Logitech MX Master 3S', serial: 'LOG-MS-11008', status: 'available', desc: 'Ergonomic Wireless Mouse', empId: null, notes: null },
+      { name: 'ThinkPad T14 Gen 4', serial: 'LEN-TP-11009', status: 'maintenance', desc: 'Broken screen panel replacement pending', empId: null, notes: null }
+    ];
 
-    // Seed asset allocations
-    await pool.query(`
-      INSERT INTO asset_allocations (asset_id, employee_id, notes)
-      VALUES ($1, $2, 'Allocated for developer workstation setup');
-    `, [macbook.id, janeEmpId]);
+    for (const a of assetsData) {
+      const res = await pool.query(
+        `INSERT INTO assets (name, serial_number, status, description)
+         VALUES ($1, $2, $3, $4) RETURNING id`,
+        [a.name, a.serial, a.status, a.desc]
+      );
+      const assetId = res.rows[0].id;
+      
+      if (a.status === 'allocated' && a.empId) {
+        await pool.query(
+          `INSERT INTO asset_allocations (asset_id, employee_id, notes, allocated_at)
+           VALUES ($1, $2, $3, NOW() - INTERVAL '30 days')`,
+          [assetId, a.empId, a.notes]
+        );
+      }
+    }
 
     // Seed attendance
-    await pool.query(`
-      INSERT INTO attendance (employee_id, check_in_time, check_out_time, location, notes, worked_hours)
-      VALUES
-        ($1, NOW() - INTERVAL '1 days' - INTERVAL '8 hours', NOW() - INTERVAL '1 days', 'Office - Gwalior', 'Daily check-in', 8.0),
-        ($1, NOW() - INTERVAL '3 hours', NULL, 'Remote - Home', 'Morning clock-in', NULL);
-    `, [janeEmpId]);
+    console.log('Seeding realistic attendance logs...');
+    const today = new Date();
+    const activeEmpIds = [janeEmpId, hrEmpId, rishiEmpId];
+    for (const empId of activeEmpIds) {
+      for (let i = 0; i < 7; i++) {
+        const date = new Date();
+        date.setDate(today.getDate() - i);
+        
+        // Skip weekends
+        const dayOfWeek = date.getDay();
+        if (dayOfWeek === 0 || dayOfWeek === 6) continue;
+        
+        const checkInHour = 8.5 + Math.random() * 1.75;
+        const checkInMin = Math.floor((checkInHour % 1) * 60);
+        const checkInHr = Math.floor(checkInHour);
+        const checkInDate = new Date(date);
+        checkInDate.setHours(checkInHr, checkInMin, 0, 0);
+        
+        const checkOutHour = 17.0 + Math.random() * 2.5;
+        const checkOutMin = Math.floor((checkOutHour % 1) * 60);
+        const checkOutHr = Math.floor(checkOutHour);
+        const checkOutDate = new Date(date);
+        checkOutDate.setHours(checkOutHr, checkOutMin, 0, 0);
+        
+        const workedHours = parseFloat((checkOutHour - checkInHour).toFixed(2));
+        const location = Math.random() > 0.3 ? 'Office - Gwalior' : 'Remote - Home';
+        const notes = 'Daily check-in/out';
+        
+        await pool.query(
+          `INSERT INTO attendance (employee_id, check_in_time, check_out_time, location, notes, worked_hours)
+           VALUES ($1, $2, $3, $4, $5, $6)`,
+          [empId, checkInDate, checkOutDate, location, notes, workedHours]
+        );
+      }
+    }
 
     console.log('Seeded database successfully with test profiles, assets, leaves, and attendance.');
   } catch (error) {

@@ -48,10 +48,10 @@ export function AuthProvider({ children }) {
     }
   };
 
-  const signup = async (name, email, password, role) => {
+  const signup = async (name, email, password, phone, confirmPassword, role) => {
     setError(null);
     try {
-      const res = await axios.post('/api/auth/register', { name, email, password, role });
+      const res = await axios.post('/api/auth/register', { name, email, password, phone, confirmPassword, role });
       return res.data;
     } catch (err) {
       const errMsg = err.response?.data?.error || 'Registration failed.';

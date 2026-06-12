@@ -8,9 +8,13 @@ export default function Signup() {
   const { signup, error: authError } = useAuth();
   const navigate = useNavigate();
 
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [middleName, setMiddleName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [localLoading, setLocalLoading] = useState(false);
   const [validationError, setValidationError] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
@@ -20,26 +24,35 @@ export default function Signup() {
     setValidationError('');
     setSuccessMsg('');
 
-    if (!name || !email || !password) {
-      setValidationError('All fields are required.');
+    if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
+      setValidationError('First Name, Last Name, Email, Phone, and Password fields are required.');
       return;
     }
-    if (name.length < 2) {
-      setValidationError('Name must be at least 2 characters long.');
+    const combinedName = [firstName, middleName, lastName].map(s => s.trim()).filter(Boolean).join(' ');
+    if (combinedName.length < 2) {
+      setValidationError('Please enter a valid name.');
       return;
     }
     if (!/\S+@\S+\.\S+/.test(email)) {
       setValidationError('Please enter a valid email address.');
       return;
     }
+    if (!/^[0-9+() -]{10,20}$/.test(phone)) {
+      setValidationError('Please enter a valid phone number (10 to 20 digits).');
+      return;
+    }
     if (password.length < 6) {
       setValidationError('Password must be at least 6 characters long.');
+      return;
+    }
+    if (password !== confirmPassword) {
+      setValidationError('Passwords do not match.');
       return;
     }
 
     setLocalLoading(true);
     try {
-      await signup(name, email, password);
+      await signup(combinedName, email, password, phone, confirmPassword);
       setSuccessMsg('Account registered successfully! Redirecting to login...');
       setTimeout(() => {
         navigate('/login');
@@ -138,17 +151,41 @@ export default function Signup() {
               </div>
             )}
 
-            {/* Full Name */}
-            <div className="form-group">
-              <label htmlFor="name">Full Name</label>
-              <input
-                id="name"
-                type="text"
-                placeholder="John Doe"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                disabled={localLoading}
-              />
+            {/* Name Fields Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
+              <div className="form-group">
+                <label htmlFor="firstName">First Name</label>
+                <input
+                  id="firstName"
+                  type="text"
+                  placeholder="First"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  disabled={localLoading}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="middleName">Middle Name</label>
+                <input
+                  id="middleName"
+                  type="text"
+                  placeholder="Middle"
+                  value={middleName}
+                  onChange={(e) => setMiddleName(e.target.value)}
+                  disabled={localLoading}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="lastName">Last Name</label>
+                <input
+                  id="lastName"
+                  type="text"
+                  placeholder="Last"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  disabled={localLoading}
+                />
+              </div>
             </div>
 
             {/* Email */}
@@ -164,6 +201,19 @@ export default function Signup() {
               />
             </div>
 
+            {/* Phone */}
+            <div className="form-group">
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                id="phone"
+                type="tel"
+                placeholder="+1234567890"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                disabled={localLoading}
+              />
+            </div>
+
             {/* Password */}
             <div className="form-group">
               <label htmlFor="password">Password (min 6 characters)</label>
@@ -173,6 +223,19 @@ export default function Signup() {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                disabled={localLoading}
+              />
+            </div>
+
+            {/* Confirm Password */}
+            <div className="form-group">
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <input
+                id="confirmPassword"
+                type="password"
+                placeholder="••••••••"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 disabled={localLoading}
               />
             </div>

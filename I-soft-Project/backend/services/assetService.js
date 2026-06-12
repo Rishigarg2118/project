@@ -1,11 +1,79 @@
+/**
+ * Asset Service — Business Logic Layer
+ * Incorporates Repository pattern, Audit Trail (auditService), and Notifications (notificationService).
+ */
 import pool from '../config/db.js';
+import * as repo from '../repositories/assetRepository.js';
+import { auditLog } from './auditService.js';
+import * as ns from './notificationService.js';
 
-export const allocateAsset = async (assetId, employeeId, notes) => {
+export const getAssets = async (filters) => {
+  return await repo.findAll(filters);
+};
+
+export const getAssetById = async (id) => {
+  return await repo.findById(id);
+};
+
+export const getAssetHistory = async (assetId) => {
+  return await repo.getHistory(assetId);
+};
+
+export const createAsset = async (assetData, performedBy) => {
+  const asset = await repo.create(assetData);
+  
+  // Log asset creation in history and audit logs
+  await repo.createHistory(null, {
+    asset_id: asset.id,
+    action: 'CREATED',
+    remarks: `Asset "${asset.name}" created under inventory.`,
+    created_by: performedBy
+  });
+
+  await auditLog(null, 'assets', 'INSERT', asset.id, null, asset, performedBy);
+  
+  return asset;
+};
+
+export const updateAsset = async (id, assetData, performedBy) => {
+  const oldAsset = await repo.findById(id);
+  if (!oldAsset) {
+    throw new Error('Asset not found');
+  }
+
+  const newAsset = await repo.update(id, assetData);
+
+  // Log in history & audit logs
+  await repo.createHistory(null, {
+    asset_id: id,
+    action: 'UPDATED',
+    remarks: `Asset details updated. Status changed: ${oldAsset.status} -> ${newAsset.status}`,
+    created_by: performedBy
+  });
+
+  await auditLog(null, 'assets', 'UPDATE', id, oldAsset, newAsset, performedBy);
+
+  return newAsset;
+};
+
+export const deleteAsset = async (id, performedBy) => {
+  const oldAsset = await repo.findById(id);
+  if (!oldAsset) {
+    throw new Error('Asset not found');
+  }
+
+  const deletedAsset = await repo.remove(id);
+  await auditLog(null, 'assets', 'DELETE', id, oldAsset, null, performedBy);
+
+  return deletedAsset;
+};
+
+export const allocateAsset = async (assetId, employeeId, notes, performedBy) => {
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
 
-    // Check if asset exists and is available
+    // 1. Fetch asset with lock
     const assetRes = await client.query('SELECT * FROM assets WHERE id = $1 FOR UPDATE', [assetId]);
     if (assetRes.rowCount === 0) {
       throw new Error('Asset not found');
@@ -15,27 +83,46 @@ export const allocateAsset = async (assetId, employeeId, notes) => {
       throw new Error(`Asset is not available for allocation. Current status: ${asset.status}`);
     }
 
-    // Check if employee exists
-    const empRes = await client.query('SELECT id FROM employees WHERE id = $1', [employeeId]);
+    // 2. Fetch employee details (user_id is needed for notification)
+    const empRes = await client.query(
+      `SELECT e.id, e.user_id, u.name 
+       FROM employees e 
+       JOIN users u ON e.user_id = u.id 
+       WHERE e.id = $1`, 
+      [employeeId]
+    );
     if (empRes.rowCount === 0) {
       throw new Error('Employee not found');
     }
+    const employee = empRes.rows[0];
 
-    // Insert allocation log
-    const allocationRes = await client.query(
-      `INSERT INTO asset_allocations (asset_id, employee_id, notes, allocated_at)
-       VALUES ($1, $2, $3, NOW()) RETURNING *`,
-      [assetId, employeeId, notes || '']
-    );
+    // 3. Insert allocation record
+    const allocation = await repo.createAllocation(client, {
+      asset_id: assetId,
+      employee_id: employeeId,
+      notes
+    });
 
-    // Update asset status
-    await client.query(
-      `UPDATE assets SET status = 'allocated' WHERE id = $1`,
-      [assetId]
-    );
+    // 4. Update asset status to 'allocated'
+    const updatedAsset = await repo.update(assetId, { ...asset, status: 'allocated' });
+
+    // 5. Create Asset History
+    await repo.createHistory(client, {
+      asset_id: assetId,
+      action: 'ALLOCATED',
+      remarks: `Allocated to ${employee.name}. Notes: ${notes || 'None'}`,
+      created_by: performedBy
+    });
+
+    // 6. Write to Audit Trail (JSONB)
+    await auditLog(client, 'assets', 'UPDATE', assetId, asset, updatedAsset, performedBy);
+    await auditLog(client, 'asset_allocations', 'INSERT', allocation.id, null, allocation, performedBy);
+
+    // 7. Fire Notification
+    await ns.notifyAssetAssigned(client, employee.user_id, asset.name);
 
     await client.query('COMMIT');
-    return allocationRes.rows[0];
+    return allocation;
   } catch (error) {
     await client.query('ROLLBACK');
     throw error;
@@ -44,12 +131,12 @@ export const allocateAsset = async (assetId, employeeId, notes) => {
   }
 };
 
-export const returnAsset = async (assetId, notes) => {
+export const returnAsset = async (assetId, notes, performedBy) => {
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
 
-    // Check if asset is allocated
+    // 1. Fetch asset with lock
     const assetRes = await client.query('SELECT * FROM assets WHERE id = $1 FOR UPDATE', [assetId]);
     if (assetRes.rowCount === 0) {
       throw new Error('Asset not found');
@@ -59,31 +146,48 @@ export const returnAsset = async (assetId, notes) => {
       throw new Error('Asset is not currently allocated');
     }
 
-    // Find the active allocation
-    const allocationRes = await client.query(
-      `SELECT * FROM asset_allocations 
-       WHERE asset_id = $1 AND returned_at IS NULL 
-       ORDER BY allocated_at DESC LIMIT 1 FOR UPDATE`,
-      [assetId]
-    );
-    if (allocationRes.rowCount === 0) {
+    // 2. Fetch active allocation with lock
+    const allocation = await repo.findActiveAllocation(client, assetId);
+    if (!allocation) {
       throw new Error('No active allocation record found for this asset');
     }
-    const allocationId = allocationRes.rows[0].id;
 
-    // Update allocation record
-    await client.query(
-      `UPDATE asset_allocations 
-       SET returned_at = NOW(), notes = COALESCE($2, notes) 
-       WHERE id = $1`,
-      [allocationId, notes]
+    // 3. Fetch employee details (user_id for notification)
+    const empRes = await client.query(
+      `SELECT e.id, e.user_id, u.name 
+       FROM employees e 
+       JOIN users u ON e.user_id = u.id 
+       WHERE e.id = $1`, 
+      [allocation.employee_id]
     );
+    if (empRes.rowCount === 0) {
+      throw new Error('Employee profile not found');
+    }
+    const employee = empRes.rows[0];
 
-    // Update asset status
-    await client.query(
-      `UPDATE assets SET status = 'available' WHERE id = $1`,
-      [assetId]
-    );
+    // 4. Update allocation record (returned_at = NOW)
+    const updatedAllocation = await repo.updateAllocation(client, allocation.id, {
+      returned_at: new Date(),
+      notes: notes || 'Returned to storage'
+    });
+
+    // 5. Update asset status to 'available'
+    const updatedAsset = await repo.update(assetId, { ...asset, status: 'available' });
+
+    // 6. Create Asset History
+    await repo.createHistory(client, {
+      asset_id: assetId,
+      action: 'RETURNED',
+      remarks: `Returned by ${employee.name}. Remarks: ${notes || 'Returned to storage'}`,
+      created_by: performedBy
+    });
+
+    // 7. Write to Audit Trail (JSONB)
+    await auditLog(client, 'assets', 'UPDATE', assetId, asset, updatedAsset, performedBy);
+    await auditLog(client, 'asset_allocations', 'UPDATE', allocation.id, allocation, updatedAllocation, performedBy);
+
+    // 8. Fire Notification
+    await ns.notifyAssetReturned(employee.user_id, asset.name);
 
     await client.query('COMMIT');
     return { status: 'success', message: 'Asset returned successfully' };
@@ -93,17 +197,4 @@ export const returnAsset = async (assetId, notes) => {
   } finally {
     client.release();
   }
-};
-
-export const getAssetHistory = async (assetId) => {
-  const result = await pool.query(
-    `SELECT aa.*, e.phone, u.name as employee_name, u.email as employee_email
-     FROM asset_allocations aa
-     JOIN employees e ON aa.employee_id = e.id
-     JOIN users u ON e.user_id = u.id
-     WHERE aa.asset_id = $1
-     ORDER BY aa.allocated_at DESC`,
-    [assetId]
-  );
-  return result.rows;
 };
