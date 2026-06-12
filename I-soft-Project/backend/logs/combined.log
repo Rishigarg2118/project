@@ -2489,3 +2489,62 @@
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:39:45"}
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:40:45"}
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:40:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:41:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:41:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:42:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:42:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:43:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:43:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:44:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:44:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:45:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:45:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:46:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:46:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:47:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:47:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:48:40"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"Cache MISS: Fetching departments list from Database","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"Cache MISS: Fetching skills list from Database","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-06-12 17:48:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:48:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:48:46"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:49:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-06-12 17:50:31"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:36"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:47"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:51"}
