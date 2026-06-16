@@ -132,7 +132,7 @@ export default function DepartmentMaster() {
         </div>
       )}
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '32px', alignItems: 'start' }}>
+      <div className="layout-grid-1fr2fr" style={{ alignItems: 'start' }}>
         {/* Add Department Form */}
         <Card style={{ padding: '28px' }}>
           <h3 style={{ fontFamily: 'var(--font-head)', fontSize: '18px', fontWeight: '700', marginBottom: '20px' }}>

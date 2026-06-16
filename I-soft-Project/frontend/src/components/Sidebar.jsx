@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import Logo from './Logo';
 
-export default function Sidebar() {
+export default function Sidebar({ visible, setVisible, isMobile }) {
   const { user, logout } = useAuth();
   const location = useLocation();
 
@@ -21,7 +21,7 @@ export default function Sidebar() {
         width: '260px',
         height: '100vh',
         position: 'fixed',
-        left: 0,
+        left: visible ? 0 : '-260px',
         top: 0,
         background: 'var(--surface-glass)',
         backdropFilter: 'blur(24px)',
@@ -29,7 +29,8 @@ export default function Sidebar() {
         padding: '28px 18px',
         display: 'flex',
         flexDirection: 'column',
-        zIndex: 100
+        zIndex: isMobile ? 1000 : 100,
+        transition: 'left 0.3s ease',
       }}
     >
       {/* Brand logo */}
@@ -37,30 +38,50 @@ export default function Sidebar() {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '12px',
+          justifyContent: 'space-between',
           marginBottom: '36px',
           paddingLeft: '6px'
         }}
       >
-        <Logo size={36} />
-        <h2
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <Logo size={36} />
+          <h2
+            style={{
+              fontFamily: 'var(--font-head)',
+              fontSize: '14px',
+              fontWeight: '800',
+              letterSpacing: '0.02em',
+              background: 'linear-gradient(135deg, var(--text-primary) 30%, var(--text-secondary) 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              lineHeight: '1.3'
+            }}
+          >
+            Employee Management<br />Portal System
+          </h2>
+        </div>
+        
+        <button
+          onClick={() => setVisible(false)}
           style={{
-            fontFamily: 'var(--font-head)',
-            fontSize: '14px',
-            fontWeight: '800',
-            letterSpacing: '0.02em',
-            background: 'linear-gradient(135deg, var(--text-primary) 30%, var(--text-secondary) 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            lineHeight: '1.3'
+            background: 'transparent',
+            border: 'none',
+            fontSize: 16,
+            cursor: 'pointer',
+            padding: '6px 10px',
+            color: 'var(--text-primary)',
+            borderRadius: '8px',
           }}
         >
-          Employee Management<br />Portal System
-        </h2>
+          ✕
+        </button>
       </div>
 
       {/* Nav Links */}
-      <nav style={{ flex: 1, overflowY: 'auto', paddingRight: '4px' }}>
+      <nav 
+        onClick={() => { if (isMobile) setVisible(false); }}
+        style={{ flex: 1, overflowY: 'auto', paddingRight: '4px' }}
+      >
         <Link to="/dashboard" className={getLinkClass('/dashboard')}>
           <span>📊</span> Dashboard
         </Link>

@@ -22,7 +22,7 @@ export default function Dashboard({ store, setPage }) {
       </div>
 
       {/* Stat Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 28 }}>
+      <div className="stats-grid-classic">
         {cards.map((c) => (
           <Card key={c.label} style={{ borderLeft: `3px solid ${c.color}` }}>
             <div style={{ fontSize: 28, marginBottom: 8 }}>{c.icon}</div>
@@ -34,7 +34,7 @@ export default function Dashboard({ store, setPage }) {
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+      <div className="layout-grid-2col">
         {/* Recent Employees */}
         <Card>
           <div style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16, marginBottom: 16 }}>

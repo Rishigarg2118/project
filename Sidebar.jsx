@@ -9,7 +9,7 @@ const MENU = [
   { id: 'profile',         label: 'My Profile',   icon: '👤' },
 ]
 
-export default function Sidebar({ page, setPage, user, onLogout }) {
+export default function Sidebar({ page, setPage, user, onLogout, visible, setVisible, isMobile }) {
   return (
     <div style={{
       width: 220,
@@ -17,26 +17,53 @@ export default function Sidebar({ page, setPage, user, onLogout }) {
       borderRight: '1.5px solid var(--border)',
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '100vh',
+      height: '100vh',
       position: 'fixed',
-      top: 0, left: 0,
-      zIndex: 100,
+      top: 0, 
+      left: visible ? 0 : -220,
+      zIndex: isMobile ? 1000 : 100,
       boxShadow: '2px 0 12px rgba(0,0,0,0.05)',
+      transition: 'left 0.3s ease',
     }}>
       {/* Logo */}
-      <div style={{ padding: '24px 20px 20px', borderBottom: '1px solid var(--border)' }}>
-        <div style={{ fontSize: 22, fontFamily: 'var(--font-head)', fontWeight: 800, color: 'var(--accent)' }}>
-          EMS
+      <div style={{ 
+        padding: '20px', 
+        borderBottom: '1px solid var(--border)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        <div>
+          <div style={{ fontSize: 22, fontFamily: 'var(--font-head)', fontWeight: 800, color: 'var(--accent)' }}>
+            EMS
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 2 }}>Employee Management</div>
         </div>
-        <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 2 }}>Employee Management</div>
+        <button
+          onClick={() => setVisible(false)}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            fontSize: 16,
+            cursor: 'pointer',
+            color: 'var(--muted)',
+            padding: '4px 8px',
+            borderRadius: 6,
+          }}
+        >
+          ✕
+        </button>
       </div>
 
       {/* Nav */}
-      <nav style={{ flex: 1, padding: '12px 10px' }}>
+      <nav style={{ flex: 1, padding: '12px 10px', overflowY: 'auto' }}>
         {MENU.map((m) => (
           <button
             key={m.id}
-            onClick={() => setPage(m.id)}
+            onClick={() => {
+              setPage(m.id)
+              if (isMobile) setVisible(false) // Close drawer on mobile item select
+            }}
             style={{
               display: 'flex', alignItems: 'center', gap: 11,
               width: '100%', padding: '9px 12px', borderRadius: 9, marginBottom: 2,

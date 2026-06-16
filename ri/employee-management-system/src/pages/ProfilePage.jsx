@@ -34,7 +34,7 @@ export default function ProfilePage({ user, store }) {
         </div>
 
         {myEmp ? (
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+          <div className="layout-grid-2col">
             {[
               ['Designation', myEmp.designation],
               ['Department',  dept?.department_name],

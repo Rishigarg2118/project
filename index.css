@@ -62,3 +62,40 @@ select option {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+/* Responsive Grid Utilities */
+.stats-grid-classic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.layout-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.layout-grid-1fr2fr {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .stats-grid-classic {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid-classic {
+    grid-template-columns: 1fr;
+  }
+  .layout-grid-2col, .layout-grid-1fr2fr {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+

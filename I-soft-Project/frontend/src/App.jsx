@@ -23,6 +23,18 @@ import Profile from './pages/Profile';
 
 function MainLayout() {
   const { user, loading } = useAuth();
+  const [sidebarVisible, setSidebarVisible] = useState(window.innerWidth >= 1024);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < 1024;
+      setIsMobile(mobile);
+      setSidebarVisible(!mobile);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   if (loading) {
     return (
@@ -45,24 +57,81 @@ function MainLayout() {
   }
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh' }}>
-      <Sidebar />
-      <main style={{ marginLeft: '260px', flex: 1, padding: '40px', minWidth: '0' }}>
-        <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-          <Route path="/employees" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><EmployeeList /></ProtectedRoute>} />
-          <Route path="/departments" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><DepartmentMaster /></ProtectedRoute>} />
-          <Route path="/skills" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><SkillsMaster /></ProtectedRoute>} />
-          <Route path="/assets" element={<ProtectedRoute><AssetManagement /></ProtectedRoute>} />
-          <Route path="/attendance" element={<ProtectedRoute><AttendancePortal /></ProtectedRoute>} />
-          <Route path="/leaves" element={<ProtectedRoute><LeaveDashboard /></ProtectedRoute>} />
-          <Route path="/approvals" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><LeaveApproval /></ProtectedRoute>} />
-          <Route path="/reports" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><Reports /></ProtectedRoute>} />
-          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-          <Route path="*" element={<Navigate to="/dashboard" replace />} />
-        </Routes>
-      </main>
+    <div style={{ display: 'flex', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
+      {/* Mobile overlay backdrop */}
+      {isMobile && sidebarVisible && (
+        <div 
+          onClick={() => setSidebarVisible(false)}
+          style={{
+            position: 'fixed',
+            top: 0, left: 0, right: 0, bottom: 0,
+            background: 'rgba(15, 23, 42, 0.4)',
+            backdropFilter: 'blur(4px)',
+            zIndex: 99,
+          }}
+        />
+      )}
+
+      <Sidebar visible={sidebarVisible} setVisible={setSidebarVisible} isMobile={isMobile} />
+
+      <div style={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        minWidth: 0,
+        marginLeft: isMobile || !sidebarVisible ? 0 : '260px',
+        transition: 'margin-left 0.3s ease',
+      }}>
+        {/* Top Header Bar */}
+        <header style={{
+          height: 64,
+          background: 'var(--surface-glass)',
+          backdropFilter: 'blur(20px)',
+          borderBottom: '1px solid var(--border-glass)',
+          display: 'flex',
+          alignItems: 'center',
+          padding: '0 24px',
+          position: 'sticky',
+          top: 0,
+          zIndex: 90,
+        }}>
+          <button 
+            onClick={() => setSidebarVisible(!sidebarVisible)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              fontSize: 22,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 8,
+              borderRadius: 8,
+              color: 'var(--text-primary)',
+              transition: 'background 0.2s',
+            }}
+          >
+            ☰
+          </button>
+        </header>
+
+        <main style={{ flex: 1, padding: isMobile ? '24px 16px' : '40px', minWidth: '0' }}>
+          <Routes>
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+            <Route path="/employees" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><EmployeeList /></ProtectedRoute>} />
+            <Route path="/departments" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><DepartmentMaster /></ProtectedRoute>} />
+            <Route path="/skills" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><SkillsMaster /></ProtectedRoute>} />
+            <Route path="/assets" element={<ProtectedRoute><AssetManagement /></ProtectedRoute>} />
+            <Route path="/attendance" element={<ProtectedRoute><AttendancePortal /></ProtectedRoute>} />
+            <Route path="/leaves" element={<ProtectedRoute><LeaveDashboard /></ProtectedRoute>} />
+            <Route path="/approvals" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><LeaveApproval /></ProtectedRoute>} />
+            <Route path="/reports" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><Reports /></ProtectedRoute>} />
+            <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+            <Route path="*" element={<Navigate to="/dashboard" replace />} />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 }

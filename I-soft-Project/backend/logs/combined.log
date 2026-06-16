@@ -2548,3 +2548,14 @@
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:41"}
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:47"}
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-12 17:50:51"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-06-13 10:57:31"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-06-13 10:57:32"}
+{"level":"info","message":"===================================================","timestamp":"2026-06-13 10:57:32"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-06-13 10:57:32"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-06-13 10:57:32"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-06-13 10:57:32"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-06-13 10:57:32"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-06-13 10:57:32"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-06-13 10:57:32"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-06-13 10:57:32"}
+{"level":"info","message":"===================================================","timestamp":"2026-06-13 10:57:32"}

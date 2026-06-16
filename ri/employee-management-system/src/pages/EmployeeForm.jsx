@@ -68,7 +68,7 @@ export default function EmployeeForm({ store, editId, setPage, currentUser }) {
           <div style={{ fontFamily: 'var(--font-head)', fontWeight: 700, marginBottom: 16 }}>
             Basic Information
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+          <div className="layout-grid-2col">
             <div>
               <label style={{ fontSize: 12, color: 'var(--muted)', display: 'block', marginBottom: 6 }}>User Account *</label>
               <select
