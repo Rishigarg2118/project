@@ -42,10 +42,6 @@ export default function Login() {
     }
   };
 
-  const handleQuickLogin = (quickEmail, quickPassword) => {
-    setEmail(quickEmail);
-    setPassword(quickPassword);
-  };
 
   return (
     <div
@@ -175,108 +171,6 @@ export default function Login() {
           </div>
         </Card>
 
-        {/* Quick Demo Logins */}
-        <div
-          style={{
-            marginTop: '24px',
-            background: 'var(--surface-glass)',
-            border: '1px solid var(--border-glass)',
-            borderRadius: '14px',
-            padding: '16px 20px',
-            textAlign: 'center'
-          }}
-        >
-          <h5
-            style={{
-              fontSize: '12px',
-              fontFamily: 'var(--font-head)',
-              fontWeight: '700',
-              textTransform: 'uppercase',
-              color: 'var(--text-secondary)',
-              letterSpacing: '0.05em',
-              marginBottom: '12px'
-            }}
-          >
-            🔑 Demo Quick Logins
-          </h5>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'center' }}>
-            <button
-              onClick={() => handleQuickLogin('admin@demo.com', 'admin123')}
-              style={{
-                background: 'rgba(234, 88, 12, 0.05)',
-                border: '1px solid rgba(234, 88, 12, 0.15)',
-                padding: '6px 12px',
-                borderRadius: '8px',
-                color: 'var(--primary)',
-                fontSize: '11px',
-                fontWeight: '700',
-                transition: 'all 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'var(--primary)';
-                e.currentTarget.style.color = '#fff';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(234, 88, 12, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(234, 88, 12, 0.05)';
-                e.currentTarget.style.color = 'var(--primary)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              Admin (Full Control)
-            </button>
-            <button
-              onClick={() => handleQuickLogin('hr@demo.com', 'hr123')}
-              style={{
-                background: 'rgba(217, 119, 6, 0.05)',
-                border: '1px solid rgba(217, 119, 6, 0.15)',
-                padding: '6px 12px',
-                borderRadius: '8px',
-                color: 'var(--secondary)',
-                fontSize: '11px',
-                fontWeight: '700',
-                transition: 'all 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'var(--secondary)';
-                e.currentTarget.style.color = '#fff';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(217, 119, 6, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(217, 119, 6, 0.05)';
-                e.currentTarget.style.color = 'var(--secondary)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              HR (Manager role)
-            </button>
-            <button
-              onClick={() => handleQuickLogin('jane@demo.com', 'jane123')}
-              style={{
-                background: 'rgba(5, 150, 105, 0.05)',
-                border: '1px solid rgba(5, 150, 105, 0.15)',
-                padding: '6px 12px',
-                borderRadius: '8px',
-                color: 'var(--success)',
-                fontSize: '11px',
-                fontWeight: '700',
-                transition: 'all 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'var(--success)';
-                e.currentTarget.style.color = '#fff';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(5, 150, 105, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(5, 150, 105, 0.05)';
-                e.currentTarget.style.color = 'var(--success)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              Employee (Jane Smith)
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );

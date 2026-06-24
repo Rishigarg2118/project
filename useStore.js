@@ -2,41 +2,13 @@ import { useState } from 'react'
 
 const INITIAL_USERS = [
   { id: 1, name: 'Admin User', email: 'admin@demo.com', password: 'admin123', role: 'admin' },
-  { id: 2, name: 'Jane Smith', email: 'jane@demo.com', password: 'jane123', role: 'user' },
 ]
 
-const INITIAL_DEPTS = [
-  { id: 1, department_name: 'IT' },
-  { id: 2, department_name: 'HR' },
-  { id: 3, department_name: 'Finance' },
-  { id: 4, department_name: 'Marketing' },
-]
+const INITIAL_DEPTS = []
 
-const INITIAL_SKILLS = [
-  { id: 1, skill_name: 'React' },
-  { id: 2, skill_name: 'NodeJS' },
-  { id: 3, skill_name: 'PostgreSQL' },
-  { id: 4, skill_name: 'Python' },
-  { id: 5, skill_name: 'Java' },
-]
+const INITIAL_SKILLS = []
 
-const INITIAL_EMPLOYEES = [
-  {
-    id: 1,
-    user_id: 2,
-    department_id: 1,
-    phone: '9876543210',
-    address: '123 MG Road, Gwalior',
-    designation: 'Senior Developer',
-    salary: 85000,
-    created_at: '2024-01-15T10:00:00',
-    images: [
-      { id: 1, label: 'Profile Photo', url: 'https://i.pravatar.cc/150?img=47' },
-      { id: 2, label: 'Aadhar Card', url: 'https://i.pravatar.cc/150?img=48' },
-    ],
-    skill_ids: [1, 2, 3],
-  },
-]
+const INITIAL_EMPLOYEES = []
 
 export function useStore() {
   const [users, setUsers] = useState(INITIAL_USERS)

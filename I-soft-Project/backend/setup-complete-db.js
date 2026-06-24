@@ -171,27 +171,30 @@ async function rebuildAndSeed() {
 
     console.log('Created database tables successfully.');
 
-    // Seed mock data
+    // Seed clean administrative users and layout profiles
     const salt = await bcrypt.genSalt(10);
-    const adminPassword = await bcrypt.hash('admin123', salt);
+    const adminPassword123 = await bcrypt.hash('admin123', salt);
+    const userPassword123456 = await bcrypt.hash('123456', salt);
     const hrPassword = await bcrypt.hash('hr123', salt);
-    const janePassword = await bcrypt.hash('jane123', salt);
-    const rishiPassword = await bcrypt.hash('admin123', salt);
 
-    const usersResult = await pool.query(`
-      INSERT INTO users (name, email, password, role)
-      VALUES
-        ('Admin User', 'admin@demo.com', $1, 'admin'),
-        ('HR Manager', 'hr@demo.com', $2, 'hr'),
-        ('Jane Smith', 'jane@demo.com', $3, 'user'),
-        ('Rishi Garg', 'rishigarg1290@gmail.com', $4, 'admin')
-      RETURNING id, email;
-    `, [adminPassword, hrPassword, janePassword, rishiPassword]);
+    const adminUsers = [
+      { name: 'Rishi Garg', email: 'rishigarg1290@gmail.com', password: adminPassword123, role: 'admin' },
+      { name: 'Admin User', email: 'admin@demo.com', password: adminPassword123, role: 'admin' },
+      { name: 'Pranay Gupta', email: 'pranay@isoftzone.com', password: userPassword123456, role: 'admin' },
+      { name: 'Rahul Sharma', email: 'rahul@isoftzone.com', password: userPassword123456, role: 'manager' },
+      { name: 'Priya Verma', email: 'priya@isoftzone.com', password: userPassword123456, role: 'hr' },
+      { name: 'HR Manager', email: 'hr@demo.com', password: hrPassword, role: 'hr' }
+    ];
 
-    const adminUser = usersResult.rows.find(u => u.email === 'admin@demo.com');
-    const hrUser = usersResult.rows.find(u => u.email === 'hr@demo.com');
-    const janeUser = usersResult.rows.find(u => u.email === 'jane@demo.com');
-    const rishiUser = usersResult.rows.find(u => u.email === 'rishigarg1290@gmail.com');
+    const usersResult = [];
+    for (const u of adminUsers) {
+      const res = await pool.query(`
+        INSERT INTO users (name, email, password, role)
+        VALUES ($1, $2, $3, $4)
+        RETURNING id, name, email, role;
+      `, [u.name, u.email, u.password, u.role]);
+      usersResult.push(res.rows[0]);
+    }
 
     const deptsResult = await pool.query(`
       INSERT INTO departments (department_name)
@@ -201,153 +204,36 @@ async function rebuildAndSeed() {
     const itDept = deptsResult.rows.find(d => d.department_name === 'IT');
     const hrDept = deptsResult.rows.find(d => d.department_name === 'HR');
 
-    const skillsResult = await pool.query(`
+    await pool.query(`
       INSERT INTO skills (skill_name)
-      VALUES ('React'), ('NodeJS'), ('PostgreSQL'), ('Python'), ('Java'), ('AWS'), ('TypeScript')
-      RETURNING id, skill_name;
+      VALUES ('React'), ('NodeJS'), ('PostgreSQL'), ('Python'), ('Java'), ('AWS'), ('TypeScript');
     `);
-    const reactSkill = skillsResult.rows.find(s => s.skill_name === 'React');
-    const nodeSkill = skillsResult.rows.find(s => s.skill_name === 'NodeJS');
-    const pgSkill = skillsResult.rows.find(s => s.skill_name === 'PostgreSQL');
-    const javaSkill = skillsResult.rows.find(s => s.skill_name === 'Java');
 
-    // Seed Employee profiles
-    const janeEmp = await pool.query(`
-      INSERT INTO employees (user_id, department_id, phone, address, designation, salary, created_at)
-      VALUES ($1, $2, '9876543210', '123 MG Road, Gwalior', 'Senior Developer', 85000, NOW() - INTERVAL '150 days')
-      RETURNING id;
-    `, [janeUser.id, itDept.id]);
+    // Seed clean Employee profiles and initial leave balances
+    for (const u of usersResult) {
+      const deptId = (u.role === 'hr') ? hrDept.id : itDept.id;
+      const designation = (u.name === 'Rishi Garg') ? 'Director of Engineering' :
+                          (u.role === 'admin') ? 'System Administrator' :
+                          (u.role === 'manager') ? 'IT Manager' : 'HR Specialist';
+      const salary = (u.name === 'Rishi Garg') ? 120000 :
+                     (u.role === 'admin') ? 95000 :
+                     (u.role === 'manager') ? 85000 : 70000;
 
-    const hrEmp = await pool.query(`
-      INSERT INTO employees (user_id, department_id, phone, address, designation, salary, created_at)
-      VALUES ($1, $2, '9123456780', '45 Nehru Nagar, Delhi', 'HR Lead', 75000, NOW() - INTERVAL '200 days')
-      RETURNING id;
-    `, [hrUser.id, hrDept.id]);
+      const empRes = await pool.query(`
+        INSERT INTO employees (user_id, department_id, phone, address, designation, salary, created_at)
+        VALUES ($1, $2, '9876543210', 'i-SOFTZONE Technologies Office', $3, $4, NOW())
+        RETURNING id;
+      `, [u.id, deptId, designation, salary]);
 
-    const rishiEmp = await pool.query(`
-      INSERT INTO employees (user_id, department_id, phone, address, designation, salary, created_at)
-      VALUES ($1, $2, '9876543211', '123 MG Road, Gwalior', 'Director of Engineering', 120000, NOW() - INTERVAL '150 days')
-      RETURNING id;
-    `, [rishiUser.id, itDept.id]);
+      const empId = empRes.rows[0].id;
 
-    const janeEmpId = janeEmp.rows[0].id;
-    const hrEmpId = hrEmp.rows[0].id;
-    const rishiEmpId = rishiEmp.rows[0].id;
-
-    // Seed Employee images
-    await pool.query(`
-      INSERT INTO employee_images (employee_id, label, url)
-      VALUES
-        ($1, 'Profile Photo', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80'),
-        ($1, 'Aadhar Card', 'https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?auto=format&fit=crop&w=150&q=80')
-    `, [janeEmpId]);
-
-    await pool.query(`
-      INSERT INTO employee_images (employee_id, label, url)
-      VALUES
-        ($1, 'Profile Photo', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80')
-    `, [hrEmpId]);
-
-    // Seed Employee skills
-    await pool.query(`
-      INSERT INTO employee_skills (employee_id, skill_id)
-      VALUES
-        ($1, $2), ($1, $3), ($1, $4)
-    `, [janeEmpId, reactSkill.id, nodeSkill.id, pgSkill.id]);
-
-    await pool.query(`
-      INSERT INTO employee_skills (employee_id, skill_id)
-      VALUES
-        ($1, $2)
-    `, [hrEmpId, javaSkill.id]);
-
-    // Seed leave balances
-    await pool.query(`
-      INSERT INTO leave_balances (employee_id, sick_leaves, casual_leaves, earned_leaves)
-      VALUES
-        ($1, 10, 12, 15),
-        ($2, 12, 12, 15),
-        ($3, 12, 12, 15)
-    `, [janeEmpId, hrEmpId, rishiEmpId]);
-
-    // Seed leaves
-    await pool.query(`
-      INSERT INTO leaves (employee_id, leave_type, start_date, end_date, reason, status, reviewed_by, review_notes)
-      VALUES ($1, 'sick', NOW() - INTERVAL '10 days', NOW() - INTERVAL '9 days', 'Fever and cold', 'approved', $2, 'Take rest');
-    `, [janeEmpId, hrUser.id]);
-
-    await pool.query(`
-      INSERT INTO leaves (employee_id, leave_type, start_date, end_date, reason, status)
-      VALUES ($1, 'casual', NOW() + INTERVAL '5 days', NOW() + INTERVAL '6 days', 'Family function', 'pending');
-    `, [janeEmpId]);
-
-    // Seed assets
-    console.log('Seeding hardware assets...');
-    const assetsData = [
-      { name: 'MacBook Pro 16', serial: 'MAC-16-11001', status: 'allocated', desc: 'Apple M3 Max, 36GB RAM, 1TB SSD', empId: rishiEmpId, notes: 'Engineering Lead setup' },
-      { name: 'MacBook Air 15', serial: 'MAC-15-11002', status: 'allocated', desc: 'Apple M3, 16GB RAM, 512GB SSD', empId: janeEmpId, notes: 'Senior Developer setup' },
-      { name: 'Dell Latitude 5440', serial: 'DEL-LT-11004', status: 'allocated', desc: 'Intel Core i5, 16GB RAM, 512GB SSD', empId: hrEmpId, notes: 'HR Laptop' },
-      { name: 'Dell UltraSharp 27 Monitor', serial: 'DEL-MON-11006', status: 'available', desc: '4K USB-C Hub Monitor', empId: null, notes: null },
-      { name: 'iPad Pro 11', serial: 'APL-IPD-11007', status: 'available', desc: 'Apple M2 chip, 256GB WiFi', empId: null, notes: null },
-      { name: 'Logitech MX Master 3S', serial: 'LOG-MS-11008', status: 'available', desc: 'Ergonomic Wireless Mouse', empId: null, notes: null },
-      { name: 'ThinkPad T14 Gen 4', serial: 'LEN-TP-11009', status: 'maintenance', desc: 'Broken screen panel replacement pending', empId: null, notes: null }
-    ];
-
-    for (const a of assetsData) {
-      const res = await pool.query(
-        `INSERT INTO assets (name, serial_number, status, description)
-         VALUES ($1, $2, $3, $4) RETURNING id`,
-        [a.name, a.serial, a.status, a.desc]
-      );
-      const assetId = res.rows[0].id;
-      
-      if (a.status === 'allocated' && a.empId) {
-        await pool.query(
-          `INSERT INTO asset_allocations (asset_id, employee_id, notes, allocated_at)
-           VALUES ($1, $2, $3, NOW() - INTERVAL '30 days')`,
-          [assetId, a.empId, a.notes]
-        );
-      }
+      await pool.query(`
+        INSERT INTO leave_balances (employee_id, sick_leaves, casual_leaves, earned_leaves)
+        VALUES ($1, 12, 12, 15)
+      `, [empId]);
     }
 
-    // Seed attendance
-    console.log('Seeding realistic attendance logs...');
-    const today = new Date();
-    const activeEmpIds = [janeEmpId, hrEmpId, rishiEmpId];
-    for (const empId of activeEmpIds) {
-      for (let i = 0; i < 7; i++) {
-        const date = new Date();
-        date.setDate(today.getDate() - i);
-        
-        // Skip weekends
-        const dayOfWeek = date.getDay();
-        if (dayOfWeek === 0 || dayOfWeek === 6) continue;
-        
-        const checkInHour = 8.5 + Math.random() * 1.75;
-        const checkInMin = Math.floor((checkInHour % 1) * 60);
-        const checkInHr = Math.floor(checkInHour);
-        const checkInDate = new Date(date);
-        checkInDate.setHours(checkInHr, checkInMin, 0, 0);
-        
-        const checkOutHour = 17.0 + Math.random() * 2.5;
-        const checkOutMin = Math.floor((checkOutHour % 1) * 60);
-        const checkOutHr = Math.floor(checkOutHour);
-        const checkOutDate = new Date(date);
-        checkOutDate.setHours(checkOutHr, checkOutMin, 0, 0);
-        
-        const workedHours = parseFloat((checkOutHour - checkInHour).toFixed(2));
-        const location = Math.random() > 0.3 ? 'Office - Gwalior' : 'Remote - Home';
-        const notes = 'Daily check-in/out';
-        
-        await pool.query(
-          `INSERT INTO attendance (employee_id, check_in_time, check_out_time, location, notes, worked_hours)
-           VALUES ($1, $2, $3, $4, $5, $6)`,
-          [empId, checkInDate, checkOutDate, location, notes, workedHours]
-        );
-      }
-    }
-
-    console.log('Seeded database successfully with test profiles, assets, leaves, and attendance.');
+    console.log('Seeded database successfully with clean administrative profiles (0 sample logs/leaves/assets).');
   } catch (error) {
     console.error('Failed to run database setups and seeding:', error);
     throw error;

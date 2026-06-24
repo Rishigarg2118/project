@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Sidebar from './components/Sidebar';
@@ -25,6 +25,22 @@ function MainLayout() {
   const { user, loading } = useAuth();
   const [sidebarVisible, setSidebarVisible] = useState(window.innerWidth >= 1024);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+  const location = useLocation();
+
+  const getBreadcrumb = () => {
+    const path = location.pathname;
+    if (path === '/dashboard') return 'Dashboard';
+    if (path === '/employees') return 'Employee Directory';
+    if (path === '/departments') return 'Departments';
+    if (path === '/skills') return 'Skills Master';
+    if (path === '/assets') return 'Hardware Assets';
+    if (path === '/attendance') return 'Clock In / Out';
+    if (path === '/leaves') return 'Leave Balance';
+    if (path === '/approvals') return 'Leave Review';
+    if (path === '/reports') return 'View Reports';
+    if (path === '/profile') return 'My Profile';
+    return 'Portal';
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -90,29 +106,88 @@ function MainLayout() {
           borderBottom: '1px solid var(--border-glass)',
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'space-between',
           padding: '0 24px',
           position: 'sticky',
           top: 0,
           zIndex: 90,
         }}>
-          <button 
-            onClick={() => setSidebarVisible(!sidebarVisible)}
-            style={{
-              background: 'transparent',
-              border: 'none',
-              fontSize: 22,
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: 8,
-              borderRadius: 8,
-              color: 'var(--text-primary)',
-              transition: 'background 0.2s',
-            }}
-          >
-            ☰
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <button 
+              onClick={() => setSidebarVisible(!sidebarVisible)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                fontSize: 20,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '6px 10px',
+                borderRadius: '8px',
+                color: 'var(--text-primary)',
+                transition: 'background 0.2s',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.03)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
+            >
+              ☰
+            </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', fontWeight: '500' }}>
+              <span style={{ color: 'var(--text-muted)' }}>Portal</span>
+              <span style={{ color: 'var(--text-muted)' }}>/</span>
+              <span style={{ color: 'var(--text-primary)', fontWeight: '700', fontFamily: 'var(--font-head)' }}>
+                {getBreadcrumb()}
+              </span>
+            </div>
+          </div>
+
+          {/* User Profile Badge */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', fontSize: '13px' }}>
+              <span style={{ fontWeight: '600', color: 'var(--text-primary)', lineHeight: '1.2' }}>{user.name}</span>
+              <span style={{
+                fontSize: '9px',
+                fontWeight: '800',
+                color: user.role === 'admin' ? 'var(--primary)' : user.role === 'hr' ? 'var(--secondary)' : 'var(--text-muted)',
+                background: user.role === 'admin' ? 'var(--primary-glow)' : user.role === 'hr' ? 'var(--secondary-glow)' : 'rgba(0,0,0,0.03)',
+                border: `1.5px solid ${user.role === 'admin' ? 'rgba(234,88,12,0.2)' : user.role === 'hr' ? 'rgba(217,119,6,0.2)' : 'rgba(0,0,0,0.08)'}`,
+                padding: '2px 8px',
+                borderRadius: '30px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.04em',
+                marginTop: '3px',
+                display: 'inline-flex',
+                alignItems: 'center'
+              }}>
+                {user.role}
+              </span>
+            </div>
+
+            <Link to="/profile" style={{ textDecoration: 'none' }}>
+              <div
+                style={{
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, var(--primary-glow) 0%, var(--secondary-glow) 100%)',
+                  border: '1px solid var(--border-glass-active)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '14px',
+                  fontWeight: '800',
+                  color: 'var(--primary)',
+                  boxShadow: 'var(--shadow-premium)',
+                  transition: 'transform 0.2s',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                {user.name.charAt(0)}
+              </div>
+            </Link>
+          </div>
         </header>
 
         <main style={{ flex: 1, padding: isMobile ? '24px 16px' : '40px', minWidth: '0' }}>

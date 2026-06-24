@@ -61,20 +61,22 @@ export default function Sidebar({ visible, setVisible, isMobile }) {
           </h2>
         </div>
         
-        <button
-          onClick={() => setVisible(false)}
-          style={{
-            background: 'transparent',
-            border: 'none',
-            fontSize: 16,
-            cursor: 'pointer',
-            padding: '6px 10px',
-            color: 'var(--text-primary)',
-            borderRadius: '8px',
-          }}
-        >
-          ✕
-        </button>
+        {isMobile && (
+          <button
+            onClick={() => setVisible(false)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              fontSize: 16,
+              cursor: 'pointer',
+              padding: '6px 10px',
+              color: 'var(--text-primary)',
+              borderRadius: '8px',
+            }}
+          >
+            ✕
+          </button>
+        )}
       </div>
 
       {/* Nav Links */}

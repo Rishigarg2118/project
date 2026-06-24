@@ -96,11 +96,11 @@ export const getAttendanceAnalytics = async (req, res, next) => {
       SELECT 
         e.id AS employee_id,
         u.name AS employee_name,
-        COALESCE(AVG(EXTRACT(HOUR FROM att.check_in_time) + EXTRACT(MINUTE FROM att.check_in_time)/60.0), 9.0)::NUMERIC(4,2) AS avg_check_in_hour,
-        COALESCE(AVG(EXTRACT(HOUR FROM att.check_out_time) + EXTRACT(MINUTE FROM att.check_out_time)/60.0), 17.5)::NUMERIC(4,2) AS avg_check_out_hour
+        AVG(EXTRACT(HOUR FROM att.check_in_time) + EXTRACT(MINUTE FROM att.check_in_time)/60.0)::NUMERIC(4,2) AS avg_check_in_hour,
+        AVG(EXTRACT(HOUR FROM att.check_out_time) + EXTRACT(MINUTE FROM att.check_out_time)/60.0)::NUMERIC(4,2) AS avg_check_out_hour
       FROM employees e
       JOIN users u ON e.user_id = u.id
-      LEFT JOIN attendance att ON e.id = att.employee_id AND att.check_out_time IS NOT NULL
+      JOIN attendance att ON e.id = att.employee_id
       GROUP BY e.id, u.name
       ORDER BY u.name ASC
     `);

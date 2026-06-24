@@ -29,8 +29,50 @@ export default function Table({
             </tr>
           ) : data.length === 0 ? (
             <tr>
-              <td colSpan={headers.length} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-secondary)' }}>
-                {emptyMessage}
+              <td colSpan={headers.length} style={{ textAlign: 'center', padding: '48px 24px' }}>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '12px',
+                  maxWidth: '360px',
+                  margin: '0 auto',
+                  animation: 'fadeIn 0.4s ease-out'
+                }}>
+                  <div style={{
+                    width: '56px',
+                    height: '56px',
+                    borderRadius: '50%',
+                    background: 'var(--primary-glow)',
+                    border: '1.5px dashed rgba(234, 88, 12, 0.3)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '24px',
+                    color: 'var(--primary)',
+                    marginBottom: '8px'
+                  }}>
+                    📭
+                  </div>
+                  <h4 style={{
+                    fontFamily: 'var(--font-head)',
+                    fontSize: '15px',
+                    fontWeight: '700',
+                    color: 'var(--text-primary)',
+                    margin: 0
+                  }}>
+                    No Records Found
+                  </h4>
+                  <p style={{
+                    fontSize: '13px',
+                    color: 'var(--text-secondary)',
+                    lineHeight: '1.5',
+                    margin: 0
+                  }}>
+                    {emptyMessage}
+                  </p>
+                </div>
               </td>
             </tr>
           ) : (
