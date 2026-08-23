@@ -116,7 +116,15 @@ app.get('/api/v1/health', async (req, res) => {
     await pool.query('SELECT 1');
     res.json({ status: 'UP', database: 'CONNECTED', timestamp: new Date() });
   } catch (err) {
-    res.status(500).json({ status: 'DOWN', database: 'DISCONNECTED', message: err.message });
+    const connectionStr = pool.options?.connectionString || '';
+    const redactedUrl = connectionStr.replace(/:[^@/]+@/, ':***@');
+    res.status(500).json({ 
+      status: 'DOWN', 
+      database: 'DISCONNECTED', 
+      message: err.message || err.toString() || String(err),
+      url: redactedUrl,
+      stack: err.stack
+    });
   }
 });
 
@@ -126,7 +134,14 @@ app.get('/api/health', async (req, res) => {
     await pool.query('SELECT 1');
     res.json({ status: 'ok', database: true });
   } catch (err) {
-    res.status(500).json({ status: 'error', database: false, message: err.message });
+    const connectionStr = pool.options?.connectionString || '';
+    const redactedUrl = connectionStr.replace(/:[^@/]+@/, ':***@');
+    res.status(500).json({ 
+      status: 'error', 
+      database: false, 
+      message: err.message || err.toString() || String(err),
+      url: redactedUrl
+    });
   }
 });
 
