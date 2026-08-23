@@ -4540,3 +4540,844 @@
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-22 17:15:28"}
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-22 17:16:28"}
 {"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-06-22 17:16:28"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:26:02"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:26:03"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:26:03"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:26:03"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:26:03"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:26:03"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:26:03"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:26:03"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:26:03"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:26:03"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:26:03"}
+{"level":"warn","message":"POST /api/auth/login — 401: Invalid email or password","timestamp":"2026-08-19 15:26:18"}
+{"level":"info","message":"POST /api/auth/login 401","timestamp":"2026-08-19 15:26:18"}
+{"level":"warn","message":"POST /api/auth/login — 401: Invalid email or password","timestamp":"2026-08-19 15:26:28"}
+{"level":"info","message":"POST /api/auth/login 401","timestamp":"2026-08-19 15:26:28"}
+{"level":"warn","message":"POST /api/auth/login — 401: Invalid email or password","timestamp":"2026-08-19 15:27:17"}
+{"level":"info","message":"POST /api/auth/login 401","timestamp":"2026-08-19 15:27:17"}
+{"level":"warn","message":"POST /api/auth/login — 401: Invalid email or password","timestamp":"2026-08-19 15:27:27"}
+{"level":"info","message":"POST /api/auth/login 401","timestamp":"2026-08-19 15:27:27"}
+{"level":"warn","message":"POST /api/auth/login — 401: Invalid email or password","timestamp":"2026-08-19 15:27:29"}
+{"level":"info","message":"POST /api/auth/login 401","timestamp":"2026-08-19 15:27:29"}
+{"level":"info","message":"POST /api/auth/login 200","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"Cache MISS: Fetching departments list from Database","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"Cache MISS: Fetching skills list from Database","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/employees?limit=100 200","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/departments 200","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/skills 200","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/leaves/analytics 200","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/attendance/analytics 200","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:28:39"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:28:44"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:28:49"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:28:54"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:28:59"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:04"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:09"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:14"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:19"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:24"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:29"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:34"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:39"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:44"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:49"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:54"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:29:59"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:04"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:09"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:19"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:24"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:29"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:34"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:39"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:44"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:30:46"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:30:46"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:30:46"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:30:46"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/employees 200","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/auth/profile 200","timestamp":"2026-08-19 15:30:48"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:30:48"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-08-19 15:30:48"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:53"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:30:58"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:03"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:08"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:31:09"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:13"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:31:16"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:18"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:23"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:28"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:31:31"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:33"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:38"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:31:42"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:43"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:48"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:53"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:31:58"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"Cache MISS: Fetching departments list from Database","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"Cache MISS: Fetching skills list from Database","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:32:00"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:05"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:20"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:32:24"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:29"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:34"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:39"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:44"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:49"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:54"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:32:59"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:04"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:09"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:14"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:19"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:24"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:29"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:34"}
+{"level":"error","message":"Error in AI Chat handler: OpenRouter API error (402): {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15633. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\",\"provider_name\":null,\"previous_errors\":[{\"code\":402,\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15633. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\"},{\"code\":402,\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15633. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\"},{\"code\":402,\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15633. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\"}]}},\"user_id\":\"user_3GFsgpg91rbU8n5X03EN2VpcebE\"}","stack":"Error: OpenRouter API error (402): {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15633. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\",\"code\":402,\"metadata\":{\"limit_source\":\"openrouter_credits\",\"remedy_hint\":\"Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.\",\"provider_name\":null,\"previous_errors\":[{\"code\":402,\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15633. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\"},{\"code\":402,\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15633. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\"},{\"code\":402,\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 65535 tokens, but can only afford 15633. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\"}]}},\"user_id\":\"user_3GFsgpg91rbU8n5X03EN2VpcebE\"}\n    at file:///E:/I%20soft/I-soft-Project/backend/routes/ai.js:107:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)","timestamp":"2026-08-19 15:33:37"}
+{"level":"info","message":"POST /api/v1/ai/chat 500","timestamp":"2026-08-19 15:33:37"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:39"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:44"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:33:49"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:33:54"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:33:54"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-08-19 15:33:54"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:34:47"}
+{"level":"info","message":"POST /api/v1/ai/chat 200","timestamp":"2026-08-19 15:34:50"}
+{"level":"info","message":"POST /api/v1/ai/chat 200","timestamp":"2026-08-19 15:35:10"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:35:55"}
+{"level":"info","message":"Cache MISS: Fetching departments list from Database","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"Cache MISS: Fetching skills list from Database","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:35:56"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:36:02"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:07"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:11"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:36:13"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:17"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:21"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:26"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:36:28"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:31"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:36"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:46"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:51"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:36:56"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:01"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:06"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:11"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:16"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:21"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:26"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:31"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:36"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:46"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:51"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:37:56"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:01"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:06"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:11"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:16"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:21"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:26"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:31"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:36"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:46"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:51"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:38:56"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:01"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:06"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:11"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"Cache MISS: Fetching departments list from Database","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"Cache MISS: Fetching skills list from Database","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:39:16"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:21"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:26"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:39:29"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:31"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:36"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:41"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:46"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:51"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:39:54"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:39:56"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:01"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:06"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:11"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:16"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:21"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:26"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:31"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:40:34"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:36"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:41"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:40:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:47"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:51"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:40:56"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:40:58"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:01"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:06"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:11"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:16"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:21"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:26"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:31"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:36"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:41"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:41:45"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:46"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:51"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:41:52"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:41:56"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:41:57"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:42:01"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:42:06"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"Cache MISS: Fetching departments list from Database","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"Cache MISS: Fetching skills list from Database","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:42:10"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:42:11"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:42:11"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:42:15"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:42:20"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:42:25"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:42:26"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-08-19 15:42:26"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-08-19 15:42:26"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:42:27"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:42:27"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:42:34"}
+{"level":"info","message":"GET /api/assets?limit=1000 200","timestamp":"2026-08-19 15:42:37"}
+{"level":"info","message":"GET /api/employees?limit=1000 200","timestamp":"2026-08-19 15:42:37"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:42:37"}
+{"level":"info","message":"GET /api/employees?limit=1000 304","timestamp":"2026-08-19 15:42:37"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:42:37"}
+{"level":"info","message":"GET /api/assets?limit=1000 304","timestamp":"2026-08-19 15:42:37"}
+{"level":"info","message":"GET /api/leaves/queue 200","timestamp":"2026-08-19 15:42:38"}
+{"level":"info","message":"GET /api/leaves/queue 304","timestamp":"2026-08-19 15:42:38"}
+{"level":"info","message":"GET /api/leaves/my 200","timestamp":"2026-08-19 15:42:40"}
+{"level":"info","message":"GET /api/leaves/balances 200","timestamp":"2026-08-19 15:42:40"}
+{"level":"info","message":"GET /api/leaves/balances 304","timestamp":"2026-08-19 15:42:40"}
+{"level":"info","message":"GET /api/leaves/my 304","timestamp":"2026-08-19 15:42:40"}
+{"level":"info","message":"GET /api/assets 200","timestamp":"2026-08-19 15:42:44"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-08-19 15:42:44"}
+{"level":"info","message":"GET /api/assets 304","timestamp":"2026-08-19 15:42:44"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-08-19 15:42:44"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:42:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:42:45"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:42:45"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:42:45"}
+{"level":"info","message":"Cache INVALIDATED: Purged skills_list key from Node-Cache","timestamp":"2026-08-19 15:42:53"}
+{"level":"info","message":"DELETE /api/skills/7 200","timestamp":"2026-08-19 15:42:53"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":"Cache INVALIDATED: Purged skills_list key from Node-Cache","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":"POST /api/skills 201","timestamp":"2026-08-19 15:43:03"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:43:18"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:43:48"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:44:38"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:44:56"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:45:08"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:45:58"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:46:13"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:47:41"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:48:02"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:48:08"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 15:48:26"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:48:54"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-08-19 15:48:54"}
+{"level":"info","message":"Cache MISS: Fetching skills list from Database","timestamp":"2026-08-19 15:48:54"}
+{"level":"info","message":"GET /api/skills 200","timestamp":"2026-08-19 15:48:54"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:48:54"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:48:54"}
+{"level":"info","message":"Cache MISS: Fetching departments list from Database","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/employees?limit=100 200","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/leaves/analytics 200","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 15:52:14"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 16:02:45"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 16:02:59"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 16:03:18"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":"⏰ Background Jobs Engine initialized successfully.","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":" i-SOFTZONE Backend running on port 4000","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":" Environment             : DEVELOPMENT","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":" 🔒 Helmet + Rate Limiting: ACTIVE","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":" 📢 Notifications Engine  : ACTIVE","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":" 🗂️  Audit Trail (JSONB)   : ACTIVE","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":" ⏰ Cron Scheduler        : ACTIVE","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":"===================================================","timestamp":"2026-08-19 16:03:32"}
+{"level":"info","message":"POST /api/auth/login 200","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"Cache MISS: Fetching departments list from Database","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"Cache MISS: Fetching skills list from Database","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-08-19 16:06:23"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:06:28"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:06:33"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:06:38"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:06:43"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:06:48"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:06:53"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:06:58"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:07:03"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:07:08"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:07:13"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:07:18"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:07:23"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-08-19 16:07:28"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-23 12:19:31"}
+{"level":"warn","message":"POST /api/v1/auth/login — 401: Invalid email or password","timestamp":"2026-08-23 12:19:32"}
+{"level":"info","message":"POST /api/v1/auth/login 401","timestamp":"2026-08-23 12:19:32"}
+{"level":"error","message":"POST /api/v1/auth/login — \"password\" is required","stack":"ValidationError: \"password\" is required","timestamp":"2026-08-23 12:19:32"}
+{"level":"info","message":"POST /api/v1/auth/login 422","timestamp":"2026-08-23 12:19:32"}
+{"level":"info","message":"GET /api/v1/auth/profile 401","timestamp":"2026-08-23 12:19:32"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-23 12:19:32"}
+{"level":"info","message":"POST /api/v1/leaves/apply 401","timestamp":"2026-08-23 12:19:32"}
+{"level":"info","message":"GET /api/v1/leaves/balances 401","timestamp":"2026-08-23 12:19:32"}
+{"level":"info","message":"📧 Nodemailer running in MOCK mode. Emails will be logged to combined.log","timestamp":"2026-08-23 12:19:32"}
+{"level":"info","message":"GET /api/v1/employees 401","timestamp":"2026-08-23 12:19:32"}
+{"level":"info","message":"GET /api/v1/employees/1 401","timestamp":"2026-08-23 12:19:32"}

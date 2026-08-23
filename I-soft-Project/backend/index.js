@@ -13,7 +13,7 @@ initCronJobs();
 // Start Express Listener
 app.listen(PORT, () => {
   logger.info(`===================================================`);
-  logger.info(` i-SOFTZONE Backend running on port ${PORT}`);
+  logger.info(` Rishi's Emp system Backend running on port ${PORT}`);
   logger.info(` Environment             : ${NODE_ENV.toUpperCase()}`);
   logger.info(` 🔒 Helmet + Rate Limiting: ACTIVE`);
   logger.info(` 📢 Notifications Engine  : ACTIVE`);

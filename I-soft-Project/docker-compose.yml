@@ -4,7 +4,7 @@ services:
   # 1. PostgreSQL Database Service
   postgres-db:
     image: postgres:15-alpine
-    container_name: isoftzone_postgres
+    container_name: rishis_emp_system_postgres
     restart: always
     environment:
       POSTGRES_USER: postgres
@@ -18,7 +18,7 @@ services:
   # 2. Node.js Express API Service
   backend:
     build: ./backend
-    container_name: isoftzone_backend
+    container_name: rishis_emp_system_backend
     restart: always
     environment:
       - PORT=4000
@@ -34,10 +34,13 @@ services:
   # 3. React Frontend Nginx Host Service
   frontend:
     build: ./frontend
-    container_name: isoftzone_frontend
+    container_name: rishis_emp_system_frontend
     restart: always
     ports:
       - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     depends_on:
       - backend
 

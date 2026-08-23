@@ -1,8 +1,8 @@
 {
   "info": {
     "_postman_id": "7801a7ed-a316-411f-8537-f1db760cf20b",
-    "name": "i-SOFTZONE Enterprise API Collection",
-    "description": "Comprehensive API collection for i-SOFTZONE Employee Profile Management System (Task 6 - Production Ready Software Engineering)",
+    "name": "Rishi's Emp system Enterprise API Collection",
+    "description": "Comprehensive API collection for Rishi's Emp system Employee Profile Management System (Task 6 - Production Ready Software Engineering)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -16,7 +16,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"testuser@isoftzone.com\",\n  \"password\": \"password123\"\n}",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"testuser@rishis-emp-system.com\",\n  \"password\": \"password123\"\n}",
               "options": {
                 "raw": {
                   "language": "json"

@@ -129,6 +129,25 @@ export default function Sidebar({ visible, setVisible, isMobile }) {
         <Link to="/profile" className={getLinkClass('/profile')}>
           <span>👤</span> My Profile
         </Link>
+
+        <button 
+          onClick={() => {
+            window.dispatchEvent(new CustomEvent('open-ai-chat'));
+            if (isMobile) setVisible(false);
+          }}
+          className="sidebar-link"
+          style={{
+            background: 'transparent',
+            border: 'none',
+            outline: 'none',
+            textAlign: 'left',
+            width: '100%',
+            cursor: 'pointer',
+            padding: '12px 18px',
+          }}
+        >
+          <span>🤖</span> AI Assistant
+        </button>
       </nav>
 
       {/* Bottom Profile Widget & Logout */}

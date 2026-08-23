@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Sidebar from './components/Sidebar';
 import useAuth from './hooks/useAuth';
+import FloatingAiWidget from './components/FloatingAiWidget';
 
 // Pages
 import Landing from './pages/Landing';
@@ -20,6 +21,7 @@ import LeaveDashboard from './pages/LeaveDashboard';
 import LeaveApproval from './pages/LeaveApproval';
 import Reports from './pages/Reports';
 import Profile from './pages/Profile';
+import ChangePassword from './pages/ChangePassword';
 
 function MainLayout() {
   const { user, loading } = useAuth();
@@ -203,10 +205,12 @@ function MainLayout() {
             <Route path="/approvals" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><LeaveApproval /></ProtectedRoute>} />
             <Route path="/reports" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><Reports /></ProtectedRoute>} />
             <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+            <Route path="/change-password" element={<ProtectedRoute allowResetPending={true}><ChangePassword /></ProtectedRoute>} />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </main>
       </div>
+      <FloatingAiWidget />
     </div>
   );
 }

@@ -10,6 +10,7 @@ import pool from './config/db.js';
 import swaggerSpec from './config/swagger.js';
 import logger from './config/logger.js';
 import { notFound, errorHandler } from './middleware/errorHandler.js';
+import { FRONTEND_URL } from './config/env.js';
 
 // Route imports
 import authRoutes         from './routes/auth.js';
@@ -20,6 +21,7 @@ import leaveRoutes        from './routes/leaves.js';
 import assetRoutes        from './routes/assets.js';
 import attendanceRoutes   from './routes/attendance.js';
 import notificationRoutes from './routes/notifications.js';
+import aiRoutes           from './routes/ai.js';
 
 // Import request incrementer for stats monitoring
 import { incrementApiRequests } from './services/authService.js';
@@ -42,7 +44,14 @@ const apiLimiter = rateLimit({
 });
 
 // ─── Core Middleware ─────────────────────────────────────────────────────────
-app.use(cors());
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? FRONTEND_URL 
+    : ['http://localhost:3000', 'http://localhost:4566', 'http://localhost:5173', 'http://localhost:5180', 'http://localhost:5182'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/api/auth', authLimiter);
 app.use('/api', apiLimiter);
@@ -73,6 +82,7 @@ const registerRoutes = (prefix) => {
   app.use(`${prefix}/assets`,        assetRoutes);
   app.use(`${prefix}/attendance`,    attendanceRoutes);
   app.use(`${prefix}/notifications`, notificationRoutes);
+  app.use(`${prefix}/ai`,            aiRoutes);
 };
 
 registerRoutes('/api/v1'); // Future ready versioned APIs

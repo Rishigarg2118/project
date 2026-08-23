@@ -12,7 +12,7 @@ const SMTP_HOST = process.env.SMTP_HOST || '';
 const SMTP_PORT = process.env.SMTP_PORT || 587;
 const SMTP_USER = process.env.SMTP_USER || '';
 const SMTP_PASS = process.env.SMTP_PASS || '';
-const FROM_EMAIL = process.env.FROM_EMAIL || 'no-reply@isoftzone.com';
+const FROM_EMAIL = process.env.FROM_EMAIL || 'no-reply@rishis-emp-system.com';
 
 let transporter = null;
 const isMock = !SMTP_HOST || !SMTP_USER;
@@ -37,7 +37,7 @@ if (!isMock) {
  */
 export async function sendEmail({ to, subject, html, text }) {
   const mailOptions = {
-    from: `"i-SOFTZONE Admin" <${FROM_EMAIL}>`,
+    from: `"Rishi's Emp system Admin" <${FROM_EMAIL}>`,
     to,
     subject,
     text: text || html.replace(/<[^>]*>/g, ''),
@@ -68,15 +68,15 @@ export async function sendEmail({ to, subject, html, text }) {
  * Send Welcome Email
  */
 export async function sendWelcomeEmail(userEmail, userName) {
-  const subject = 'Welcome to i-SOFTZONE Technologies Pvt Ltd!';
+  const subject = "Welcome to Rishi's Emp system!";
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
-      <h2 style="color: #6366f1;">Welcome to i-SOFTZONE!</h2>
+      <h2 style="color: #6366f1;">Welcome to Rishi's Emp system!</h2>
       <p>Hi <strong>${userName}</strong>,</p>
       <p>Your user profile has been successfully set up in the Employee leave and attendance tracker system portal.</p>
       <p>You can now log in using your registered email and password to track leave balances, attendance logs, and manage allocations.</p>
       <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
-      <p style="font-size: 11px; color: #718096; text-align: center;">i-SOFTZONE Technologies Pvt Ltd &copy; ${new Date().getFullYear()}</p>
+      <p style="font-size: 11px; color: #718096; text-align: center;">Rishi's Emp system &copy; ${new Date().getFullYear()}</p>
     </div>
   `;
   return sendEmail({ to: userEmail, subject, html });
@@ -96,7 +96,7 @@ export async function sendLeaveStatusEmail(userEmail, userName, leaveType, statu
       {reason && <p>Manager notes: "<em>${reason}</em>"</p>}
       <p>Please log in to your employee portal dashboard to review updated leave schedules and available balance grids.</p>
       <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
-      <p style="font-size: 11px; color: #718096; text-align: center;">i-SOFTZONE Technologies Pvt Ltd &copy; ${new Date().getFullYear()}</p>
+      <p style="font-size: 11px; color: #718096; text-align: center;">Rishi's Emp system &copy; ${new Date().getFullYear()}</p>
     </div>
   `;
   return sendEmail({ to: userEmail, subject, html });
@@ -119,7 +119,7 @@ export async function sendAssetAssignedEmail(userEmail, userName, assetName, ser
       </ul>
       <p>Please contact support to collect your hardware. Handle with care.</p>
       <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
-      <p style="font-size: 11px; color: #718096; text-align: center;">i-SOFTZONE Technologies Pvt Ltd &copy; ${new Date().getFullYear()}</p>
+      <p style="font-size: 11px; color: #718096; text-align: center;">Rishi's Emp system &copy; ${new Date().getFullYear()}</p>
     </div>
   `;
   return sendEmail({ to: userEmail, subject, html });

@@ -34,7 +34,7 @@ export const registerUser = async ({ name, email, password, phone, role = 'user'
     throw error;
   }
 
-  const salt = await bcrypt.genSalt(10);
+  const salt = await bcrypt.genSalt(12);
   const hashedPassword = await bcrypt.hash(password, salt);
 
   const newUser = await userRepo.create({
@@ -91,12 +91,14 @@ export const loginUser = async ({ email, password }) => {
   return {
     token,
     role: user.role,
+    requiresPasswordReset: user.requires_password_reset || false,
     user: {
       id: user.id,
       name: user.name,
       email: user.email,
       role: user.role,
-      employee_id: employee ? employee.id : null
+      employee_id: employee ? employee.id : null,
+      requiresPasswordReset: user.requires_password_reset || false
     }
   };
 };
@@ -168,9 +170,36 @@ export const verifyAndResetPassword = async ({ email, code, newPassword }) => {
     throw error;
   }
 
-  const salt = await bcrypt.genSalt(10);
+  const salt = await bcrypt.genSalt(12);
   const hashedPassword = await bcrypt.hash(newPassword, salt);
 
   await userRepo.updatePassword(user.id, hashedPassword);
   logger.info(`Password successfully reset for user ${email}`);
+};
+
+export const changePassword = async ({ userId, currentPassword, newPassword }) => {
+  const user = await userRepo.findById(userId);
+  if (!user) {
+    const error = new Error('User not found');
+    error.statusCode = 404;
+    throw error;
+  }
+
+  const isMatch = await bcrypt.compare(currentPassword, user.password);
+  if (!isMatch) {
+    const error = new Error('Incorrect current password');
+    error.statusCode = 400;
+    throw error;
+  }
+
+  if (newPassword.length < 6) {
+    const error = new Error('Password must be at least 6 characters long');
+    error.statusCode = 400;
+    throw error;
+  }
+
+  const salt = await bcrypt.genSalt(12);
+  const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+  await userRepo.updatePassword(userId, hashedPassword);
 };

@@ -1,5 +1,5 @@
 /**
- * i-SOFTZONE Technologies Pvt Ltd — Full Dataset Seeder
+ * Rishi's Emp system Technologies Pvt Ltd — Full Dataset Seeder
  * 
  * Maps the curriculum dataset to our actual DB schema:
  *   employee_profiles → employees
@@ -13,7 +13,7 @@ import bcrypt from 'bcryptjs';
 
 async function seed() {
   const client = await pool.connect();
-  console.log('\n🌱 i-SOFTZONE Technologies Pvt Ltd — Seeding dataset...\n');
+  console.log('\n🌱 Rishi's Emp system Technologies Pvt Ltd — Seeding dataset...\n');
 
   try {
     await client.query('BEGIN');
@@ -92,28 +92,28 @@ async function seed() {
     console.log('\n👥 Inserting 10 users (hashing passwords with bcrypt)...');
     const usersData = [
       { name: 'Rishi Garg',     email: 'rishigarg1290@gmail.com', password: 'admin123', role: 'admin' },
-      { name: 'Pranay Gupta',   email: 'pranay@isoftzone.com',  password: '123456', role: 'admin' },
-      { name: 'Rahul Sharma',   email: 'rahul@isoftzone.com',   password: '123456', role: 'manager' },
-      { name: 'Priya Verma',    email: 'priya@isoftzone.com',   password: '123456', role: 'hr' },
-      { name: 'Amit Patel',     email: 'amit@isoftzone.com',    password: '123456', role: 'employee' },
-      { name: 'Neha Jain',      email: 'neha@isoftzone.com',    password: '123456', role: 'employee' },
-      { name: 'Rohit Singh',    email: 'rohit@isoftzone.com',   password: '123456', role: 'employee' },
-      { name: 'Anjali Gupta',   email: 'anjali@isoftzone.com',  password: '123456', role: 'employee' },
-      { name: 'Vikas Mehta',    email: 'vikas@isoftzone.com',   password: '123456', role: 'employee' },
-      { name: 'Pooja Shah',     email: 'pooja@isoftzone.com',   password: '123456', role: 'employee' },
-      { name: 'Sandeep Kumar',  email: 'sandeep@isoftzone.com', password: '123456', role: 'employee' },
+      { name: 'Pranay Gupta',   email: 'pranay@rishis-emp-system.com',  password: '123456', role: 'admin' },
+      { name: 'Rahul Sharma',   email: 'rahul@rishis-emp-system.com',   password: '123456', role: 'manager' },
+      { name: 'Priya Verma',    email: 'priya@rishis-emp-system.com',   password: '123456', role: 'hr' },
+      { name: 'Amit Patel',     email: 'amit@rishis-emp-system.com',    password: '123456', role: 'employee' },
+      { name: 'Neha Jain',      email: 'neha@rishis-emp-system.com',    password: '123456', role: 'employee' },
+      { name: 'Rohit Singh',    email: 'rohit@rishis-emp-system.com',   password: '123456', role: 'employee' },
+      { name: 'Anjali Gupta',   email: 'anjali@rishis-emp-system.com',  password: '123456', role: 'employee' },
+      { name: 'Vikas Mehta',    email: 'vikas@rishis-emp-system.com',   password: '123456', role: 'employee' },
+      { name: 'Pooja Shah',     email: 'pooja@rishis-emp-system.com',   password: '123456', role: 'employee' },
+      { name: 'Sandeep Kumar',  email: 'sandeep@rishis-emp-system.com', password: '123456', role: 'employee' },
     ];
 
     const hashedUsers = await Promise.all(
       usersData.map(async u => ({
         ...u,
-        hash: await bcrypt.hash(u.password, 10)
+        hash: await bcrypt.hash(u.password, 12)
       }))
     );
 
     const userRes = await client.query(
-      `INSERT INTO users (name, email, password, role)
-       SELECT name, email, password, role
+      `INSERT INTO users (name, email, password, role, requires_password_reset)
+       SELECT name, email, password, role, TRUE
        FROM UNNEST($1::text[], $2::text[], $3::text[], $4::text[])
          AS t(name, email, password, role)
        RETURNING id, email, name, role`,
@@ -133,16 +133,16 @@ async function seed() {
     // user_id references, department_id references match dataset order
     const empData = [
       { email: 'rishigarg1290@gmail.com', dept: 'Software Development', phone: '9876543220', address: 'Gwalior', designation: 'Engineering Lead',   salary: 160000 },
-      { email: 'pranay@isoftzone.com',  dept: 'Software Development', phone: '9876543210', address: 'Indore', designation: 'Director',            salary: 150000 },
-      { email: 'rahul@isoftzone.com',   dept: 'Software Development', phone: '9876543211', address: 'Indore', designation: 'Project Manager',     salary: 85000  },
-      { email: 'priya@isoftzone.com',   dept: 'Human Resources',      phone: '9876543212', address: 'Indore', designation: 'HR Manager',          salary: 70000  },
-      { email: 'amit@isoftzone.com',    dept: 'Software Development', phone: '9876543213', address: 'Indore', designation: 'React Developer',     salary: 45000  },
-      { email: 'neha@isoftzone.com',    dept: 'Software Development', phone: '9876543214', address: 'Indore', designation: 'Node Developer',      salary: 50000  },
-      { email: 'rohit@isoftzone.com',   dept: 'Quality Assurance',    phone: '9876543215', address: 'Indore', designation: 'QA Engineer',         salary: 40000  },
-      { email: 'anjali@isoftzone.com',  dept: 'Digital Marketing',    phone: '9876543216', address: 'Indore', designation: 'Marketing Executive', salary: 35000  },
-      { email: 'vikas@isoftzone.com',   dept: 'Sales',                phone: '9876543217', address: 'Indore', designation: 'Sales Executive',     salary: 38000  },
-      { email: 'pooja@isoftzone.com',   dept: 'Technical Support',    phone: '9876543218', address: 'Indore', designation: 'Support Engineer',    salary: 32000  },
-      { email: 'sandeep@isoftzone.com', dept: 'Finance',              phone: '9876543219', address: 'Indore', designation: 'Accountant',          salary: 42000  },
+      { email: 'pranay@rishis-emp-system.com',  dept: 'Software Development', phone: '9876543210', address: 'Indore', designation: 'Director',            salary: 150000 },
+      { email: 'rahul@rishis-emp-system.com',   dept: 'Software Development', phone: '9876543211', address: 'Indore', designation: 'Project Manager',     salary: 85000  },
+      { email: 'priya@rishis-emp-system.com',   dept: 'Human Resources',      phone: '9876543212', address: 'Indore', designation: 'HR Manager',          salary: 70000  },
+      { email: 'amit@rishis-emp-system.com',    dept: 'Software Development', phone: '9876543213', address: 'Indore', designation: 'React Developer',     salary: 45000  },
+      { email: 'neha@rishis-emp-system.com',    dept: 'Software Development', phone: '9876543214', address: 'Indore', designation: 'Node Developer',      salary: 50000  },
+      { email: 'rohit@rishis-emp-system.com',   dept: 'Quality Assurance',    phone: '9876543215', address: 'Indore', designation: 'QA Engineer',         salary: 40000  },
+      { email: 'anjali@rishis-emp-system.com',  dept: 'Digital Marketing',    phone: '9876543216', address: 'Indore', designation: 'Marketing Executive', salary: 35000  },
+      { email: 'vikas@rishis-emp-system.com',   dept: 'Sales',                phone: '9876543217', address: 'Indore', designation: 'Sales Executive',     salary: 38000  },
+      { email: 'pooja@rishis-emp-system.com',   dept: 'Technical Support',    phone: '9876543218', address: 'Indore', designation: 'Support Engineer',    salary: 32000  },
+      { email: 'sandeep@rishis-emp-system.com', dept: 'Finance',              phone: '9876543219', address: 'Indore', designation: 'Accountant',          salary: 42000  },
     ];
 
     const empIds = {};  // empIds[email] = employee.id
@@ -162,13 +162,13 @@ async function seed() {
     console.log('\n🎯 Inserting employee skills...');
     // Dataset: (emp_seq_id, skill_id) — emp ids 4..10 map to our emails
     const empSkillMap = [
-      { email: 'amit@isoftzone.com',    skillNames: ['React', 'JavaScript', 'HTML'] },
-      { email: 'neha@isoftzone.com',    skillNames: ['NodeJS', 'PostgreSQL', 'JavaScript'] },
-      { email: 'rohit@isoftzone.com',   skillNames: ['Testing'] },
-      { email: 'anjali@isoftzone.com',  skillNames: ['JavaScript'] },
-      { email: 'vikas@isoftzone.com',   skillNames: ['Salesforce'] },
-      { email: 'pooja@isoftzone.com',   skillNames: ['NodeJS', 'PostgreSQL'] },
-      { email: 'sandeep@isoftzone.com', skillNames: ['Python'] },
+      { email: 'amit@rishis-emp-system.com',    skillNames: ['React', 'JavaScript', 'HTML'] },
+      { email: 'neha@rishis-emp-system.com',    skillNames: ['NodeJS', 'PostgreSQL', 'JavaScript'] },
+      { email: 'rohit@rishis-emp-system.com',   skillNames: ['Testing'] },
+      { email: 'anjali@rishis-emp-system.com',  skillNames: ['JavaScript'] },
+      { email: 'vikas@rishis-emp-system.com',   skillNames: ['Salesforce'] },
+      { email: 'pooja@rishis-emp-system.com',   skillNames: ['NodeJS', 'PostgreSQL'] },
+      { email: 'sandeep@rishis-emp-system.com', skillNames: ['Python'] },
     ];
 
     for (const es of empSkillMap) {
@@ -188,17 +188,17 @@ async function seed() {
     console.log('\n🗓️  Inserting leave balances...');
     const leaveBalanceData = [
       { email: 'rishigarg1290@gmail.com', casual: 12, sick: 10, earned: 15 },
-      { email: 'amit@isoftzone.com',   casual: 10, sick: 8,  earned: 15 },
-      { email: 'neha@isoftzone.com',   casual: 12, sick: 10, earned: 15 },
-      { email: 'rohit@isoftzone.com',  casual: 8,  sick: 6,  earned: 15 },
-      { email: 'anjali@isoftzone.com', casual: 10, sick: 7,  earned: 15 },
-      { email: 'vikas@isoftzone.com',  casual: 12, sick: 10, earned: 15 },
+      { email: 'amit@rishis-emp-system.com',   casual: 10, sick: 8,  earned: 15 },
+      { email: 'neha@rishis-emp-system.com',   casual: 12, sick: 10, earned: 15 },
+      { email: 'rohit@rishis-emp-system.com',  casual: 8,  sick: 6,  earned: 15 },
+      { email: 'anjali@rishis-emp-system.com', casual: 10, sick: 7,  earned: 15 },
+      { email: 'vikas@rishis-emp-system.com',  casual: 12, sick: 10, earned: 15 },
       // Give balances to all employees for completeness
-      { email: 'pranay@isoftzone.com',  casual: 12, sick: 10, earned: 15 },
-      { email: 'rahul@isoftzone.com',   casual: 12, sick: 10, earned: 15 },
-      { email: 'priya@isoftzone.com',   casual: 12, sick: 10, earned: 15 },
-      { email: 'pooja@isoftzone.com',   casual: 12, sick: 10, earned: 15 },
-      { email: 'sandeep@isoftzone.com', casual: 12, sick: 10, earned: 15 },
+      { email: 'pranay@rishis-emp-system.com',  casual: 12, sick: 10, earned: 15 },
+      { email: 'rahul@rishis-emp-system.com',   casual: 12, sick: 10, earned: 15 },
+      { email: 'priya@rishis-emp-system.com',   casual: 12, sick: 10, earned: 15 },
+      { email: 'pooja@rishis-emp-system.com',   casual: 12, sick: 10, earned: 15 },
+      { email: 'sandeep@rishis-emp-system.com', casual: 12, sick: 10, earned: 15 },
     ];
     for (const lb of leaveBalanceData) {
       const empId = empIds[lb.email];
@@ -217,15 +217,15 @@ async function seed() {
     // leave_type_id 1=Casual → 'casual', 2=Sick → 'sick'
     const leaveTypeMap = { 1: 'casual', 2: 'sick', 3: 'earned', 4: 'casual' };
     const leaveApps = [
-      { email: 'amit@isoftzone.com',   type: 'casual', from: '2026-06-01', to: '2026-06-03', reason: 'Family Function', status: 'approved' },
-      { email: 'neha@isoftzone.com',   type: 'sick',   from: '2026-06-10', to: '2026-06-11', reason: 'Fever',           status: 'pending'  },
-      { email: 'rohit@isoftzone.com',  type: 'casual', from: '2026-05-20', to: '2026-05-21', reason: 'Personal Work',   status: 'approved' },
-      { email: 'anjali@isoftzone.com', type: 'casual', from: '2026-06-15', to: '2026-06-17', reason: 'Travel',          status: 'pending'  },
-      { email: 'vikas@isoftzone.com',  type: 'sick',   from: '2026-06-18', to: '2026-06-20', reason: 'Medical',         status: 'rejected' },
+      { email: 'amit@rishis-emp-system.com',   type: 'casual', from: '2026-06-01', to: '2026-06-03', reason: 'Family Function', status: 'approved' },
+      { email: 'neha@rishis-emp-system.com',   type: 'sick',   from: '2026-06-10', to: '2026-06-11', reason: 'Fever',           status: 'pending'  },
+      { email: 'rohit@rishis-emp-system.com',  type: 'casual', from: '2026-05-20', to: '2026-05-21', reason: 'Personal Work',   status: 'approved' },
+      { email: 'anjali@rishis-emp-system.com', type: 'casual', from: '2026-06-15', to: '2026-06-17', reason: 'Travel',          status: 'pending'  },
+      { email: 'vikas@rishis-emp-system.com',  type: 'sick',   from: '2026-06-18', to: '2026-06-20', reason: 'Medical',         status: 'rejected' },
     ];
 
     // reviewer_id for approved/rejected = rahul (manager)
-    const rahulId = userByEmail['rahul@isoftzone.com'];
+    const rahulId = userByEmail['rahul@rishis-emp-system.com'];
     const leaveIds = [];
 
     for (const la of leaveApps) {
@@ -246,12 +246,12 @@ async function seed() {
     // ─── 9. APPROVAL HISTORY ─────────────────────────────────────────────────
     console.log('\n📝 Inserting approval history (audit trail)...');
     // Dataset: leave 1 (Amit - approved), leave 3 (Rohit - approved), leave 5 (Vikas - rejected)
-    const rahulUserId = userByEmail['rahul@isoftzone.com'];
-    const priyaUserId = userByEmail['priya@isoftzone.com'];
+    const rahulUserId = userByEmail['rahul@rishis-emp-system.com'];
+    const priyaUserId = userByEmail['priya@rishis-emp-system.com'];
 
-    const approvedLeave1 = leaveIds.find(l => l.email === 'amit@isoftzone.com');
-    const approvedLeave3 = leaveIds.find(l => l.email === 'rohit@isoftzone.com');
-    const rejectedLeave5 = leaveIds.find(l => l.email === 'vikas@isoftzone.com');
+    const approvedLeave1 = leaveIds.find(l => l.email === 'amit@rishis-emp-system.com');
+    const approvedLeave3 = leaveIds.find(l => l.email === 'rohit@rishis-emp-system.com');
+    const rejectedLeave5 = leaveIds.find(l => l.email === 'vikas@rishis-emp-system.com');
 
     // Leave 1 — Amit: Manager Approved, then HR Approved
     await client.query(
@@ -291,10 +291,10 @@ async function seed() {
     // Define 10 assets
     const assetsData = [
       { name: 'MacBook Pro 16', serial: 'MAC-16-11001', status: 'allocated', desc: 'Apple M3 Max, 36GB RAM, 1TB SSD', email: 'rishigarg1290@gmail.com', notes: 'Engineering Lead setup' },
-      { name: 'MacBook Air 15', serial: 'MAC-15-11002', status: 'allocated', desc: 'Apple M3, 16GB RAM, 512GB SSD', email: 'amit@isoftzone.com', notes: 'React Developer setup' },
-      { name: 'ThinkPad X1 Carbon', serial: 'LEN-TP-11003', status: 'allocated', desc: 'Intel Core Ultra 7, 32GB RAM, 1TB SSD', email: 'rahul@isoftzone.com', notes: 'Project Manager setup' },
-      { name: 'Dell Latitude 5440', serial: 'DEL-LT-11004', status: 'allocated', desc: 'Intel Core i5, 16GB RAM, 512GB SSD', email: 'priya@isoftzone.com', notes: 'HR Laptop' },
-      { name: 'ThinkPad E16', serial: 'LEN-TP-11005', status: 'allocated', desc: 'AMD Ryzen 5, 16GB RAM, 512GB SSD', email: 'neha@isoftzone.com', notes: 'Node Developer setup' },
+      { name: 'MacBook Air 15', serial: 'MAC-15-11002', status: 'allocated', desc: 'Apple M3, 16GB RAM, 512GB SSD', email: 'amit@rishis-emp-system.com', notes: 'React Developer setup' },
+      { name: 'ThinkPad X1 Carbon', serial: 'LEN-TP-11003', status: 'allocated', desc: 'Intel Core Ultra 7, 32GB RAM, 1TB SSD', email: 'rahul@rishis-emp-system.com', notes: 'Project Manager setup' },
+      { name: 'Dell Latitude 5440', serial: 'DEL-LT-11004', status: 'allocated', desc: 'Intel Core i5, 16GB RAM, 512GB SSD', email: 'priya@rishis-emp-system.com', notes: 'HR Laptop' },
+      { name: 'ThinkPad E16', serial: 'LEN-TP-11005', status: 'allocated', desc: 'AMD Ryzen 5, 16GB RAM, 512GB SSD', email: 'neha@rishis-emp-system.com', notes: 'Node Developer setup' },
       { name: 'Dell UltraSharp 27 Monitor', serial: 'DEL-MON-11006', status: 'available', desc: '4K USB-C Hub Monitor', email: null, notes: null },
       { name: 'iPad Pro 11', serial: 'APL-IPD-11007', status: 'available', desc: 'Apple M2 chip, 256GB WiFi', email: null, notes: null },
       { name: 'Logitech MX Master 3S', serial: 'LOG-MS-11008', status: 'available', desc: 'Ergonomic Wireless Mouse', email: null, notes: null },
@@ -371,7 +371,7 @@ async function seed() {
     await client.query('COMMIT');
 
     console.log('\n' + '═'.repeat(55));
-    console.log('  🎉 i-SOFTZONE Dataset Successfully Seeded!');
+    console.log('  🎉 Rishi's Emp system Dataset Successfully Seeded!');
     console.log('═'.repeat(55));
     console.log('\n📊 Dashboard Expected Output:');
     console.log('  Total Employees      : 10');
@@ -382,11 +382,11 @@ async function seed() {
     console.log('  Rejected Leaves      : 1');
     console.log('  Total Salary Expense : ₹5,87,000');
     console.log('\n🔑 Login Credentials (password: 123456 for all):');
-    console.log('  Admin   → pranay@isoftzone.com');
-    console.log('  Manager → rahul@isoftzone.com');
-    console.log('  HR      → priya@isoftzone.com');
-    console.log('  Employee→ amit@isoftzone.com (React Dev)');
-    console.log('  Employee→ neha@isoftzone.com (Node Dev)');
+    console.log('  Admin   → pranay@rishis-emp-system.com');
+    console.log('  Manager → rahul@rishis-emp-system.com');
+    console.log('  HR      → priya@rishis-emp-system.com');
+    console.log('  Employee→ amit@rishis-emp-system.com (React Dev)');
+    console.log('  Employee→ neha@rishis-emp-system.com (Node Dev)');
     console.log('═'.repeat(55) + '\n');
 
   } catch (err) {

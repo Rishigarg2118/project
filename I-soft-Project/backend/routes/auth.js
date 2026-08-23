@@ -1,6 +1,6 @@
 import express from 'express';
 import { verifyToken } from '../middleware/authMiddleware.js';
-import { validateSignup, validateLogin, validateReset } from '../validators/auth.validator.js';
+import { validateSignup, validateLogin, validateReset, validateChangePassword } from '../validators/auth.validator.js';
 import * as authController from '../controllers/authController.js';
 
 const router = express.Router();
@@ -135,5 +135,6 @@ router.post('/forgot-password', authController.forgotPassword);
  *         description: Invalid/expired code or user not found
  */
 router.post('/reset-password', validateReset, authController.resetPassword);
+router.post('/change-password', verifyToken, validateChangePassword, authController.changePassword);
 
 export default router;

@@ -17,7 +17,7 @@ describe('🔑 Authentication API Endpoints', () => {
       const res = await request(app)
         .post('/api/v1/auth/login')
         .send({
-          email: 'invalid@isoftzone.com',
+          email: 'invalid@rishis-emp-system.com',
           password: 'wrongpassword'
         });
 
@@ -29,7 +29,7 @@ describe('🔑 Authentication API Endpoints', () => {
       const res = await request(app)
         .post('/api/v1/auth/login')
         .send({
-          email: 'invalid@isoftzone.com'
+          email: 'invalid@rishis-emp-system.com'
           // password missing
         });
 

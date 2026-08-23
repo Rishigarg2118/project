@@ -23,11 +23,11 @@ export const findById = async (id) => {
   return result.rows[0];
 };
 
-export const create = async ({ name, email, password, role = 'user' }) => {
+export const create = async ({ name, email, password, role = 'user', requiresPasswordReset = false }) => {
   const result = await pool.query(
-    `INSERT INTO users (name, email, password, role, created_at)
-     VALUES ($1, $2, $3, $4, NOW()) RETURNING *`,
-    [name, email, password, role]
+    `INSERT INTO users (name, email, password, role, requires_password_reset, created_at)
+     VALUES ($1, $2, $3, $4, $5, NOW()) RETURNING *`,
+    [name, email, password, role, requiresPasswordReset]
   );
   return result.rows[0];
 };
@@ -64,7 +64,7 @@ export const findByResetCode = async (resetCode) => {
 export const updatePassword = async (id, hashedPassword) => {
   const result = await pool.query(
     `UPDATE users 
-     SET password = $1, reset_code = NULL, reset_expires = NULL 
+     SET password = $1, reset_code = NULL, reset_expires = NULL, requires_password_reset = FALSE 
      WHERE id = $2 RETURNING *`,
     [hashedPassword, id]
   );

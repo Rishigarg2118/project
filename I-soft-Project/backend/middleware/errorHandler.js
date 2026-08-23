@@ -45,8 +45,13 @@ export const errorHandler = (err, req, res, next) => {
     return res.status(400).json({ error: 'Foreign key violation — referenced record not found', detail: err.detail });
   }
 
+  const isProduction = process.env.NODE_ENV === 'production';
+  const responseMessage = (isProduction && statusCode >= 500)
+    ? 'Internal Server Error'
+    : (err.message || 'Internal Server Error');
+
   res.status(statusCode).json({
-    error: err.message || 'Internal Server Error',
-    ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
+    error: responseMessage,
+    ...(!isProduction && { stack: err.stack }),
   });
 };

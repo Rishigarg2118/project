@@ -25,3 +25,9 @@ export const resetPasswordSchema = Joi.object({
 export const validateSignup = validateBody(userSignupSchema);
 export const validateLogin = validateBody(userLoginSchema);
 export const validateReset = validateBody(resetPasswordSchema);
+
+export const changePasswordSchema = Joi.object({
+  currentPassword: Joi.string().required(),
+  newPassword: Joi.string().min(6).required(),
+});
+export const validateChangePassword = validateBody(changePasswordSchema);

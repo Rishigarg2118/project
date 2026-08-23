@@ -42,7 +42,7 @@ async function cleanDatabase() {
 
     // 3. Re-insert administrative users & lookup data
     console.log('👥 Seeding clean administrative accounts...');
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt(12);
     const adminPassword123 = await bcrypt.hash('admin123', salt);
     const userPassword123456 = await bcrypt.hash('123456', salt);
     const hrPassword = await bcrypt.hash('hr123', salt);
@@ -50,16 +50,16 @@ async function cleanDatabase() {
     const adminUsers = [
       { name: 'Rishi Garg', email: 'rishigarg1290@gmail.com', password: adminPassword123, role: 'admin' },
       { name: 'Admin User', email: 'admin@demo.com', password: adminPassword123, role: 'admin' },
-      { name: 'Pranay Gupta', email: 'pranay@isoftzone.com', password: userPassword123456, role: 'admin' },
-      { name: 'Rahul Sharma', email: 'rahul@isoftzone.com', password: userPassword123456, role: 'manager' },
-      { name: 'Priya Verma', email: 'priya@isoftzone.com', password: userPassword123456, role: 'hr' },
+      { name: 'Pranay Gupta', email: 'pranay@rishis-emp-system.com', password: userPassword123456, role: 'admin' },
+      { name: 'Rahul Sharma', email: 'rahul@rishis-emp-system.com', password: userPassword123456, role: 'manager' },
+      { name: 'Priya Verma', email: 'priya@rishis-emp-system.com', password: userPassword123456, role: 'hr' },
       { name: 'HR Manager', email: 'hr@demo.com', password: hrPassword, role: 'hr' }
     ];
 
     const usersResult = [];
     for (const u of adminUsers) {
       const res = await client.query(
-        `INSERT INTO users (name, email, password, role) VALUES ($1, $2, $3, $4) RETURNING id, name, email, role`,
+        `INSERT INTO users (name, email, password, role, requires_password_reset) VALUES ($1, $2, $3, $4, TRUE) RETURNING id, name, email, role, requires_password_reset`,
         [u.name, u.email, u.password, u.role]
       );
       usersResult.push(res.rows[0]);
@@ -94,7 +94,7 @@ async function cleanDatabase() {
 
       const empRes = await client.query(`
         INSERT INTO employees (user_id, department_id, phone, address, designation, salary, created_at)
-        VALUES ($1, $2, '9876543210', 'i-SOFTZONE Technologies Office', $3, $4, NOW())
+        VALUES ($1, $2, '9876543210', 'Rishi's Emp system Office', $3, $4, NOW())
         RETURNING id;
       `, [u.id, deptId, designation, salary]);
 
@@ -112,9 +112,9 @@ async function cleanDatabase() {
     console.log('\nActive Credentials:');
     console.log('  - rishigarg1290@gmail.com (admin123)');
     console.log('  - admin@demo.com (admin123)');
-    console.log('  - pranay@isoftzone.com (123456)');
-    console.log('  - rahul@isoftzone.com (123456)');
-    console.log('  - priya@isoftzone.com (123456)');
+    console.log('  - pranay@rishis-emp-system.com (123456)');
+    console.log('  - rahul@rishis-emp-system.com (123456)');
+    console.log('  - priya@rishis-emp-system.com (123456)');
     console.log('  - hr@demo.com (hr123)\n');
 
   } catch (error) {

@@ -4,7 +4,7 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'I-soft-Project API Documentation',
+      title: "Rishi's Emp system API Documentation",
       version: '1.0.0',
       description: 'REST API documentation for Employee, Asset, Leave, and Attendance Management System',
     },

@@ -7,6 +7,11 @@ dotenv.config();
 const { Pool } = pg;
 const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/employee_db';
 
+const isLocal = !DATABASE_URL ||
+  DATABASE_URL.includes('localhost') ||
+  DATABASE_URL.includes('127.0.0.1') ||
+  DATABASE_URL.includes('postgres-db');
+
 const databaseUrl = new URL(DATABASE_URL);
 const DATABASE_NAME = databaseUrl.pathname?.replace('/', '') || 'employee_db';
 const ADMIN_DATABASE_URL = new URL(DATABASE_URL);
@@ -14,7 +19,10 @@ ADMIN_DATABASE_URL.pathname = '/postgres';
 
 async function ensureDatabaseExists() {
   console.log(`Ensuring database "${DATABASE_NAME}" exists...`);
-  const adminPool = new Pool({ connectionString: ADMIN_DATABASE_URL.toString() });
+  const adminPool = new Pool({
+    connectionString: ADMIN_DATABASE_URL.toString(),
+    ssl: isLocal ? false : { rejectUnauthorized: false }
+  });
   try {
     await adminPool.query(`CREATE DATABASE "${DATABASE_NAME}"`);
     console.log(`Created database "${DATABASE_NAME}".`);
@@ -33,7 +41,10 @@ async function ensureDatabaseExists() {
 async function rebuildAndSeed() {
   await ensureDatabaseExists();
 
-  const pool = new Pool({ connectionString: DATABASE_URL });
+  const pool = new Pool({
+    connectionString: DATABASE_URL,
+    ssl: isLocal ? false : { rejectUnauthorized: false }
+  });
   console.log('Connected to database. Starting table cleanups and builds...');
 
   try {
@@ -61,6 +72,7 @@ async function rebuildAndSeed() {
         role VARCHAR(20) DEFAULT 'user',
         reset_code VARCHAR(6) NULL,
         reset_expires TIMESTAMP NULL,
+        requires_password_reset BOOLEAN DEFAULT FALSE,
         created_at TIMESTAMP DEFAULT NOW()
       );
     `);
@@ -172,7 +184,7 @@ async function rebuildAndSeed() {
     console.log('Created database tables successfully.');
 
     // Seed clean administrative users and layout profiles
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt(12);
     const adminPassword123 = await bcrypt.hash('admin123', salt);
     const userPassword123456 = await bcrypt.hash('123456', salt);
     const hrPassword = await bcrypt.hash('hr123', salt);
@@ -180,18 +192,18 @@ async function rebuildAndSeed() {
     const adminUsers = [
       { name: 'Rishi Garg', email: 'rishigarg1290@gmail.com', password: adminPassword123, role: 'admin' },
       { name: 'Admin User', email: 'admin@demo.com', password: adminPassword123, role: 'admin' },
-      { name: 'Pranay Gupta', email: 'pranay@isoftzone.com', password: userPassword123456, role: 'admin' },
-      { name: 'Rahul Sharma', email: 'rahul@isoftzone.com', password: userPassword123456, role: 'manager' },
-      { name: 'Priya Verma', email: 'priya@isoftzone.com', password: userPassword123456, role: 'hr' },
+      { name: 'Pranay Gupta', email: 'pranay@rishis-emp-system.com', password: userPassword123456, role: 'admin' },
+      { name: 'Rahul Sharma', email: 'rahul@rishis-emp-system.com', password: userPassword123456, role: 'manager' },
+      { name: 'Priya Verma', email: 'priya@rishis-emp-system.com', password: userPassword123456, role: 'hr' },
       { name: 'HR Manager', email: 'hr@demo.com', password: hrPassword, role: 'hr' }
     ];
 
     const usersResult = [];
     for (const u of adminUsers) {
       const res = await pool.query(`
-        INSERT INTO users (name, email, password, role)
-        VALUES ($1, $2, $3, $4)
-        RETURNING id, name, email, role;
+        INSERT INTO users (name, email, password, role, requires_password_reset)
+        VALUES ($1, $2, $3, $4, TRUE)
+        RETURNING id, name, email, role, requires_password_reset;
       `, [u.name, u.email, u.password, u.role]);
       usersResult.push(res.rows[0]);
     }
@@ -221,7 +233,7 @@ async function rebuildAndSeed() {
 
       const empRes = await pool.query(`
         INSERT INTO employees (user_id, department_id, phone, address, designation, salary, created_at)
-        VALUES ($1, $2, '9876543210', 'i-SOFTZONE Technologies Office', $3, $4, NOW())
+        VALUES ($1, $2, '9876543210', "Rishi's Emp system Office", $3, $4, NOW())
         RETURNING id;
       `, [u.id, deptId, designation, salary]);
 
