@@ -5,7 +5,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const { Pool } = pg;
-const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/employee_db';
+const DATABASE_URL = process.env.DATABASE_URL || 
+                     process.env.DATABASE_PRIVATE_URL || 
+                     process.env.DATABASE_PUBLIC_URL || 
+                     process.env.POSTGRES_URL || 
+                     process.env.DB_URL || 
+                     'postgresql://postgres:postgres@localhost:5432/employee_db';
 
 const isLocal = !DATABASE_URL ||
   DATABASE_URL.includes('localhost') ||
