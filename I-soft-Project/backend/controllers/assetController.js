@@ -6,8 +6,11 @@ import * as assetService from '../services/assetService.js';
 
 export const getAssets = async (req, res, next) => {
   try {
-    const { search = '', status = '', page = 1, limit = 10 } = req.query;
-    const result = await assetService.getAssets({ search, status, page, limit });
+    const { search = '', status = '', page = 1, limit = 50 } = req.query;
+    // Standard employees can only view hardware assets assigned to them
+    const isRestrictedRole = req.user?.role === 'user';
+    const userId = isRestrictedRole ? req.user.id : null;
+    const result = await assetService.getAssets({ search, status, page, limit, userId });
     res.json(result);
   } catch (error) {
     next(error);

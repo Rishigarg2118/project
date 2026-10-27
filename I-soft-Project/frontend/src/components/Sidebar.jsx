@@ -85,13 +85,13 @@ export default function Sidebar({ visible, setVisible, isMobile }) {
         style={{ flex: 1, overflowY: 'auto', paddingRight: '4px' }}
       >
         <Link to="/dashboard" className={getLinkClass('/dashboard')}>
-          <span>📊</span> Dashboard
+          <span>📊</span> {isHrOrAdmin ? 'Executive Dashboard' : 'My Workspace'}
         </Link>
         
         {isHrOrAdmin && (
           <>
             <Link to="/employees" className={getLinkClass('/employees')}>
-              <span>👥</span> Directory
+              <span>👥</span> Employee Directory
             </Link>
             <Link to="/departments" className={getLinkClass('/departments')}>
               <span>🏢</span> Departments
@@ -102,27 +102,27 @@ export default function Sidebar({ visible, setVisible, isMobile }) {
           </>
         )}
 
-        <Link to="/assets" className={getLinkClass('/assets')}>
-          <span>💻</span> Hardware Assets
-        </Link>
-
         <Link to="/attendance" className={getLinkClass('/attendance')}>
-          <span>⏰</span> Clock In/Out
+          <span>⏰</span> Clock In / Out
         </Link>
 
         <Link to="/leaves" className={getLinkClass('/leaves')}>
-          <span>🌴</span> Leave Balance
+          <span>🌴</span> {isHrOrAdmin ? 'Leave Management' : 'My Leave Balances'}
+        </Link>
+
+        <Link to="/assets" className={getLinkClass('/assets')}>
+          <span>💻</span> {isHrOrAdmin ? 'Hardware Inventory' : 'My Assigned Hardware'}
         </Link>
 
         {(isHrOrAdmin || isManager) && (
           <Link to="/approvals" className={getLinkClass('/approvals')}>
-            <span>✅</span> Leave Review
+            <span>✅</span> Leave Review & Approvals
           </Link>
         )}
 
         {(isHrOrAdmin || isManager) && (
           <Link to="/reports" className={getLinkClass('/reports')}>
-            <span>📈</span> View Reports
+            <span>📈</span> Executive Reports
           </Link>
         )}
 

@@ -162,8 +162,9 @@ export default function Login() {
             </Button>
           </form>
 
+
           {/* Direct registration navigation */}
-          <div style={{ textAlign: 'center', marginTop: '24px', fontSize: '13px', color: 'var(--text-secondary)' }}>
+          <div style={{ textAlign: 'center', marginTop: '20px', fontSize: '13px', color: 'var(--text-secondary)' }}>
             New employee?{' '}
             <Link to="/signup" style={{ color: 'var(--secondary)', textDecoration: 'none', fontWeight: '600' }}>
               Register Here

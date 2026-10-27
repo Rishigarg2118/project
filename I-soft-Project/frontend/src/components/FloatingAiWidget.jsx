@@ -54,7 +54,7 @@ export default function FloatingAiWidget() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          ...(localStorage.getItem('token') && localStorage.getItem('token') !== 'null' ? { 'Authorization': `Bearer ${localStorage.getItem('token')}` } : {}),
         },
         body: JSON.stringify({
           message: userMsg.text,

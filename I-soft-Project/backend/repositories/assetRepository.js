@@ -4,13 +4,18 @@
  */
 import pool from '../config/db.js';
 
-export const findAll = async ({ search = '', status = '', page = 1, limit = 10 } = {}) => {
+export const findAll = async ({ search = '', status = '', page = 1, limit = 10, userId = null } = {}) => {
   const pageNum = Math.max(1, parseInt(page));
   const limitNum = Math.min(100, Math.max(1, parseInt(limit)));
   const offset = (pageNum - 1) * limitNum;
 
   const conditions = [];
   const params = [];
+
+  if (userId) {
+    params.push(userId);
+    conditions.push(`u.id = $${params.length}`);
+  }
 
   if (search.trim()) {
     params.push(`%${search.trim()}%`);
@@ -24,9 +29,14 @@ export const findAll = async ({ search = '', status = '', page = 1, limit = 10 }
 
   const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
 
-  // Get total count
+  // Get total count with necessary joins for scoping
   const countResult = await pool.query(
-    `SELECT COUNT(DISTINCT a.id)::INT AS total FROM assets a ${whereClause}`,
+    `SELECT COUNT(DISTINCT a.id)::INT AS total 
+     FROM assets a 
+     LEFT JOIN asset_allocations aa ON a.id = aa.asset_id AND aa.returned_at IS NULL
+     LEFT JOIN employees e ON aa.employee_id = e.id
+     LEFT JOIN users u ON e.user_id = u.id
+     ${whereClause}`,
     params
   );
   const total = countResult.rows[0].total;

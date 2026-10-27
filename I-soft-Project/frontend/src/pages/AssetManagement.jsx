@@ -169,21 +169,31 @@ export default function AssetManagement() {
     }
   };
 
-  const filteredAssets = assets.filter(asset =>
+  const isHrOrAdmin = user.role === 'admin' || user.role === 'hr';
+  const isManager = user.role === 'manager';
+
+  const userAssets = (!isHrOrAdmin && !isManager)
+    ? assets.filter(asset => asset.employee_user_id === user?.id || (user?.name && asset.allocated_to === user.name))
+    : assets;
+
+  const filteredAssets = userAssets.filter(asset =>
     asset.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     asset.serial_number.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const isHrOrAdmin = user.role === 'admin' || user.role === 'hr';
-  const isManager = user.role === 'manager';
-
-  const headers = [
+  const headers = (isHrOrAdmin || isManager) ? [
     { label: 'Device Name' },
     { label: 'Serial Number' },
     { label: 'Status' },
     { label: 'Current Allocation' },
     { label: 'Description' },
     { label: 'Actions', style: { textAlign: 'right' } }
+  ] : [
+    { label: 'Device Name' },
+    { label: 'Serial Number' },
+    { label: 'Status' },
+    { label: 'Assigned On' },
+    { label: 'Device Notes / Specs' }
   ];
 
   return (
@@ -211,10 +221,12 @@ export default function AssetManagement() {
               marginBottom: '8px'
             }}
           >
-            Hardware Inventory
+            {isHrOrAdmin || isManager ? 'Hardware Inventory' : 'My Assigned Hardware'}
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '15px' }}>
-            Track IT hardware allocation log records, device assignments, and maintenance.
+            {isHrOrAdmin || isManager 
+              ? 'Track IT hardware allocation log records, device assignments, and maintenance.'
+              : 'Overview of company equipment, laptops, and hardware assets assigned to your employee account.'}
           </p>
         </div>
 
@@ -231,10 +243,10 @@ export default function AssetManagement() {
           <span style={{ fontSize: '18px' }}>🔍</span>
           <input
             type="text"
-            placeholder="Search by device name or serial number..."
+            placeholder={isHrOrAdmin || isManager ? "Search by device name or serial number..." : "Search my assigned devices..."}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            style={{ border: 'none', background: 'transparent', padding: '4px' }}
+            style={{ border: 'none', background: 'transparent', padding: '4px', width: '100%', outline: 'none' }}
           />
         </div>
       </Card>
@@ -244,7 +256,7 @@ export default function AssetManagement() {
         headers={headers}
         data={filteredAssets}
         loading={loading}
-        emptyMessage="No hardware devices found."
+        emptyMessage={isHrOrAdmin || isManager ? "No hardware devices found." : "No hardware equipment is currently assigned to your employee account."}
         renderRow={(asset) => (
           <tr key={asset.id}>
             <td style={{ fontWeight: '600' }}>💻 {asset.name}</td>
@@ -263,51 +275,66 @@ export default function AssetManagement() {
                 {asset.status}
               </span>
             </td>
-            <td>
-              {asset.status === 'allocated' && asset.allocated_to ? (
-                <div>
-                  <div style={{ fontWeight: '600', fontSize: '13px' }}>👤 {asset.allocated_to}</div>
-                  <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                    Since {new Date(asset.allocated_at).toLocaleDateString()}
+            {(isHrOrAdmin || isManager) ? (
+              <>
+                <td>
+                  {asset.status === 'allocated' && asset.allocated_to ? (
+                    <div>
+                      <div style={{ fontWeight: '600', fontSize: '13px' }}>👤 {asset.allocated_to}</div>
+                      <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
+                        Since {new Date(asset.allocated_at).toLocaleDateString()}
+                      </div>
+                    </div>
+                  ) : (
+                    <span style={{ color: 'var(--text-muted)', fontSize: '13px' }}>—</span>
+                  )}
+                </td>
+                <td style={{ maxWidth: '200px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  {asset.description || 'No description.'}
+                </td>
+                <td style={{ textAlign: 'right' }}>
+                  <div style={{ display: 'inline-flex', gap: '8px' }}>
+                    <Button size="small" variant="ghost" onClick={() => handleOpenHistory(asset)}>
+                      Log History
+                    </Button>
+
+                    {asset.status === 'available' && (
+                      <Button size="small" variant="secondary" onClick={() => handleOpenAllocate(asset)}>
+                        Allocate
+                      </Button>
+                    )}
+
+                    {asset.status === 'allocated' && (
+                      <Button size="small" variant="primary" onClick={() => handleReturnAsset(asset)}>
+                        Log Return
+                      </Button>
+                    )}
+
+                    {isHrOrAdmin && (
+                      <>
+                        <Button size="small" variant="ghost" onClick={() => handleOpenEditAsset(asset)}>
+                          Edit
+                        </Button>
+                        <Button size="small" variant="danger" onClick={() => handleDeleteAsset(asset.id)}>
+                          Delete
+                        </Button>
+                      </>
+                    )}
                   </div>
-                </div>
-              ) : (
-                <span style={{ color: 'var(--text-muted)', fontSize: '13px' }}>—</span>
-              )}
-            </td>
-            <td style={{ maxWidth: '200px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-              {asset.description || 'No description.'}
-            </td>
-            <td style={{ textAlign: 'right' }}>
-              <div style={{ display: 'inline-flex', gap: '8px' }}>
-                <Button size="small" variant="ghost" onClick={() => handleOpenHistory(asset)}>
-                  Log History
-                </Button>
-
-                {asset.status === 'available' && (isHrOrAdmin || isManager) && (
-                  <Button size="small" variant="secondary" onClick={() => handleOpenAllocate(asset)}>
-                    Allocate
-                  </Button>
-                )}
-
-                {asset.status === 'allocated' && (isHrOrAdmin || isManager) && (
-                  <Button size="small" variant="primary" onClick={() => handleReturnAsset(asset)}>
-                    Log Return
-                  </Button>
-                )}
-
-                {isHrOrAdmin && (
-                  <>
-                    <Button size="small" variant="ghost" onClick={() => handleOpenEditAsset(asset)}>
-                      Edit
-                    </Button>
-                    <Button size="small" variant="danger" onClick={() => handleDeleteAsset(asset.id)}>
-                      Delete
-                    </Button>
-                  </>
-                )}
-              </div>
-            </td>
+                </td>
+              </>
+            ) : (
+              <>
+                <td>
+                  {asset.allocated_at 
+                    ? new Date(asset.allocated_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
+                    : 'Active Assignment'}
+                </td>
+                <td style={{ maxWidth: '300px' }}>
+                  {asset.description || 'Standard company issue.'}
+                </td>
+              </>
+            )}
           </tr>
         )}
       />
