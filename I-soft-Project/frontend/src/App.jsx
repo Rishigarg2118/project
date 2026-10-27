@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Sidebar from './components/Sidebar';
 import useAuth from './hooks/useAuth';
 import FloatingAiWidget from './components/FloatingAiWidget';
+import Loader from './components/Loader';
+import { initAutoCookieCleaner } from './utils/cookieCleaner';
 
-// Pages
-import Landing from './pages/Landing';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import ForgotPassword from './pages/ForgotPassword';
-import Dashboard from './pages/Dashboard';
-import EmployeeList from './pages/EmployeeList';
-import DepartmentMaster from './pages/DepartmentMaster';
-import SkillsMaster from './pages/SkillsMaster';
-import AssetManagement from './pages/AssetManagement';
-import AttendancePortal from './pages/AttendancePortal';
-import LeaveDashboard from './pages/LeaveDashboard';
-import LeaveApproval from './pages/LeaveApproval';
-import Reports from './pages/Reports';
-import Profile from './pages/Profile';
-import ChangePassword from './pages/ChangePassword';
+// High-speed code-split chunks: pages load asynchronously on-demand
+const Landing          = lazy(() => import('./pages/Landing'));
+const Login            = lazy(() => import('./pages/Login'));
+const Signup           = lazy(() => import('./pages/Signup'));
+const ForgotPassword   = lazy(() => import('./pages/ForgotPassword'));
+const Dashboard        = lazy(() => import('./pages/Dashboard'));
+const EmployeeList     = lazy(() => import('./pages/EmployeeList'));
+const DepartmentMaster = lazy(() => import('./pages/DepartmentMaster'));
+const SkillsMaster     = lazy(() => import('./pages/SkillsMaster'));
+const AssetManagement  = lazy(() => import('./pages/AssetManagement'));
+const AttendancePortal = lazy(() => import('./pages/AttendancePortal'));
+const LeaveDashboard   = lazy(() => import('./pages/LeaveDashboard'));
+const LeaveApproval    = lazy(() => import('./pages/LeaveApproval'));
+const Reports          = lazy(() => import('./pages/Reports'));
+const Profile          = lazy(() => import('./pages/Profile'));
+const ChangePassword   = lazy(() => import('./pages/ChangePassword'));
 
 function MainLayout() {
   const { user, loading } = useAuth();
@@ -53,6 +55,12 @@ function MainLayout() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Automated 10-second cookie cleaner
+  useEffect(() => {
+    const stopCleaner = initAutoCookieCleaner(10000);
+    return () => stopCleaner();
+  }, []);
   
   if (loading) {
     return (
@@ -64,13 +72,15 @@ function MainLayout() {
 
   if (!user) {
     return (
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <Suspense fallback={<Loader fullPage message="Loading portal..." />}>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Suspense>
     );
   }
 
@@ -193,21 +203,23 @@ function MainLayout() {
         </header>
 
         <main style={{ flex: 1, padding: isMobile ? '24px 16px' : '40px', minWidth: '0' }}>
-          <Routes>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-            <Route path="/employees" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><EmployeeList /></ProtectedRoute>} />
-            <Route path="/departments" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><DepartmentMaster /></ProtectedRoute>} />
-            <Route path="/skills" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><SkillsMaster /></ProtectedRoute>} />
-            <Route path="/assets" element={<ProtectedRoute><AssetManagement /></ProtectedRoute>} />
-            <Route path="/attendance" element={<ProtectedRoute><AttendancePortal /></ProtectedRoute>} />
-            <Route path="/leaves" element={<ProtectedRoute><LeaveDashboard /></ProtectedRoute>} />
-            <Route path="/approvals" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><LeaveApproval /></ProtectedRoute>} />
-            <Route path="/reports" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><Reports /></ProtectedRoute>} />
-            <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-            <Route path="/change-password" element={<ProtectedRoute allowResetPending={true}><ChangePassword /></ProtectedRoute>} />
-            <Route path="*" element={<Navigate to="/dashboard" replace />} />
-          </Routes>
+          <Suspense fallback={<Loader message="Loading workspace..." />}>
+            <Routes>
+              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+              <Route path="/employees" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><EmployeeList /></ProtectedRoute>} />
+              <Route path="/departments" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><DepartmentMaster /></ProtectedRoute>} />
+              <Route path="/skills" element={<ProtectedRoute allowedRoles={['admin', 'hr']}><SkillsMaster /></ProtectedRoute>} />
+              <Route path="/assets" element={<ProtectedRoute><AssetManagement /></ProtectedRoute>} />
+              <Route path="/attendance" element={<ProtectedRoute><AttendancePortal /></ProtectedRoute>} />
+              <Route path="/leaves" element={<ProtectedRoute><LeaveDashboard /></ProtectedRoute>} />
+              <Route path="/approvals" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><LeaveApproval /></ProtectedRoute>} />
+              <Route path="/reports" element={<ProtectedRoute allowedRoles={['admin', 'hr', 'manager']}><Reports /></ProtectedRoute>} />
+              <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+              <Route path="/change-password" element={<ProtectedRoute allowResetPending={true}><ChangePassword /></ProtectedRoute>} />
+              <Route path="*" element={<Navigate to="/dashboard" replace />} />
+            </Routes>
+          </Suspense>
         </main>
       </div>
       <FloatingAiWidget />

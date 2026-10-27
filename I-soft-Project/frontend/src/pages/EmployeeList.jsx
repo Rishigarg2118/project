@@ -578,31 +578,32 @@ export default function EmployeeList() {
         onClose={() => setIsDetailOpen(false)}
         title="Employee Detailed Profile"
         footer={
-          <Button variant="ghost" onClick={() => setIsDetailOpen(false)}>
+          <Button variant="secondary" onClick={() => setIsDetailOpen(false)}>
             Close Profile
           </Button>
         }
         size="medium"
       >
         {selectedEmployee && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
             {/* Header profile block */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
               <div
                 style={{
-                  width: '64px',
-                  height: '64px',
+                  width: '68px',
+                  height: '68px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-                  border: '2px solid var(--primary)',
+                  background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)',
+                  border: '3px solid #ffffff',
+                  boxShadow: '0 8px 20px rgba(234, 88, 12, 0.25)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '24px',
-                  fontWeight: '700',
-                  color: 'var(--secondary)',
+                  fontSize: '26px',
+                  fontWeight: '800',
+                  color: '#ffffff',
                   overflow: 'hidden',
-                  boxShadow: '0 0 10px rgba(139, 92, 246, 0.3)'
+                  flexShrink: 0
                 }}
               >
                 {selectedEmployee.images?.find(i => i.label === 'Profile Photo') ? (
@@ -616,39 +617,52 @@ export default function EmployeeList() {
                 )}
               </div>
               <div>
-                <h2 style={{ fontFamily: 'var(--font-head)', fontSize: '20px', fontWeight: '700' }}>
+                <h2 style={{ fontFamily: 'var(--font-head)', fontSize: '22px', fontWeight: '800', color: 'var(--text-primary)', margin: 0 }}>
                   {selectedEmployee.name}
                 </h2>
-                <div style={{ color: 'var(--text-secondary)', fontSize: '13px' }}>{selectedEmployee.email}</div>
-                <div style={{ fontSize: '12px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: '700', letterSpacing: '0.05em', marginTop: '4px' }}>
-                  {selectedEmployee.role} account
+                <div style={{ color: 'var(--text-secondary)', fontSize: '14px', marginTop: '2px' }}>{selectedEmployee.email}</div>
+                <div style={{ marginTop: '6px' }}>
+                  <span style={{
+                    display: 'inline-block',
+                    fontSize: '11px',
+                    color: 'var(--primary)',
+                    background: 'var(--primary-glow)',
+                    border: '1px solid rgba(234, 88, 12, 0.25)',
+                    padding: '3px 10px',
+                    borderRadius: '20px',
+                    fontWeight: '800',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em'
+                  }}>
+                    {selectedEmployee.role} account
+                  </span>
                 </div>
               </div>
             </div>
 
             <hr style={{ border: 'none', borderTop: '1px solid var(--border-glass)' }} />
 
-            {/* Profile fields */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '14px' }}>
-              <div>
-                <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '12px' }}>DESIGNATION</span>
-                <strong style={{ color: 'var(--text-primary)' }}>{selectedEmployee.designation || 'N/A'}</strong>
+            {/* Profile fields grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px' }}>
+              <div style={{ background: '#f8fafc', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '12px 16px' }}>
+                <span style={{ color: 'var(--text-muted)', display: 'block', fontSize: '11px', fontWeight: '700', letterSpacing: '0.05em' }}>DESIGNATION</span>
+                <strong style={{ color: 'var(--text-primary)', fontSize: '15px' }}>{selectedEmployee.designation || 'N/A'}</strong>
               </div>
-              <div>
-                <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '12px' }}>DEPARTMENT</span>
-                <strong style={{ color: 'var(--text-primary)' }}>{selectedEmployee.department_name || 'Unassigned'}</strong>
+              <div style={{ background: '#f8fafc', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '12px 16px' }}>
+                <span style={{ color: 'var(--text-muted)', display: 'block', fontSize: '11px', fontWeight: '700', letterSpacing: '0.05em' }}>DEPARTMENT</span>
+                <strong style={{ color: 'var(--text-primary)', fontSize: '15px' }}>{selectedEmployee.department_name || 'Unassigned'}</strong>
               </div>
-              <div>
-                <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '12px' }}>MONTHLY SALARY</span>
-                <strong style={{ color: 'var(--text-primary)' }}>₹{Number(selectedEmployee.salary).toLocaleString('en-IN') || '0'}</strong>
+              <div style={{ background: '#f8fafc', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '12px 16px' }}>
+                <span style={{ color: 'var(--text-muted)', display: 'block', fontSize: '11px', fontWeight: '700', letterSpacing: '0.05em' }}>MONTHLY SALARY</span>
+                <strong style={{ color: 'var(--primary)', fontSize: '15px' }}>₹{Number(selectedEmployee.salary).toLocaleString('en-IN') || '0'}</strong>
               </div>
-              <div>
-                <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '12px' }}>CONTACT PHONE</span>
-                <strong style={{ color: 'var(--text-primary)' }}>{selectedEmployee.phone || 'N/A'}</strong>
+              <div style={{ background: '#f8fafc', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '12px 16px' }}>
+                <span style={{ color: 'var(--text-muted)', display: 'block', fontSize: '11px', fontWeight: '700', letterSpacing: '0.05em' }}>CONTACT PHONE</span>
+                <strong style={{ color: 'var(--text-primary)', fontSize: '15px' }}>{selectedEmployee.phone || 'N/A'}</strong>
               </div>
-              <div style={{ gridColumn: 'span 2' }}>
-                <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '12px' }}>RESIDENTIAL ADDRESS</span>
-                <span style={{ color: 'var(--text-primary)' }}>{selectedEmployee.address || 'No address details listed.'}</span>
+              <div style={{ gridColumn: '1 / -1', background: '#f8fafc', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '12px 16px' }}>
+                <span style={{ color: 'var(--text-muted)', display: 'block', fontSize: '11px', fontWeight: '700', letterSpacing: '0.05em' }}>RESIDENTIAL ADDRESS</span>
+                <span style={{ color: 'var(--text-primary)', fontSize: '14px', fontWeight: '600' }}>{selectedEmployee.address || 'No address details listed.'}</span>
               </div>
             </div>
 
@@ -656,11 +670,13 @@ export default function EmployeeList() {
 
             {/* Skills */}
             <div>
-              <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '12px', marginBottom: '8px' }}>TECHNICAL SKILLS</span>
+              <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '12px', fontWeight: '700', letterSpacing: '0.05em', marginBottom: '10px' }}>
+                TECHNICAL SKILLS
+              </span>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {selectedEmployee.skills && selectedEmployee.skills.length > 0 ? (
                   selectedEmployee.skills.map(s => (
-                    <span key={s.id} className="status-badge success" style={{ background: 'rgba(16,185,129,0.1)', color: 'var(--success)', border: '1px solid rgba(16,185,129,0.3)', textTransform: 'none', fontSize: '12px' }}>
+                    <span key={s.id} className="status-badge success" style={{ background: 'rgba(16,185,129,0.1)', color: 'var(--success)', border: '1px solid rgba(16,185,129,0.3)', textTransform: 'none', fontSize: '12px', padding: '4px 10px' }}>
                       {s.skill_name}
                     </span>
                   ))
@@ -674,7 +690,9 @@ export default function EmployeeList() {
 
             {/* Documents */}
             <div>
-              <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '12px', marginBottom: '8px' }}>UPLOADED DOCUMENTS</span>
+              <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '12px', fontWeight: '700', letterSpacing: '0.05em', marginBottom: '10px' }}>
+                UPLOADED DOCUMENTS
+              </span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {selectedEmployee.images && selectedEmployee.images.length > 0 ? (
                   selectedEmployee.images.map(img => (
@@ -687,20 +705,27 @@ export default function EmployeeList() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        background: 'rgba(255,255,255,0.02)',
+                        background: '#f8fafc',
                         border: '1px solid var(--border-glass)',
-                        borderRadius: '8px',
-                        padding: '10px 14px',
-                        color: 'var(--secondary)',
+                        borderRadius: '10px',
+                        padding: '12px 16px',
+                        color: 'var(--primary)',
                         textDecoration: 'none',
                         fontSize: '13px',
+                        fontWeight: '600',
                         transition: 'var(--transition-smooth)'
                       }}
-                      onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
-                      onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.02)'}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'rgba(234, 88, 12, 0.08)';
+                        e.currentTarget.style.borderColor = 'rgba(234, 88, 12, 0.3)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = '#f8fafc';
+                        e.currentTarget.style.borderColor = 'var(--border-glass)';
+                      }}
                     >
                       <span>📁 {img.label}</span>
-                      <span style={{ fontSize: '11px', textDecoration: 'underline' }}>View File ↗</span>
+                      <span style={{ fontSize: '12px', fontWeight: '700' }}>View File ↗</span>
                     </a>
                   ))
                 ) : (
