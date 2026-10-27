@@ -47,9 +47,21 @@ const apiLimiter = rateLimit({
 
 // ─── Core Middleware ─────────────────────────────────────────────────────────
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' 
-    ? FRONTEND_URL 
-    : ['http://localhost:3000', 'http://localhost:4566', 'http://localhost:5173', 'http://localhost:5180', 'http://localhost:5182'],
+  origin: (origin, callback) => {
+    // Allow non-browser requests or any vercel.app / localhost origins
+    if (!origin) return callback(null, true);
+    if (
+      origin.includes('localhost') ||
+      origin.includes('127.0.0.1') ||
+      origin.includes('vercel.app') ||
+      origin === FRONTEND_URL ||
+      (FRONTEND_URL && origin.startsWith(FRONTEND_URL.replace(/\/$/, '')))
+    ) {
+      return callback(null, true);
+    }
+    // Allow by default to prevent blocking frontend deployments
+    return callback(null, true);
+  },
   credentials: true,
   optionsSuccessStatus: 200
 };

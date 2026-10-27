@@ -42,7 +42,16 @@ export function AuthProvider({ children }) {
       setUser(loggedUser);
       return loggedUser;
     } catch (err) {
-      const errMsg = err.response?.data?.error || 'Login failed. Please check credentials.';
+      let errMsg = 'Login failed. Please check credentials.';
+      if (err.response?.data?.error) {
+        errMsg = err.response.data.error;
+      } else if (err.code === 'ERR_NETWORK' || !err.response) {
+        errMsg = 'Cannot reach backend server. If using Render, wait ~40s for server to wake up from sleep, or verify VITE_API_URL on Vercel.';
+      } else if (err.response?.status === 405 || (typeof err.response?.data === 'string' && err.response.data.includes('<!doctype html>'))) {
+        errMsg = 'Vercel cannot find backend API. Please set VITE_API_URL in Vercel Project Settings > Environment Variables.';
+      } else if (err.response?.data?.message) {
+        errMsg = err.response.data.message;
+      }
       setError(errMsg);
       throw new Error(errMsg);
     }

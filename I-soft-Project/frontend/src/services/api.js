@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Use relative paths to rely on Vite's local dev proxy
-axios.defaults.baseURL = '';
+// Use VITE_API_URL in production, or fallback to relative paths in local development
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
 
 const token = localStorage.getItem('token');
 if (token) {

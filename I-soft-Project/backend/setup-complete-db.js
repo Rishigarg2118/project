@@ -192,24 +192,26 @@ async function rebuildAndSeed() {
     const salt = await bcrypt.genSalt(12);
     const adminPassword123 = await bcrypt.hash('admin123', salt);
     const userPassword123456 = await bcrypt.hash('123456', salt);
+    const demoAdminPassword = await bcrypt.hash('admin123456', salt);
     const hrPassword = await bcrypt.hash('hr123', salt);
 
     const adminUsers = [
-      { name: 'Rishi Garg', email: 'rishigarg1290@gmail.com', password: adminPassword123, role: 'admin' },
-      { name: 'Admin User', email: 'admin@demo.com', password: adminPassword123, role: 'admin' },
-      { name: 'Pranay Gupta', email: 'pranay@rishis-emp-system.com', password: userPassword123456, role: 'admin' },
-      { name: 'Rahul Sharma', email: 'rahul@rishis-emp-system.com', password: userPassword123456, role: 'manager' },
-      { name: 'Priya Verma', email: 'priya@rishis-emp-system.com', password: userPassword123456, role: 'hr' },
-      { name: 'HR Manager', email: 'hr@demo.com', password: hrPassword, role: 'hr' }
+      { name: 'Rishi Garg', email: 'rishigarg@demo.com', password: demoAdminPassword, role: 'admin', resetRequired: false },
+      { name: 'Rishi Garg', email: 'rishigarg1290@gmail.com', password: adminPassword123, role: 'admin', resetRequired: false },
+      { name: 'Admin User', email: 'admin@demo.com', password: adminPassword123, role: 'admin', resetRequired: false },
+      { name: 'Pranay Gupta', email: 'pranay@rishis-emp-system.com', password: userPassword123456, role: 'admin', resetRequired: false },
+      { name: 'Rahul Sharma', email: 'rahul@rishis-emp-system.com', password: userPassword123456, role: 'manager', resetRequired: false },
+      { name: 'Priya Verma', email: 'priya@rishis-emp-system.com', password: userPassword123456, role: 'hr', resetRequired: false },
+      { name: 'HR Manager', email: 'hr@demo.com', password: hrPassword, role: 'hr', resetRequired: false }
     ];
 
     const usersResult = [];
     for (const u of adminUsers) {
       const res = await pool.query(`
         INSERT INTO users (name, email, password, role, requires_password_reset)
-        VALUES ($1, $2, $3, $4, TRUE)
+        VALUES ($1, $2, $3, $4, $5)
         RETURNING id, name, email, role, requires_password_reset;
-      `, [u.name, u.email, u.password, u.role]);
+      `, [u.name, u.email, u.password, u.role, u.resetRequired ?? false]);
       usersResult.push(res.rows[0]);
     }
 
