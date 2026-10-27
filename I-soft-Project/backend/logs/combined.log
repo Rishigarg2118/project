@@ -6188,3 +6188,37 @@
 {"level":"info","message":" 📖 Swagger Docs          : http://localhost:4000/api-docs","timestamp":"2026-10-27 11:14:24"}
 {"level":"info","message":"===================================================","timestamp":"2026-10-27 11:14:24"}
 {"level":"info","message":"GET /api/v1/health 200","timestamp":"2026-10-27 11:18:23"}
+{"level":"info","message":"POST /api/auth/login 200","timestamp":"2026-10-27 11:36:33"}
+{"level":"info","message":"Cache MISS: Fetching departments list from Database","timestamp":"2026-10-27 11:36:33"}
+{"level":"info","message":"Cache MISS: Fetching skills list from Database","timestamp":"2026-10-27 11:36:33"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/employees?limit=100 304","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/v1/monitoring/stats 200","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/leaves/analytics 200","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/attendance/analytics 304","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"GET /api/leaves/analytics 304","timestamp":"2026-10-27 11:36:34"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"Cache HIT: Serving departments list from Node-Cache","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/departments 304","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"Cache HIT: Serving skills list from Node-Cache","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/skills 304","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/auth/profile 304","timestamp":"2026-10-27 11:36:38"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/employees 304","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-10-27 11:36:38"}
+{"level":"warn","message":"GET /api/users — 404: Route Not Found — /api/users","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/users 404","timestamp":"2026-10-27 11:36:38"}
+{"level":"info","message":"GET /api/employees/1 200","timestamp":"2026-10-27 11:36:41"}
