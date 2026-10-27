@@ -46,9 +46,18 @@ export const errorHandler = (err, req, res, next) => {
   }
 
   const isProduction = process.env.NODE_ENV === 'production';
-  const responseMessage = (isProduction && statusCode >= 500)
-    ? 'Internal Server Error'
-    : (err.message || 'Internal Server Error');
+  let responseMessage = err.message || 'Internal Server Error';
+  if (isProduction && statusCode >= 500) {
+    if (err.code === 'ECONNREFUSED' || err.message?.includes('connect ECONNREFUSED')) {
+      responseMessage = 'Database connection failed. Please verify DATABASE_URL on Render.';
+    } else if (err.code === '42P01') {
+      responseMessage = 'Database table not found. Auto-initialization is initializing tables, please retry in a few seconds.';
+    } else if (err.code === '28P01' || err.message?.includes('password authentication failed')) {
+      responseMessage = 'Database authentication failed. Please check DATABASE_URL credentials on Render.';
+    } else {
+      responseMessage = 'Internal Server Error';
+    }
+  }
 
   res.status(statusCode).json({
     error: responseMessage,

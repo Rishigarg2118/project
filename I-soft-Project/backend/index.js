@@ -5,7 +5,13 @@
 import app from './app.js';
 import { PORT, NODE_ENV } from './config/env.js';
 import { initCronJobs } from './jobs/cronJobs.js';
+import { initDatabase } from './config/initDb.js';
 import logger from './config/logger.js';
+
+// Auto-verify and ensure database schema & seed admin accounts
+initDatabase().catch(err => {
+  logger.error(`Database auto-init error: ${err.message}`);
+});
 
 // Start Background Cron Jobs
 initCronJobs();

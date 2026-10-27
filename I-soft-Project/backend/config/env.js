@@ -5,16 +5,26 @@
 import dotenv from 'dotenv';
 import path from 'path';
 
+// Preserve platform-provided environment variables (e.g. Render, Railway, Docker)
+const platformDatabaseUrl = process.env.DATABASE_URL || process.env.DATABASE_PRIVATE_URL || process.env.DATABASE_PUBLIC_URL || process.env.POSTGRES_URL;
+const platformPort = process.env.PORT;
+const platformFrontendUrl = process.env.FRONTEND_URL;
+
 // Load base .env first (for shared API keys like OPENROUTER_API_KEY)
 dotenv.config();
 
 const env = process.env.NODE_ENV || 'development';
 const envPath = path.resolve(process.cwd(), `.env.${env}`);
 
-// Load environment-specific overrides
-dotenv.config({ path: envPath, override: true });
+// Load environment-specific overrides without clobbering system env vars
+dotenv.config({ path: envPath, override: false });
 
-console.log(`[Config] Loaded environment: ${env.toUpperCase()} from ${envPath}`);
+// Restore platform env vars if present
+if (platformDatabaseUrl) process.env.DATABASE_URL = platformDatabaseUrl;
+if (platformPort) process.env.PORT = platformPort;
+if (platformFrontendUrl) process.env.FRONTEND_URL = platformFrontendUrl;
+
+console.log(`[Config] Loaded environment: ${env.toUpperCase()}`);
 
 export const PORT = process.env.PORT || 4000;
 export const DATABASE_URL = process.env.DATABASE_URL || 
